@@ -18,27 +18,26 @@
 
 <div>
 <!--Signup form-->
-<form id="SignUp">
+<form id="SignUp" action="" method="post">
     <feildset>
-        <label>Email: <input type="email" action="" method="post" name="email" required placeholder="Your Email"></label>
-        <label>Password: <input type="password" action="" method="post" name="password" required placeholder="Your Password"></label>
-        <label>Re-type Password: <imput type="check" action="" method="post" name="password check" required placeholder="Your Password "></imput>
-        <label> 
-            Who are you? <input type="radio" name="account" required>
-            <input type="radio" name="account" required>
-         </label>
-        <input type="submit">
+        <label>Email: <input type="email" name="email" required placeholder="Your Email"></label>
+        <label>Password: <input type="password" name="password" required placeholder="Your Password"></label>
+        <label>Re-type Password: <imput type="check" name="password check" required placeholder="Your Password "></imput>
+        <label>Student<input type="radio" name="account" required value="student">
+        <label>Teacher<input type="radio" name="account" required calue="teacher"></label>
+        <input type="submit" value="Sign up!">
     </feildset>
 </form>
 
 <!--Login Form-->
-<form id="Login">
+<form id="Login" action="" method="post">
         <feildset>
-            <label>Email: <input type="email" action="" method="post" name="email" required placeholder="Your Email"></label>
-            <label>Password: <input type="password" action="" method="post" name="password" required placeholder="Your Password"></label>
-            <input type="submit">
+            <label>Email: <input type="email" name="email" required placeholder="Your Email"></label>
+            <label>Password: <input type="password" name="password" required placeholder="Your Password"></label>
+            <input type="submit" value="Login">
         </feildset>
     </form>
+    
 </div>
 
 </body>
