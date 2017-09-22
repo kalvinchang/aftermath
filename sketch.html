@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sketchpad</title>
+	<style type="text/css">
+		h1 {
+			position: absolute;
+			width: 80%;
+			top: 0;
+			left: 0;
+			text-align: center; /*center text in the center of container*/
+			background: #008eff;
+		}
+		#sidebar {
+			background: #E5E5E5;
+			width: 20%; /*make width draggable by mouse*/
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			font-size: 1.2em;
+		}
+
+		button.accordion {
+			background-color: inherit;
+			padding: 10px;
+			width: 100%;
+			text-align: left;
+			border: none;
+			outline: none;
+			transition: 0.4s;
+			font-size: 1em;
+		}
+
+		button.accordion.active,  button.accordion:hover {
+			background-color: #ccc;
+		}
+
+		div.panel {
+			padding: 0 10px;
+			background-color: inherit;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+		}
+		canvas {
+			width: 80%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+<h1>Ch1 - Review of Algebra</h1>
+<canvas>
+	
+</canvas>
+<div class="accordion" id="sidebar">
+	<button class="accordion">Function Operations</button>
+	<div class="panel" id="topic-checklist">
+		<ul>
+			<li>Addition</li>
+			<li>Subtraction</li>
+			<li>Multiplication</li>
+			<li>Division</li>
+			<li>Composition</li>
+		</ul>
+	</div>
+	<button class="accordion">Annotations</button>
+	<div class="panel" id="annotations">
+		<ul>
+			<li>I think this is wrong</li>
+			<li>I don't understand this</li>
+		</ul>
+	</div>
+	<button class="accordion">Resources</button>
+	<div class="panel" id="resources">
+		<ul>
+			<li><!-- Youtube videos --></li>
+		</ul>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	    acc[i].onclick = function() {
+	        this.classList.toggle("active");
+	        var panel = this.nextElementSibling;
+	        if (panel.style.maxHeight) {
+	        	panel.style.maxHeight = null;
+	        } else {
+	        	panel.style.maxHeight = panel.scrollHeight + "px";
+	        }
+	    }
+	}
+</script>
+
+</body>
+</html>
