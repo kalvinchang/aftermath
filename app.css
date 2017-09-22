@@ -1,0 +1,108 @@
+/*NOTE: INSERT FONTS LATER*/
+
+/*General Styles*/
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    font-size: 100%;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-style: none;
+}
+body {
+    width: 100%;
+}
+
+/*Progressive Styles*/
+
+/*________________HOME START________________*/
+/*Home Sidebar*/
+#Home {
+    width: 100%;
+    height: 100%;
+}
+#Home sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    background-color: #101B54; 
+}
+#Home sidebar header {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    height: 8%;
+    padding-top: 2%;
+    margin: auto;
+    color: white;
+}
+#Home sidebar section {
+    margin: auto;
+    width: 95%;
+    font-size: 1.5em;
+    height: 70%;
+}
+/*Insert styles for people list items*/
+#Home sidebar section h3 {
+    color: white;
+    background-color: #9A9AC6;
+    font-size: 1.5em;
+    text-align: center;
+    width: 50%;
+}
+#Home sidebar section ul {
+    margin: auto;
+    width: 95%;
+}
+#Home sidebar section.setting {
+    height: 20%;
+}
+#Home sidebar section#setting {
+    height: 20%;
+}
+
+/*Home Body*/
+#HomeBody {
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #B5E8E5
+}
+#HomeBody header {
+    width: 100%;
+    height: 20%;
+    color: #101B54;
+}
+#HomeBody header h1 {
+    margin: auto;
+    width: 93%;
+    margin-top: 3.5%;
+    font-size: 2em;
+}
+#HomeBody header h2 {
+    margin: auto;
+    width: 90%;
+    font-size: 1.5em;
+}
+#HomeCheckList{
+    width: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#HomeResources{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/*________________HOME END________________*/
