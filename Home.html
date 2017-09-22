@@ -4,24 +4,27 @@
 <!--This is for the presentation of account and messaging-->
 <head>
 
+    <!--Title subject to change between Home, Chat, and Study-->
     <title>Home</title>
     <meta lang="eng-US">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intitial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="#">
+    <link rel="stylesheet" type="text/css" href="app.css">
 
 </head>
 
 <body>
 
+<div id="Home">
 <!--____________BEGINNING OF HOME MODULE____________-->
 
 <!--left-hand: class, people, topics, account things-->
 <sidebar>
     <header>
         <!--<h3>Math course title</h3>-->
+        <h3>Classroom Name<h3>
     </header>
-    <section>
+    <section id=>
         <div>
         <a href="Study.html"><h3>Study</h3></a>
         <!--Insert Search Icon-->
@@ -31,12 +34,12 @@
             <!--<a><li>person</li></a>-->
         </ul>
         <!--Units list-->
-        ><h3>Units</h3>
+        <h3>Units</h3>
         <ul>
             <!--<a><li>unit</li></a>-->
         </ul>
     </section>
-    <section>
+    <section id="setting">
         <!--Insert account stuff-->
     <!--<h3>id number</h3>-->
     <!--<h3>rank I think</h3>-->
@@ -46,28 +49,41 @@
 </sidebar>
 
 <!--Test banner, topics, and links-->
-<div>
+<div id="HomeBody">
     <!--Test banner-->
     <header>
     <!--<h1>Test Date</h1>-->
-    <!--<h1>Test Subject</h1>-->
+    <!--<h2>Test Subject</h2>-->
     </header>
     <!--topics and links-->
-    <section>
+    <section id="HomeCheckList">
         <!--checklist list container-->
         <!--checklist item (topic names)-->
     </section>
-
-    <section>
+    <section id="HomeResources">
         <!--figure out how to display YouTube videos, DOM-->
     </section>
 </div>
 <!--____________END OF HOME MODULE____________-->
+</div>
 
+<div id="Settings">
 <!--____________BEGINNING OF SETTINGS MODULE____________-->
 
-<!--____________END OF SETTINGS MODULE____________-->
+<!--<a href="">Back button</a>-->
+<section>
+    <h4>Account Settings</h4>
 
+</section>
+<section>
+    <h4>Chat settings</h4>
+
+</section>
+
+<!--____________END OF SETTINGS MODULE____________-->
+</div>
+
+<div id="Chat">
 <!--____________BEGINNING OF CHAT MODULE____________-->
 
 <!--Groups and DM's-->
@@ -117,10 +133,50 @@
 </sidebar>
 
 <!--____________END OF CHAT MODULE____________-->
+</div>
 
+<div id="Study">
 <!--____________BEGINNING OF STUDY MODULE____________-->
 
+<header>
+    <!--<a href="">Back</a>-->
+    <!--Session Name-->
+</header>
+<!--Tools-->
+<div>
+    <!--group-->
+    <div>
+
+    </div>
+    <!--tools-->
+    <div>
+
+    </div>
+</div>
+
+<!--checklist, annotations, and resources-->
+<sidebar>
+    <!--checklist list-->
+    <div>
+
+    </div>
+    <!--annotaions list-->
+    <div>
+
+    </div>
+    <!--resources list-->
+    <div>
+
+    </div>
+</sidebar>
+
+<!--Integrate sketchpad-->
+<section>
+
+</section>
+
 <!--____________END OF STUDY MODULE____________-->
+</div>
 
 </body>
 
