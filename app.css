@@ -115,18 +115,38 @@ body {
     font-size: 2em;
 }
 #HomeCheckList{
-    width: 50%;
+    width: 60%;
+    height: 80%;
     position: absolute;
     left: 0;
 }
-#HomecheckList ul{
-    width: 100%;
-    height: 80%;
+#HomeCheckList h1{
+    height: fit-content;
+    width: 70%;
+    margin: auto;
+    border-bottom: 5px solid #101B54;
+    text-align: center;
+    font-size: 2.7em;
+    color: #3E3EBE;
+}
+#HomeCheckList ul{
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    font-size: 2.7em;
+    list-style: none;
+}
+#HomeCheckList ul li{
+    padding: 2%;
+    color: #57BCFF;
 }
 #HomeResources{
-    width: 50%;
+    width: 40%;
     position: absolute;
     right: 0;
+}
+#HomeResurces ul{
+    list-style: none;
 }
 
 /*________________HOME END________________*/
