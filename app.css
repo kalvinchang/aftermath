@@ -36,8 +36,8 @@ body {
     width: 100%;
     text-align: center;
     font-size: 2em;
-    height: 8%;
-    padding-top: 2%;
+    height: 7%;
+    padding-top: 3%;
     margin: auto;
     color: white;
 }
@@ -58,7 +58,16 @@ body {
 #Home sidebar section ul {
     margin: auto;
     width: 95%;
+    height: 40%;
+    font-size: 1.2em;
+    color: white;
 }
+#Home sidebar section ul li {
+    width: 85%;
+    padding: 3%;
+    overflow: hidden;
+}
+
 #Home sidebar section.setting {
     height: 20%;
 }
