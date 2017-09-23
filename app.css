@@ -35,7 +35,7 @@ body {
 #Home sidebar header {
     width: 100%;
     text-align: center;
-    font-size: 2em;
+    font-size: 3vh;
     height: 7%;
     padding-top: 3%;
     margin: auto;
@@ -51,7 +51,7 @@ body {
 #Home sidebar section h3 {
     color: white;
     background-color: #9A9AC6;
-    font-size: 1.5em;
+    font-size: 3vh;
     text-align: center;
     width: 50%;
 }
@@ -60,7 +60,7 @@ body {
     margin-bottom: 2%;
     width: 95%;
     height: 42%;
-    font-size: 1.2em;
+    font-size: 2.8vh;
     color: white;
     overflow: auto;
 }
@@ -76,7 +76,7 @@ body {
 }
 #Home sidebar section#setting h3{
     background-color: rgba(0,0,0,0);
-    font-size: 1em;
+    font-size: 2.3vh;
     position: relative;
     width: 48%;
     display: inline-block;
@@ -105,14 +105,14 @@ body {
     background-color: white;
     margin: auto;
     width: 70%;
-    font-size: 4em;
+    font-size: 7.2vh;
 }
 #HomeBody header h2 {
     height: 48%;
     padding: 1% 0;
     margin: auto;
     width: 100%;
-    font-size: 2em;
+    font-size: 3.3vh;
 }
 #HomeCheckList{
     width: 60%;
@@ -126,14 +126,14 @@ body {
     margin: auto;
     border-bottom: 5px solid #101B54;
     text-align: center;
-    font-size: 2.7em;
+    font-size: 5vh;
     color: #3E3EBE;
 }
 #HomeCheckList ul{
     margin: auto;
     width: 90%;
     height: 90%;
-    font-size: 2.7em;
+    font-size: 4.8vh;
     list-style: none;
 }
 #HomeCheckList ul li{
