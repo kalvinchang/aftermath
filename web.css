@@ -58,7 +58,7 @@ nav ul li:hover{
 /*Header*/
 header{
     height: 90%;
-    background-image: url(Index_Jumbotronbg.jpg);
+    background-image: url(assets/Index_Jumbotronbg.jpg);
     background-repeat: none;
     background-size: cover;
     text-align: center;
