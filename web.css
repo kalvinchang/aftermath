@@ -70,7 +70,14 @@ header div h1{
     font-size: 8vh;
     padding: 10% 0 5% 0;
     color: #12195b;
-    width: 100%;
+    width: fit-content;
+    margin: auto;
+    transition-duration: 0.3s;
+}
+header div h1:hover{
+    color: #0C1A88;
+    transform: scale(104%);
+    transform: translateY(-7px);
 }
 header div a{
     font-size: 4vh;
@@ -83,6 +90,47 @@ header div a{
 header div a:hover{
     background-color: #161646;
 }
+/*Information*/
+section{
+   padding: 2%;
+   height: 40%;
+}
+section h3{
+    font-size: 4.5vh;
+    color: #171771;
+    padding: 2%;
+    transition-duration: 0.3s;
+}
+section h3:hover{
+    color:#4141A1;
+    transform: translateY(-5px);
+}
+section p{
+    font-size: 3vh;
+    color: #585892;
+    padding: 1%;
+    transition-duration: 0.3s;
+}
+section p:hover{
+    color: #2D2D64;
+}
+section.center {    
+    text-align: center;
+    margin: auto;
+    background-color: #efefef;
+}
+section.left{
+    text-align: left;
+    background-color: #b3b3ff;
+}
+section.right{
+    text-align: right;
+    background-color: #9292ff;
+    float: right;
+}
+
+
+
 
 /*LOGIN PAGE*/
 
