@@ -182,24 +182,32 @@ body {
     width: 15%;
     background-color: #101B54; 
 }
-MessageList header{
+#MessageList header{
     width: 100%;
     text-align: center;
     height: 7%;
     padding-top: 3%;
 }
-#MessageList section h3{
+#MessageList section#group{
+    height: 19%;
+    margin-bottom: 4%;
+}
+#MessageList section#individual{
+    height: 65%;
+}
+#MessageList h3{
     color: white;
     background-color: #9A9AC6;
     font-size: 3vh;
     text-align: center;
     width: 50%;
+    height: 4%;
 }
 #MessageList section ul{
     margin: auto;
     margin-bottom: 2%;
     width: 95%;
-    height: 42%;
+    height: 95%;
     font-size: 2.8vh;
     color: white;
     overflow: auto;
@@ -212,38 +220,49 @@ MessageList header{
 
 /*the messaging center*/
 #ChatBody{
-    width: 85%;
+    width: 60%;
     height: 100%;
     position: absolute;
-    right: 0;
     top: 0;
+    right: 25%;
+    left: 15%;
     bottom: 0;
     background-color: #B5E8E5
 }
 #ChatBody section{
-    width: inherit;
-    height: 80%;
+    width: 100%;
+    height: 90%;
     overflow: auto;
 }
 #ChatBody section h1 {
     font-size: 3vh;
     text-align: center;
+    color: #0A1342;
     width: 100%;
-    border-bottom:2px solid #8AA2AD; 
+    border-bottom:3px solid #8AA2AD; 
 }
 div.receive{
     width: 100%;
-    padding: 2%;
+    margin: 2% 0;
+    border-bottom: 2px solid rgba(77, 77, 128, 0.33);
+}
+div.sender{
+    padding: 1% 0;
+}
+div.sender img {
+    width: 6vh;
+    height: 6vh;
+}
+div.sender h3{
+    display: inline-block;
+    width: fit-content;
 }
 div.receive p{
-    width: 30%;
-    padding: 2%;
+    padding: 1% 2%;
+    width: fit-content;
     height: fit-content;
-    float: left;
     color: #2B4877;
     font-size: 2.5vh;
-    background-color: rgba(0,0,255,0.2);
-    border-radius: 50% 50% 50% 0;
 }
 
 /*The group details and call initializer*/
@@ -252,7 +271,7 @@ div.receive p{
     right: 0;
     top: 0;
     bottom: 0;
-    width: 15%;
+    width: 25%;
     background-color: #101B54; 
 }
 
