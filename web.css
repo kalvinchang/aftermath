@@ -35,11 +35,11 @@ nav ul{
     width: 100%;
     padding: 0;
 }
-nav ul li {
+nav ul a li {
     padding: 1% 2%;
     display: inline-block;
 }
-nav ul li a {
+nav ul a{
     color: #F7F7F7;
     font-size: 1.2em;
     width: 100%;
