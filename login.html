@@ -6,37 +6,38 @@
     <meta lang="eng-US">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intitial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="#">
+    <link rel="stylesheet" type="text/css" href="web.css">
 
 </head>
 
 <body>
     <!--Back to Index-->
 <nav>
-    <a href="Index.html">Back</a>
+    <ul>
+        <li><a href="index.html">Back</a></li>
+    </ul>
 </nav>
 
 <div>
 <!--Signup form-->
 <form id="SignUp" action="" method="post">
-    <feildset>
-        <label>Email: <input type="email" name="email" required placeholder="Your Email"></label>
-        <label>Password: <input type="password" name="password" required placeholder="Your Password"></label>
-        <label>Re-type Password: <imput type="check" name="password check" required placeholder="Your Password "></imput>
-        <label>Student<input type="radio" name="account" required value="student">
-        <label>Teacher<input type="radio" name="account" required calue="teacher"></label>
-        <input type="submit" value="Sign up!">
-    </feildset>
+    
+    <label for="emailUp">Email:</label><input type="email" name="email" id="emailUp" required placeholder="Your Email">
+    <label for="passUp">Password:</label><input type="password" name="password" id="passUp" required placeholder="Your Password">
+    <label for="checkUp">Re-type Password:</label><input type="text" name="password check" id="checkUp" required placeholder="Your Password ">
+    <fieldset>    
+        <label for="studUp">Student<input type="radio" name="account" id="studUp" required value="student">
+        <label for="teachUp">Teacher</label><input type="radio" name="account" id="teachUp" required calue="teacher">
+    </fieldset>    
+    <input type="submit" value="Sign up!">
 </form>
 
 <!--Login Form-->
-<form id="Login" action="" method="post">
-        <feildset>
-            <label>Email: <input type="email" name="email" required placeholder="Your Email"></label>
-            <label>Password: <input type="password" name="password" required placeholder="Your Password"></label>
-            <input type="submit" value="Login">
-        </feildset>
-    </form>
+<form id="login" action="" method="post">
+    <label for="inEmail">Email:</label><input type="email" name="email" id="inEmail" required placeholder="Your Email">
+    <label for="inPass">Password:</label><input type="password" name="password" id="inPass" required placeholder="Your Password">
+    <input type="submit" value="Login">
+</form>
     
 </div>
 
