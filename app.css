@@ -18,6 +18,10 @@ body {
 
 /*Progressive Styles*/
 
+
+
+
+
 /*________________HOME START________________*/
 /*Home Sidebar*/
 #Home {
@@ -38,7 +42,6 @@ body {
     font-size: 3vh;
     height: 7%;
     padding-top: 3%;
-    margin: auto;
     color: white;
 }
 #Home sidebar section {
@@ -69,7 +72,7 @@ body {
     padding: 3%;
     overflow: hidden;
 }
-/*For settings*/
+/*For settings section*/
 #Home sidebar section#setting{
     height: 10%;
     width: 100%;
@@ -135,6 +138,7 @@ body {
     height: 90%;
     font-size: 4.8vh;
     list-style: none;
+    overflow: auto;
 }
 #HomeCheckList ul li{
     padding: 2%;
@@ -147,6 +151,89 @@ body {
 }
 #HomeResurces ul{
     list-style: none;
+    overflow: auto;
 }
 
 /*________________HOME END________________*/
+
+
+
+
+
+/*________________SETTINGS START________________*/
+/*________________SETTINGS END________________*/
+
+
+
+
+
+/*________________CHAT START________________*/
+
+#Chat{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+#MessageList{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    background-color: #101B54; 
+}
+MessageList header{
+    width: 100%;
+    text-align: center;
+    height: 7%;
+    padding-top: 3%;
+}
+#MessageList section h3{
+    color: white;
+    background-color: #9A9AC6;
+    font-size: 3vh;
+    text-align: center;
+    width: 50%;
+}
+#MessageList section ul{
+    margin: auto;
+    margin-bottom: 2%;
+    width: 95%;
+    height: 42%;
+    font-size: 2.8vh;
+    color: white;
+    overflow: auto;
+}
+#MessageList section ul li{
+    width: 85%;
+    padding: 3%;
+    overflow: hidden;
+}
+
+#ChatBody{
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #B5E8E5
+}
+#CallInit{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    background-color: #101B54; 
+}
+
+
+/*________________CHAT END________________*/
+
+
+
+
+
+/*________________SETTINGS START________________*/
+/*________________SETTINGS END________________*/
