@@ -59,15 +59,18 @@
 </head>
 <body>
 <h1 id="topic">Ch1 - Review of Algebra</h1>
+<!-- 
+<script type='text/javascript' src='config.js'></script>
 <div style="width: 100%; height: 100%; position: absolute; top: 4%; " id="aww-wrapper">
-</div>
-<script src="https://awwapp.com/static/widget/js/aww.min.js">
+</div> -->
+<!-- <script src="https://awwapp.com/static/widget/js/aww.min.js">
 </script>
-
 <script type="text/javascript">
+	var awwKey = config.AWW_KEY;
 	 var aww = new AwwBoard('#aww-wrapper', {
-	    apiKey: '9da39cd3-d796-48e6-8962-0d8e8660f24f',
-	    boardLink: 'cac23-boardeducation-id',
+	    apiKey: awwKey,
+	    autoJoin: true,
+	    //boardLink: 'cac23-boardeducation-id',
 	    sizes: [3, 5, 8, 13, 20],
 	    fontSizes: [10, 12, 16, 22, 30],
 	    menuOrder: ['colors', 'sizes', 'tools', 'admin', 'utils'],
@@ -77,17 +80,16 @@
 	    defaultColor: "#000000",
 	    defaultSize: 4,
 	    defaultTool: 'pencil'
-
 	});
 	for (var i = 0; i < 3500; i += 20) { //vertical
-	  aww.doDrawLine('#00aeef', 1, i, 0, i, 15000);
+		aww.doDrawLine('#00aeef', 1, i, 0, i, 15000);
 	}
     for (var i = 0; i < 2000; i += 20) { //horizontal
 	 	aww.doDrawLine('#00aeef', 1, 0, i, 13000, i);
-	 }
-	 sleep(10);
-	 alert(aww.getBoardInfo().boardLink);
-</script> 
+	}
+</script>  -->
+
+<iframe width="100%" height="650px" src="https://awwapp.com/b/uyt4kagf9/"></iframe>
 
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
@@ -117,8 +119,39 @@
 			<li><!-- Youtube videos --></li>
 		</ul>
 	</div>
-
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var firebaseKey = config.FIREBASE_KEY;
+
+  var config = {
+    apiKey: firebaseKey,
+    authDomain: "aftermathcac.firebaseapp.com",
+    databaseURL: "https://aftermathcac.firebaseio.com",
+    projectId: "aftermathcac",
+    storageBucket: "aftermathcac.appspot.com",
+    messagingSenderId: "386683841943"
+  };
+  firebase.initializeApp(config);
+  var pointsData = firebase.database().ref();
+  var points = [];
+
+	function setup() {
+		pointsData.on("child_added", function (point) {
+	    	points.push(point.val());
+  		});
+	}
+
+	function draw() {
+		for (var i = 0; i < points.length; i++) {
+	    	var point = points[i];
+	    	ellipse(point.x, point.y, 5, 5);
+  		}
+	}
+</script>
+
 <script type="text/javascript">
 	var acc = document.getElementsByClassName("accordion");
 	var i;
