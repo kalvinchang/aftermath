@@ -3,14 +3,21 @@
 <head>
 	<title>Sketchpad</title>
 	<style type="text/css">
-		h1 {
+		body {
+			background: #F1F1F1;
+		}
+		#topic {
 			position: absolute;
 			width: 80%;
 			top: 0;
 			left: 0;
-			text-align: center; /*center text in the center of container*/
-			background: #008eff;
+			text-align: center;
+			margin: 0;
 		}
+/*		#aww-wrapper {
+			position: relative;
+			top: 50px; /*replace w/ viewport height
+		}*/
 		#sidebar {
 			background: #E5E5E5;
 			width: 20%; /*make width draggable by mouse*/
@@ -57,19 +64,52 @@
 	</style>
 </head>
 <body>
-<h1>Ch1 - Review of Algebra</h1>
-<canvas>
-	
-</canvas>
+<h1 id="topic">Ch1 - Review of Algebra</h1>
+<!-- <div style="width: 800px; height: 800px; position: absolute" id="aww-wrapper"></div>
+<script src="https://awwapp.com/static/widget/js/aww.min.js">
+</script>
+
+<script type="text/javascript">
+	 var aww = new AwwBoard('#aww-wrapper', {
+	    apiKey: '9da39cd3-d796-48e6-8962-0d8e8660f24f',
+	    boardLink: 'cac23-boardeducation-id',
+	    sizes: [3, 5, 8, 13, 20],
+	    fontSizes: [10, 12, 16, 22, 30],
+	    menuOrder: ['colors', 'sizes', 'tools', 'admin', 'utils'],
+	    tools: ['pencil', 'eraser', 'text', 'image'],
+	    colors: [ "#000000", "#f44336", "#4caf50", "#2196f3",
+	              "#ffc107", "#9c27b0",     "#e91e63", "#795548"],
+	    defaultColor: "#000000",
+	    defaultSize: 8,
+	    defaultTool: 'pencil'
+	});
+
+
+	for (var i = 0; i < 700; i += 20) { //vertical
+	  aww.doDrawLine('#00aeef', 1, i, 0, i, 1500);
+	}
+
+	// for (var i = 0; i < 1500; i += 20) { //horizontal
+	// 	aww.doDrawLine('#00aeef', 1, 0, i, 1000, i);
+	// }
+
+	 sleep(10);
+	 alert(aww.getBoardInfo().boardLink);
+</script> -->
+
 <div class="accordion" id="sidebar">
-	<button class="accordion">Function Operations</button>
+	<button class="accordion">Topics</button>
 	<div class="panel" id="topic-checklist">
-		<ul>
-			<li>Addition</li>
-			<li>Subtraction</li>
-			<li>Multiplication</li>
-			<li>Division</li>
-			<li>Composition</li>
+		<ul> <!-- turn each icon into a checkbox -->
+			<li>Function Operations
+				<ul>
+					<li>Addition</li>
+					<li>Subtraction</li>
+					<li>Multiplication</li>
+					<li>Division</li>
+					<li>Composition</li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 	<button class="accordion">Annotations</button>
@@ -87,7 +127,6 @@
 	</div>
 
 </div>
-
 <script type="text/javascript">
 	var acc = document.getElementsByClassName("accordion");
 	var i;
