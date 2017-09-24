@@ -14,10 +14,6 @@
 			text-align: center;
 			margin: 0;
 		}
-/*		#aww-wrapper {
-			position: relative;
-			top: 50px; /*replace w/ viewport height
-		}*/
 		#sidebar {
 			background: #E5E5E5;
 			width: 20%; /*make width draggable by mouse*/
@@ -52,8 +48,6 @@
 			transition: max-height 0.2s ease-out;
 		}
 		canvas {
-			width: 80%;
-			height: 100%;
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -65,7 +59,8 @@
 </head>
 <body>
 <h1 id="topic">Ch1 - Review of Algebra</h1>
-<!-- <div style="width: 800px; height: 800px; position: absolute" id="aww-wrapper"></div>
+<div style="width: 100%; height: 100%; position: absolute; top: 4%; " id="aww-wrapper">
+</div>
 <script src="https://awwapp.com/static/widget/js/aww.min.js">
 </script>
 
@@ -80,22 +75,19 @@
 	    colors: [ "#000000", "#f44336", "#4caf50", "#2196f3",
 	              "#ffc107", "#9c27b0",     "#e91e63", "#795548"],
 	    defaultColor: "#000000",
-	    defaultSize: 8,
+	    defaultSize: 4,
 	    defaultTool: 'pencil'
+
 	});
-
-
-	for (var i = 0; i < 700; i += 20) { //vertical
-	  aww.doDrawLine('#00aeef', 1, i, 0, i, 1500);
+	for (var i = 0; i < 3500; i += 20) { //vertical
+	  aww.doDrawLine('#00aeef', 1, i, 0, i, 15000);
 	}
-
-	// for (var i = 0; i < 1500; i += 20) { //horizontal
-	// 	aww.doDrawLine('#00aeef', 1, 0, i, 1000, i);
-	// }
-
+    for (var i = 0; i < 2000; i += 20) { //horizontal
+	 	aww.doDrawLine('#00aeef', 1, 0, i, 13000, i);
+	 }
 	 sleep(10);
 	 alert(aww.getBoardInfo().boardLink);
-</script> -->
+</script> 
 
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
