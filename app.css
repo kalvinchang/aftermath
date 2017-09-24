@@ -252,6 +252,8 @@ div.sender{
 div.sender img {
     width: 6vh;
     height: 6vh;
+    border-radius: 50%;
+    padding: 0 2%;
 }
 div.sender h3{
     display: inline-block;
@@ -264,7 +266,17 @@ div.receive p{
     color: #2B4877;
     font-size: 2.5vh;
 }
-
+#ChatBody form{
+    height: 10%;
+    background-color: #050535;
+    margin: auto;
+}
+#ChatBody form input#text{
+    width: 60%;
+}
+#ChatBody form input{
+    width: 4%;
+}
 /*The group details and call initializer*/
 #CallInit{
     position: absolute;
