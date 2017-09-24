@@ -87,12 +87,20 @@ header div a:hover{
 /*LOGIN PAGE*/
 
 /*forms*/
+h2.userGreet{
+    font-size: 3vh;
+    color: #000044;
+    padding: 1%;
+    text-align: center;
+}
 form{
+    transform: translateY(20px);
     padding: 2%;
     width: 40%;
-    background-color: #E0E0E0;
+    background-color: #fff;
     color: #22225D;
     margin: auto;
+    border-radius: 5px;
 }
 form label{
     font-size: 1.5vh;
@@ -108,11 +116,22 @@ form input{
     border-radius: 3px;
     border-width: 0;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
-    background-color: #E0E0E0;
+    background-color: #fff;
     transition-duration: 0.5s;
 }
 form input:focus{
     outline: none;
     border-width: 0;
     border-bottom: 2px solid #00002E;
+}
+#btnLogin{
+    background-color: #3F3FA8;
+    padding: 1%;
+    color: white;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+}
+#btnLogin:active{
+    background-color: #141466;
 }
