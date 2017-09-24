@@ -1,1 +1,87 @@
 /*Index/Login Styles*/
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+/*General Styles*/
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    font-size: 100%;
+    font-family: Ubuntu;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-style: none;
+}
+body, header, section, nav {
+    width: 100%;
+}
+/*Index Styles*/
+
+/*Navigation Bar*/
+nav {
+    background-color: #0E0E40;
+    font-family: "Encode Sans Condensed";
+    transition-duration: 0.7s;
+}
+nav:hover{
+    background-color: #050530
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+nav ul li {
+    padding: 1% 2%;
+    display: inline-block;
+}
+nav ul li a {
+    color: #F7F7F7;
+    text-decoration: none;
+    font-style:none;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+}
+nav ul li:hover{
+    background-color: #22225D;
+}
+
+/*Header*/
+header{
+    height: 90%;
+    background-image: url(Index_Jumbotronbg.jpg);
+    background-repeat: none;
+    background-size: cover;
+    text-align: center;
+}
+header div{
+    background-color: rgba(255, 255, 255, 0);
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.7s;
+}
+header div:hover{
+    background-color: rgba(255, 255, 255, 0.27);
+}
+header div h1{
+    font-size: 8vh;
+    padding: 10% 0 5% 0;
+    color: #12195b;
+    width: 100%;
+}
+header div a{
+    font-size: 4vh;
+    color: white;
+    background-color: #3238a5;
+    border-radius: 7px;
+    padding: 1.3%;
+    transition-duration: 0.3s;
+}
+header div a:hover{
+    background-color: #161646;
+}
