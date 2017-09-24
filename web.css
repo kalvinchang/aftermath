@@ -36,7 +36,7 @@ nav ul{
     padding: 0;
 }
 nav ul a li {
-    padding: 1% 2%;
+    padding: 1.31% 2%;
     display: inline-block;
 }
 nav ul a{
@@ -44,6 +44,12 @@ nav ul a{
     font-size: 1.2em;
     width: 100%;
     text-align: center;
+}
+nav ul a li img{
+    height: 7vh;
+}
+nav ul li.logo{
+    padding: 0 1%;
 }
 nav ul li:hover{
     background-color: #22225D;
