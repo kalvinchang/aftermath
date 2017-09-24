@@ -284,9 +284,28 @@ div.receive p{
     top: 0;
     bottom: 0;
     width: 25%;
-    background-color: #101B54; 
+    background-color: #101B54;
 }
-
+#CallInit div{
+    width: 100%;
+    height: 30%;
+}
+#CallInit div span{
+    width: 100%;
+    height: 10%;
+    display: block;
+}
+#CallInit div span img{
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+}
+#CallInit div span h2{
+    width: fit-content;
+    font-size: 2vh;
+    display: inline-block;
+    color: white;
+}
 
 /*________________CHAT END________________*/
 
