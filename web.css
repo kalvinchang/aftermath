@@ -88,10 +88,16 @@ header div a:hover{
 
 /*forms*/
 h2.userGreet{
-    font-size: 3vh;
+    font-size: 3vw;
+    width: fit-content;
+    margin: auto;
     color: #000044;
     padding: 1%;
     text-align: center;
+    transition-duration: 0.3s;
+}
+h2.userGreet:hover{
+    transform: translateY(-7px);
 }
 form{
     transform: translateY(20px);
@@ -131,6 +137,7 @@ form input:focus{
     border-radius: 3px;
     outline: none;
     border: none;
+    transform: translateX(23vw);
 }
 #btnLogin:active{
     background-color: #141466;
