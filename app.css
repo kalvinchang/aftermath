@@ -1,11 +1,15 @@
 /*NOTE: INSERT FONTS LATER*/
 
+/*imports*/
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
 /*General Styles*/
 * {
     margin: 0;
     padding: 0;
     z-index: 0;
     font-size: 100%;
+    font-family: Ubuntu;
 }
 a {
     text-decoration: none;
@@ -114,7 +118,7 @@ body {
     width: 100%;
     padding: 1% 0;
     height: 18%;
-    color: #6a6ac7;
+    color: #1a1a92;
     text-align: center;
     transition-duration: 1s;
 }
@@ -167,7 +171,7 @@ body {
 #HomeCheckList ul li{
     padding: 2% 0;
     width: 100%;
-    color: #57BCFF;
+    color: #3239b1;
     overflow-x:hidden;
     white-space: nowrap;
 }
@@ -343,6 +347,7 @@ div.receive p{
     background-color: #1d1d46;
 }
 #CallInit div span img{
+    transform: translateY(25px);
     width: 60px;
     height: 60px;
     padding: 0 2%;
@@ -351,7 +356,7 @@ div.receive p{
 #CallInit div span h2{
     width: fit-content;
     font-size: 3.2vh;
-    transform: translateY(-15px);
+    transform: translateY(7px);
     padding: 0 1%;
     display: inline-block;
     color: white;
