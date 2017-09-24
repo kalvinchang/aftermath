@@ -34,7 +34,11 @@ body {
     top: 0;
     bottom: 0;
     width: 15%;
-    background-color: #101B54; 
+    background-color: #050d33;
+    transition-duration: 0.8s;
+}
+#Home sidebar:hover {
+    transform: scale(105%);
 }
 #Home sidebar header {
     width: 100%;
@@ -57,6 +61,10 @@ body {
     font-size: 3vh;
     text-align: center;
     width: 50%;
+    transition-duration: 0.3s;
+}
+#Home sidebar section h3:hover{
+    transform: translateX(5%);
 }
 #Home sidebar section ul {
     margin: auto;
@@ -69,11 +77,14 @@ body {
     overflow-x:hidden;
 }
 #Home sidebar section ul li {
-    width: fit-content;
+    width: 100%;
     padding: 3%;
     white-space: nowrap;
     overflow: hidden;
     overflow-x:hidden;
+}
+#Home sidebar section ul li:hover{
+    background-color: #1d1d46;
 }
 /*For settings section*/
 #Home sidebar section#setting{
@@ -97,14 +108,18 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #B5E8E5
+    background-color: #e5fbfa;
 }
 #HomeBody header {
     width: 100%;
     padding: 1% 0;
     height: 18%;
-    color: #101B54;
+    color: #6a6ac7;
     text-align: center;
+    transition-duration: 1s;
+}
+#HomeBody header:hover{
+    transform: scale(105%);
 }
 #HomeBody header h1 {
     height: 50%;
@@ -112,6 +127,10 @@ body {
     margin: auto;
     width: 70%;
     font-size: 7.2vh;
+    transition-duration: 0.3s;
+}
+#HomeBody header h1:hover{
+    color: #101B54;
 }
 #HomeBody header h2 {
     height: 48%;
@@ -142,17 +161,19 @@ body {
     font-size: 4.8vh;
     list-style: none;
     overflow: auto;
+    overflow-x: hidden;
     
 }
 #HomeCheckList ul li{
-    padding: 2%;
-    width: fit-content;
+    padding: 2% 0;
+    width: 100%;
     color: #57BCFF;
     overflow-x:hidden;
     white-space: nowrap;
 }
 #HomeResources{
     width: 40%;
+    height: 80%;
     position: absolute;
     right: 0;
 }
@@ -189,7 +210,7 @@ body {
     top: 0;
     bottom: 0;
     width: 15%;
-    background-color: #101B54; 
+    background-color: #050d33; 
 }
 #MessageList header{
     width: 100%;
@@ -211,6 +232,10 @@ body {
     text-align: center;
     width: 50%;
     height: 4%;
+    transition-duration: 0.3s;
+}
+#MessageList h3:hover{
+    transform: translateX(5%);
 }
 #MessageList section ul{
     margin: auto;
@@ -223,11 +248,14 @@ body {
     overflow-x:hidden;
 }
 #MessageList section ul li{
-    width: fit-content;
+    width: 100%;
     padding: 3%;
     overflow: hidden;
     overflow-x:hidden;
     white-space: nowrap;
+}
+#MessageList section ul li:hover{
+    background-color: #1d1d46;
 }
 
 /*the messaging center*/
@@ -239,7 +267,7 @@ body {
     right: 25%;
     left: 15%;
     bottom: 0;
-    background-color: #B5E8E5
+    background-color: #e5fbfa;
 }
 #ChatBody section{
     width: 100%;
@@ -248,7 +276,7 @@ body {
     overflow-x:hidden;
 }
 #ChatBody section h1 {
-    font-size: 3vh;
+    font-size: 4vh;
     text-align: center;
     color: #0A1342;
     width: 100%;
@@ -298,7 +326,7 @@ div.receive p{
     top: 0;
     bottom: 0;
     width: 25%;
-    background-color: #101B54;
+    background-color: #050d33;
 }
 #CallInit div{
     margin-top: 3vh;
@@ -311,15 +339,19 @@ div.receive p{
     display: block;
     white-space: nowrap;
 }
+#CallInit div span:hover{
+    background-color: #1d1d46;
+}
 #CallInit div span img{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     padding: 0 2%;
     border-radius: 50%;
 }
 #CallInit div span h2{
     width: fit-content;
     font-size: 3.2vh;
+    transform: translateY(-15px);
     padding: 0 1%;
     display: inline-block;
     color: white;
