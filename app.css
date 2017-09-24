@@ -71,6 +71,7 @@ body {
 #Home sidebar section ul li {
     width: fit-content;
     padding: 3%;
+    white-space: nowrap;
     overflow: hidden;
     overflow-x:hidden;
 }
@@ -148,6 +149,7 @@ body {
     width: fit-content;
     color: #57BCFF;
     overflow-x:hidden;
+    white-space: nowrap;
 }
 #HomeResources{
     width: 40%;
@@ -157,7 +159,7 @@ body {
 #HomeResurces ul{
     list-style: none;
     overflow: auto;
-    overflow-x:hidden;
+    
 }
 
 /*________________HOME END________________*/
@@ -225,6 +227,7 @@ body {
     padding: 3%;
     overflow: hidden;
     overflow-x:hidden;
+    white-space: nowrap;
 }
 
 /*the messaging center*/
@@ -260,8 +263,9 @@ div.sender{
     padding: 1% 0;
 }
 div.sender img {
-    width: 6vh;
-    height: 6vh;
+    position: relative;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     padding: 0 2%;
 }
@@ -279,12 +283,12 @@ div.receive p{
 #ChatBody form{
     height: 10%;
     background-color: #050535;
+}
+#ChatBody form div{
+    width: fit-content;
     margin: auto;
 }
-#ChatBody form input#text{
-    width: 60%;
-}
-#ChatBody form input{
+#ChatBody form div input{
     width: 4%;
 }
 /*The group details and call initializer*/
@@ -305,10 +309,11 @@ div.receive p{
     width: 100%;
     height: 33.333%;
     display: block;
+    white-space: nowrap;
 }
 #CallInit div span img{
-    width: 6vh;
-    height: 6vh;
+    width: 50px;
+    height: 50px;
     padding: 0 2%;
     border-radius: 50%;
 }
@@ -318,6 +323,7 @@ div.receive p{
     padding: 0 1%;
     display: inline-block;
     color: white;
+    white-space: nowrap;
 }
 figure{
     margin: auto;
