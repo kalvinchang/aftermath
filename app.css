@@ -66,11 +66,13 @@ body {
     font-size: 2.8vh;
     color: white;
     overflow: auto;
+    overflow-x:hidden;
 }
 #Home sidebar section ul li {
-    width: 85%;
+    width: fit-content;
     padding: 3%;
     overflow: hidden;
+    overflow-x:hidden;
 }
 /*For settings section*/
 #Home sidebar section#setting{
@@ -139,10 +141,13 @@ body {
     font-size: 4.8vh;
     list-style: none;
     overflow: auto;
+    
 }
 #HomeCheckList ul li{
     padding: 2%;
+    width: fit-content;
     color: #57BCFF;
+    overflow-x:hidden;
 }
 #HomeResources{
     width: 40%;
@@ -152,6 +157,7 @@ body {
 #HomeResurces ul{
     list-style: none;
     overflow: auto;
+    overflow-x:hidden;
 }
 
 /*________________HOME END________________*/
@@ -173,6 +179,7 @@ body {
     height: 100%;
     width: 100%;
     z-index: 1;
+    transform: translate(0px, 100vh);
 }
 #MessageList{
     position: absolute;
@@ -193,7 +200,7 @@ body {
     margin-bottom: 4%;
 }
 #MessageList section#individual{
-    height: 65%;
+    height: 60%;
 }
 #MessageList h3{
     color: white;
@@ -211,11 +218,13 @@ body {
     font-size: 2.8vh;
     color: white;
     overflow: auto;
+    overflow-x:hidden;
 }
 #MessageList section ul li{
-    width: 85%;
+    width: fit-content;
     padding: 3%;
     overflow: hidden;
+    overflow-x:hidden;
 }
 
 /*the messaging center*/
@@ -233,6 +242,7 @@ body {
     width: 100%;
     height: 90%;
     overflow: auto;
+    overflow-x:hidden;
 }
 #ChatBody section h1 {
     font-size: 3vh;
