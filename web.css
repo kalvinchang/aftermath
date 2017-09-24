@@ -18,7 +18,7 @@ a {
 body, header, section, nav {
     width: 100%;
 }
-/*Index Styles*/
+/*INDEX STYLES*/
 
 /*Navigation Bar*/
 nav {
@@ -41,8 +41,6 @@ nav ul li {
 }
 nav ul li a {
     color: #F7F7F7;
-    text-decoration: none;
-    font-style:none;
     font-size: 1.2em;
     width: 100%;
     text-align: center;
@@ -84,4 +82,37 @@ header div a{
 }
 header div a:hover{
     background-color: #161646;
+}
+
+/*LOGIN PAGE*/
+
+/*forms*/
+form{
+    padding: 2%;
+    width: 40%;
+    background-color: #E0E0E0;
+    color: #22225D;
+    margin: auto;
+}
+form label{
+    font-size: 1.5vh;
+    color: #070742;
+    margin: auto;
+}
+form input{
+    display: block;
+    width: fit-content;
+    margin:auto;
+    margin-bottom: 3%;
+    padding: 0.5%;
+    border-radius: 3px;
+    border-width: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    background-color: #E0E0E0;
+    transition-duration: 0.5s;
+}
+form input:focus{
+    outline: none;
+    border-width: 0;
+    border-bottom: 2px solid #00002E;
 }
