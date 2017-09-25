@@ -183,7 +183,7 @@ form input:focus{
 form .btn-container {
     text-align: center;
 }
-form button {
+button {
     display: flex;
     justify-content: center;
     width: 50vh;
