@@ -154,7 +154,7 @@ h2.userGreet{
 h2.userGreet:hover{
     transform: translateY(-7px);
 }
-form{
+#form {
     transform: translateY(20px);
     padding: 2%;
     width: 40%;
@@ -163,12 +163,12 @@ form{
     margin: auto;
     border-radius: 5px;
 }
-form label{
+#form label{
     font-size: 1.5vh;
     color: #070742;
     margin: auto;
 }
-form input{
+#form input{
     display: block;
     width: fit-content;
     margin:auto;
@@ -180,7 +180,7 @@ form input{
     background-color: #fff;
     transition-duration: 0.5s;
 }
-form input:focus{
+#form input:focus{
     outline: none;
     border-width: 0;
     border-bottom: 2px solid #00002E;

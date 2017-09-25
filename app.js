@@ -3,7 +3,7 @@ const firebaseKey = config.FIREBASE_KEY;
 (function() {
 	const config = {
 	    apiKey: firebaseKey,
-	    authDomain: "kalvinfromcode.github.io/",
+	    authDomain: "aftermathcac.firebaseapp.com",
 	    databaseURL: "https://aftermathcac.firebaseio.com",
 	    projectId: "aftermathcac",
 	    storageBucket: "aftermathcac.appspot.com",
