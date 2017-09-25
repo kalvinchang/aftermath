@@ -163,6 +163,13 @@ h2.userGreet:hover{
     border-radius: 5px;
     border: none;
 }
+#signup-area p#loginWrong {
+    color: red;
+    width: fit-content;
+    height: 1.5vh;
+    margin: auto;
+    display: hidden;
+}
 form input{
     display: flex;
     width: 50vh;
