@@ -154,7 +154,7 @@ h2.userGreet{
 h2.userGreet:hover{
     transform: translateY(-7px);
 }
-form {
+#signup-area {
     padding: 2%;
     width: 40%;
     background-color: #fff;
@@ -183,7 +183,7 @@ form input:focus{
 form .btn-container {
     text-align: center;
 }
-form button {
+.login-btn {
     display: flex;
     justify-content: center;
     width: 50vh;
