@@ -153,45 +153,50 @@ h2.userGreet{
 h2.userGreet:hover{
     transform: translateY(-7px);
 }
-#form {
-    transform: translateY(20px);
+form {
     padding: 2%;
     width: 40%;
     background-color: #fff;
     color: #22225D;
     margin: auto;
     border-radius: 5px;
+    border: none;
 }
-#form label{
-    font-size: 1.5vh;
-    color: #070742;
-    margin: auto;
-}
-#form input{
-    display: block;
-    width: fit-content;
+form input{
+    display: flex;
+    width: 50vh;
     margin:auto;
     margin-bottom: 3%;
     padding: 0.5%;
-    border-radius: 3px;
     border-width: 0;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
     background-color: #fff;
     transition-duration: 0.5s;
 }
-#form input:focus{
+form input:focus{
     outline: none;
     border-width: 0;
     border-bottom: 2px solid #00002E;
 }
+
+form .btn-container {
+    text-align: center;
+}
+form button {
+    display: flex;
+    justify-content: center;
+    width: 50vh;
+    height: 10vh;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin: 10px auto 5px auto;
+}
+
 #btnLogin{
     background-color: #3F3FA8;
     padding: 1%;
     color: white;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    transform: translateX(23vw);
 }
 #btnLogin:active{
     background-color: #141466;
