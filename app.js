@@ -16,7 +16,6 @@
 
 	//add login event
 	btnLogin.addEventListener('click', e => {
-		console.log("reached");
 		//get email and pass (extract text)
 		const email = txtEmail.value;
 		const pass = txtPassword.value;
@@ -25,6 +24,32 @@
 		const promise = auth.signInWithEmailAndPassword(email, pass);
 		promise.catch(e => console.log(e.message));
 	});
+
+	//add signup event
+	btnSignUp.addEventListener('click', e => {
+		//get email and pass (extract text)
+		const email = txtEmail.value;
+		const pass = txtPassword.value;
+		const auth = firebase.auth();
+		//sign in
+		const promise = auth.createUserWithEmailAndPassword(email, pass);
+		promise.catch(e => console.log(e.message));
+	});
+
+	btnLogout.addEventListener('click', e => {
+		firebase.auth().signOut();
+	});
+
+	firebase.auth().onAuthStateChanged(firebaseUser => {
+		if (firebaseUser) {
+			console.log(firebaseUser);
+			btnLogout.classList.remove('hide');
+		} else {
+			console.log('not logged in');
+			btnLogout.classList.add('hide');
+		}
+	});
+
 }());
 
 // const auth = firebase.auth();

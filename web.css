@@ -18,6 +18,10 @@ a {
 body, header, section, nav {
     width: 100%;
 }
+.hide {
+    display: none;
+}
+
 /*INDEX STYLES*/
 
 /*Navigation Bar*/
