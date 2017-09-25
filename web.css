@@ -170,7 +170,7 @@ h2.userGreet:hover{
     margin: auto;
     display: none;
 }
-form input{
+#form input{
     display: flex;
     width: 50vh;
     margin:auto;
@@ -181,13 +181,13 @@ form input{
     background-color: #fff;
     transition-duration: 0.5s;
 }
-form input:focus{
+#form input:focus{
     outline: none;
     border-width: 0;
     border-bottom: 2px solid #00002E;
 }
 
-form .btn-container {
+#form .btn-container {
     text-align: center;
 }
 button {
