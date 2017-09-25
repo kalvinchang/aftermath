@@ -168,7 +168,7 @@ h2.userGreet:hover{
     width: fit-content;
     height: 1.5vh;
     margin: auto;
-    display: hidden;
+    display: none;
 }
 form input{
     display: flex;
