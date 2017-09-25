@@ -80,11 +80,13 @@ body {
     overflow: auto;
     overflow-x:hidden;
 }
+#Home sidebar section ul.lined, #MessageList section#individual ul.lined{
+    list-style-image: url(assets/offline.png);
+}
 #Home sidebar section ul li {
     width: 100%;
     padding: 3%;
     white-space: nowrap;
-    overflow: hidden;
     overflow-x:hidden;
 }
 #Home sidebar section ul li:hover{

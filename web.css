@@ -31,7 +31,8 @@ nav:hover{
 }
 nav ul{
     display: inline-block;
-    list-style-type: none;
+    list-style-type: disk;
+    list-style-image: url(assets/offline.png);
     width: 100%;
     padding: 0;
 }
