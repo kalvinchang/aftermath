@@ -154,7 +154,11 @@ h2.userGreet{
 h2.userGreet:hover{
     transform: translateY(-7px);
 }
+<<<<<<< HEAD
 form {
+=======
+#signup-area {
+>>>>>>> 0f22537781709d62a42f9755591f7170ae1bdeea
     padding: 2%;
     width: 40%;
     background-color: #fff;
@@ -183,19 +187,31 @@ form input:focus{
 form .btn-container {
     text-align: center;
 }
+<<<<<<< HEAD
 form button {
     display: flex;
     justify-content: center;
     width: 50vh;
     height: 8vh;
+=======
+.login-btn {
+    display: flex;
+    justify-content: center;
+    width: 50vh;
+    height: 10vh;
+>>>>>>> 0f22537781709d62a42f9755591f7170ae1bdeea
     border-radius: 10px;
     outline: none;
     border: none;
     margin: 10px auto 5px auto;
 }
+<<<<<<< HEAD
 #btnSignUp:active{
     background-color:#C5C5C5;
 }
+=======
+
+>>>>>>> 0f22537781709d62a42f9755591f7170ae1bdeea
 #btnLogin{
     background-color: #3F3FA8;
     padding: 1%;
