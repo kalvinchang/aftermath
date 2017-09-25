@@ -14,7 +14,7 @@
     <!--Back to Index-->
 <nav>
     <ul>
-        <a href="index.html"><li>Back</li></a>
+        <a href="index.html"><li><img src="assets/logo.svg" alt="A"></li></a>
     </ul>
 </nav>
 
@@ -34,14 +34,14 @@
         </fieldset>    
         <button type="submit" id="btnSignUp">Sign up</button>
     </form> -->
-    <img src="assets/logo.svg" height="250px" alt="AfterMath" style="margin:auto; display: block; padding:1%;">
     <h2 class="userGreet">Welcome Back!</h2>
-    <div id="form">
-        <label for="inEmail">Email:</label><input type="email" name="email" id="inEmail" required placeholder="Your Email">
-        <label for="inPass">Password:</label><input type="password" name="password" id="inPass" required placeholder="Your Password">
-        <button type="submit" id="btnLogin">Log in</button>
-        <button id="btnLogout" style="display: none">Log out</button>
-    </div>
+    <form>
+        <input type="email" name="email" id="inEmail" required placeholder="Email address">
+        <input type="password" name="password" id="inPass" required placeholder="Password">
+        <div class="btn-container"><button type="submit" id="btnLogin">Log in</button></div>
+        <div class="btn-container"><button type="submit" id="btnSignUp">Sign up</button></div>
+        <div class="btn-container"><button id="btnLogout" style="display: none">Log out</button></div>
+    </form>
 </div>
 
 <script src="config.js"></script>

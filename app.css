@@ -80,8 +80,12 @@ body {
     overflow: auto;
     overflow-x:hidden;
 }
-#Home sidebar section ul.lined, #MessageList section#individual ul.lined{
-    list-style-image: url(assets/offline.png);
+#Home sidebar section ul.lined{
+    list-style-position: inside;
+    color: gray;
+}
+#Home sidebar section ul.lined li span{
+    color: white;
 }
 #Home sidebar section ul li {
     width: 100%;
@@ -252,6 +256,13 @@ body {
     color: white;
     overflow: auto;
     overflow-x:hidden;
+}
+#MessageList section ul.lined{
+    list-style-position: inside;
+    color: gray;
+}
+#MessageList section ul.lined li span{
+    color: white;
 }
 #MessageList section ul li{
     width: 100%;
