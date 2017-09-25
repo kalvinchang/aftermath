@@ -193,6 +193,9 @@ button {
     border: none;
     margin: 10px auto 5px auto;
 }
+#btnSignUp{
+    background-color: #DBDBDB;
+}
 #btnSignUp:active{
     background-color:#C5C5C5;
 }

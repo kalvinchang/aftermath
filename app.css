@@ -38,7 +38,7 @@ body {
     top: 0;
     bottom: 0;
     width: 15%;
-    background-color: #050d33;
+    background-color: #A1ACDD;
     transition-duration: 0.8s;
 }
 #Home sidebar:hover {
@@ -94,7 +94,7 @@ body {
     overflow-x:hidden;
 }
 #Home sidebar section ul li:hover{
-    background-color: #1d1d46;
+    background-color: #6565A8;
 }
 /*For settings section*/
 #Home sidebar section#setting{
@@ -118,7 +118,7 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #ebecff;
+    background-color: #D4D7EE;
 }
 #HomeBody header {
     width: 100%;
@@ -220,7 +220,7 @@ body {
     top: 0;
     bottom: 0;
     width: 15%;
-    background-color: #050d33; 
+    background-color: #A1ACDD; 
 }
 #MessageList header{
     width: 100%;
@@ -272,7 +272,7 @@ body {
     white-space: nowrap;
 }
 #MessageList section ul li:hover{
-    background-color: #1d1d46;
+    background-color: #6565A8;
 }
 
 /*the messaging center*/
@@ -284,7 +284,7 @@ body {
     right: 25%;
     left: 15%;
     bottom: 0;
-    background-color: #ebecff;
+    background-color: #D4D7EE;
 }
 #ChatBody section{
     width: 100%;
@@ -327,7 +327,7 @@ div.receive p{
 }
 #ChatBody form{
     height: 10%;
-    background-color: #050535;
+    background-color: #D4D7EE;
 }
 #ChatBody form div{
     width: fit-content;
@@ -343,7 +343,7 @@ div.receive p{
     top: 0;
     bottom: 0;
     width: 25%;
-    background-color: #050d33;
+    background-color: #A1ACDD;
 }
 #CallInit div{
     margin-top: 3vh;
