@@ -1,14 +1,10 @@
-const firebaseKey = config.FIREBASE_KEY;
-
 (function() {
 	const config = {
-	    apiKey: firebaseKey,
+	    apiKey: "AIzaSyD0Fh_eak1Z-Lm_dDf_aXlhXWtToO-APD4",
 	    authDomain: "aftermathcac.firebaseapp.com",
 	    databaseURL: "https://aftermathcac.firebaseio.com",
-	    projectId: "aftermathcac",
 	    storageBucket: "aftermathcac.appspot.com",
-	    messagingSenderId: "386683841943"
-	};
+  	};
 	firebase.initializeApp(config);
 
 	//get elements
