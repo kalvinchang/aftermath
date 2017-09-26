@@ -18,7 +18,7 @@
 
 *::-webkit-scrollbar-thumb
 {
-	background-color: #433E8F;
+	background-color: #566FBE;
 }
 
 /*General Styles*/
@@ -56,7 +56,7 @@ body {
     top: 0;
     bottom: 0;
     width: 15%;
-    background-color: #A1ACDD;
+    background-color: #182784;
     transition-duration: 0.8s;
 }
 #Home sidebar:hover {
@@ -136,18 +136,20 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #D4D7EE;
+    background-color: #f3f4ff;
 }
 #HomeBody header {
     width: 100%;
     padding: 1% 0;
     height: 18%;
+    background-color: #c7ccf5;
     color: #1a1a92;
     text-align: center;
     transition-duration: 1s;
 }
 #HomeBody header:hover{
     transform: scale(105%);
+    background-color:#9AA4EE;
 }
 #HomeBody header h1 {
     height: 50%;
@@ -159,6 +161,7 @@ body {
 }
 #HomeBody header h1:hover{
     color: #101B54;
+    font-size: 7.4vh;
 }
 #HomeBody header h2 {
     height: 48%;
@@ -172,15 +175,6 @@ body {
     height: 80%;
     position: absolute;
     left: 0;
-}
-#HomeCheckList h1{
-    height: fit-content;
-    width: 70%;
-    margin: auto;
-    border-bottom: 5px solid #101B54;
-    text-align: center;
-    font-size: 5vh;
-    color: #3E3EBE;
 }
 #HomeCheckList ul{
     margin: auto;
@@ -238,7 +232,7 @@ body {
     top: 0;
     bottom: 0;
     width: 15%;
-    background-color: #A1ACDD; 
+    background-color: #182784; 
 }
 #MessageList header{
     width: 100%;
@@ -302,7 +296,7 @@ body {
     right: 25%;
     left: 15%;
     bottom: 0;
-    background-color: #D4D7EE;
+    background-color: #f4f5ff;
 }
 #ChatBody section{
     width: 100%;
@@ -361,7 +355,7 @@ div.receive p{
     top: 0;
     bottom: 0;
     width: 25%;
-    background-color: #A1ACDD;
+    background-color: #5b66ab;
 }
 #CallInit div{
     margin-top: 3vh;
