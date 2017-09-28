@@ -2,6 +2,8 @@
 
 /*imports*/
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/css?family=Mukta+Vaani");
 
 /*Scroll Bar*/
 *::-webkit-scrollbar-track
@@ -28,7 +30,7 @@
     padding: 0;
     z-index: 0;
     font-size: 100%;
-    font-family: Ubuntu;
+    font-family: 'Muli', sans-serif;
 }
 a {
     text-decoration: none;
@@ -37,6 +39,13 @@ a {
 }
 body {
     width: 100%;
+}
+button, input, a {
+    font-family: 'Ubuntu', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Mukta Vaani', sans-serif;
+    
 }
 
 /*Progressive Styles*/
@@ -63,7 +72,6 @@ body {
     -moz-transition-duration: 0.8s;
 }
 #Home sidebar:hover {
-    transform: scale(105%);
     -webkit-transform: scale(105%);
     -moz-transform: scale(105%);
     -ms-transform: scale(105%);
@@ -94,7 +102,6 @@ body {
     -moz-transition-duration: 0.3s;
 }
 #Home sidebar section h3:hover{
-    transform: translateX(5%);
     -webkit-tranform: translate(5%);
     -moz-transform: translate(5%);
     -ms-transoform: translate(5%);
@@ -161,7 +168,6 @@ body {
     -moz-transition-duration: 1s;
 }
 #HomeBody header:hover{
-    transform: scale(105%);
     -webkit-transform: scale(105%);
     -moz-transform: scale(105%);
     -ms-transform: scale(105%);
@@ -172,14 +178,14 @@ body {
     background-color: white;
     margin: auto;
     width: 70%;
-    font-size: 7.2vh;
+    font-size: 5.2vh;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
 #HomeBody header h1:hover{
     color: #101B54;
-    font-size: 7.4vh;
+    font-size: 5.7vh;
 }
 #HomeBody header h2 {
     height: 48%;
@@ -294,7 +300,6 @@ body {
     -moz-transition-duration: 0.3s
 }
 #MessageList h3:hover{
-    transform: translateX(5%);
     -webkit-tranform: translate(5%);
     -moz-transform: translate(5%);
     -ms-transform: translate(5%);
@@ -449,7 +454,6 @@ label#fileBtn:active{
     background-color: #535ea3;
 }
 #CallInit div span img{
-    transform: translateY(25px);
     -webkit-transform: translate(25px);
     -moz-transform: translate(25px);
     -ms-transoform: translate(25px);
@@ -458,10 +462,9 @@ label#fileBtn:active{
     padding: 0 2%;
     border-radius: 50%;
 }
-#CallInit div span h2{
+#CallInit div span p{
     width: fit-content;
     font-size: 3.2vh;
-    transform: translateY(7px);
     -webkit-transform: translate(7px);
     -moz-transform: translate(7px);
     -ms-transform: translate(7px);
