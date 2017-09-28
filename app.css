@@ -6,6 +6,7 @@
 /*Scroll Bar*/
 *::-webkit-scrollbar-track
 {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #EBEBEB;
 }
@@ -58,9 +59,14 @@ body {
     width: 15%;
     background-color: #1e255b;
     transition-duration: 0.8s;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
 }
 #Home sidebar:hover {
     transform: scale(105%);
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
 }
 #Home sidebar header {
     width: 100%;
@@ -84,9 +90,14 @@ body {
     text-align: center;
     width: 50%;
     transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
 }
 #Home sidebar section h3:hover{
     transform: translateX(5%);
+    -webkit-tranform: translate(5%);
+    -moz-transform: translate(5%);
+    -ms-transoform: translate(5%);
 }
 #Home sidebar section ul {
     margin: auto;
@@ -146,9 +157,14 @@ body {
     color: #1a1a92;
     text-align: center;
     transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
 }
 #HomeBody header:hover{
     transform: scale(105%);
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
     background-color:#9AA4EE;
 }
 #HomeBody header h1 {
@@ -158,6 +174,8 @@ body {
     width: 70%;
     font-size: 7.2vh;
     transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
 }
 #HomeBody header h1:hover{
     color: #101B54;
@@ -241,6 +259,7 @@ body {
     width: 100%;
     z-index: 2;
     transform: translateY(100vh);
+    /*The transformation is a test thing*/
 }
 #MessageList{
     position: absolute;
@@ -271,9 +290,14 @@ body {
     width: 50%;
     height: 4%;
     transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s
 }
 #MessageList h3:hover{
     transform: translateX(5%);
+    -webkit-tranform: translate(5%);
+    -moz-transform: translate(5%);
+    -ms-transform: translate(5%);
 }
 #MessageList section ul{
     margin: auto;
@@ -426,6 +450,9 @@ label#fileBtn:active{
 }
 #CallInit div span img{
     transform: translateY(25px);
+    -webkit-transform: translate(25px);
+    -moz-transform: translate(25px);
+    -ms-transofmr: translate(25px);
     width: 60px;
     height: 60px;
     padding: 0 2%;
@@ -435,6 +462,9 @@ label#fileBtn:active{
     width: fit-content;
     font-size: 3.2vh;
     transform: translateY(7px);
+    -webkit-transform: translate(7px);
+    -moz-transform: translate(7px);
+    -ms-transform: translate(7px);
     padding: 0 1%;
     display: inline-block;
     color: white;
