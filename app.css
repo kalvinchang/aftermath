@@ -379,22 +379,24 @@ div.receive p{
     height: 0.1px;
     opacity: 0;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     z-index: -1;
 }
 label#fileBtn{
-    font-size: 1.8vh;
-    color: white;
-    padding: 0.1%;
+    font-size: 2.3vh;
+    color: #6D67A5;
+    padding: 0.5%;
     background-color: #CBCBF1;
     display: inline-block;
 }
 
 label#fileBtn:hover {
     background-color: #342B83;
+    color: #E0E0E0;
 }
 label#fileBtn:active{
     background-color:#261E6D;
+    color: white;
 }
 #ChatBody form div input#file:active{
     background-color:#D8D8D8;
