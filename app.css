@@ -452,7 +452,7 @@ label#fileBtn:active{
     transform: translateY(25px);
     -webkit-transform: translate(25px);
     -moz-transform: translate(25px);
-    -ms-transofmr: translate(25px);
+    -ms-transoform: translate(25px);
     width: 60px;
     height: 60px;
     padding: 0 2%;
@@ -487,10 +487,3 @@ figure figcaption{
     font-size: 4vh;
 }
 /*________________CHAT END________________*/
-
-
-
-
-
-/*________________SETTINGS START________________*/
-/*________________SETTINGS END________________*/
