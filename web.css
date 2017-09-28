@@ -95,8 +95,8 @@ header div h1:hover{
     color: #0C1A88;
     transform: scale(104%), translateY(-7px);
     -webkit-transform: scale(104%), translateY(-7px);
-    -moz-transform: scale(104%), translate(-7px);
-    -ms-transform: scale(104%), translate(-7px);
+    -moz-transform: scale(104%), translateY(-7px);
+    -ms-transform: scale(104%), translateY(-7px);
 }
 header div a{
     font-size: 4vh;
@@ -127,9 +127,9 @@ section h3{
 section h3:hover{
     color:#4141A1;
     transform: translateY(-5px);
-    -webkit-transform: translate(-5px);
-    -moz-transform: translate(-5px);
-    -ms-transform: translate(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
 }
 section p{
     font-size: 3vh;
