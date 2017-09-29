@@ -51,9 +51,448 @@ h1, h2, h3, h4, h5, h6{
 /*Progressive Styles*/
 
 
+/*________________HOME START________________*/
+/*Home Sidebar*/
+#Home {
+    width: 100%;
+    height: 100%;
+}
+#Home sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 18%;
+    background-color: #1e255b;
+    transition-duration: 0.8s;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+}
+#Home sidebar:hover {
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
+}
+#Home sidebar header {
+    width: 100%;
+    text-align: center;
+    font-size: 1.7vw;
+    white-space: none;
+    height: 7%;
+    padding-top: 3%;
+    color: white;
+}
+#Home sidebar section {
+    margin: auto;
+    width: 97%;
+    height: 83%;
+}
+/*for the lists*/
+#Home sidebar section h3 {
+    color: white;
+    background-color: #9A9AC6;
+    font-size: 3.2vh;
+    text-align: center;
+    width: 50%;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+}
+#Home sidebar section h3:hover{
+    -webkit-tranform: translate(5%);
+    -moz-transform: translate(5%);
+    -ms-transoform: translate(5%);
+}
+#Home sidebar section ul {
+    margin: auto;
+    margin-bottom: 2%;
+    width: 95%;
+    height: 42%;
+    font-size: 3.5vh;
+    color: white;
+    overflow: auto;
+    overflow-x:hidden;
+}
+#Home sidebar section ul.lined{
+    list-style-position: inside;
+    color: gray;
+}
+#Home sidebar section ul.lined li span{
+    color: white;
+}
+#Home sidebar section ul li {
+    width: 100%;
+    padding: 3%;
+    white-space: nowrap;
+    overflow-x:hidden;
+}
+#Home sidebar section ul li:hover{
+    background-color: #2d3363;
+}
+/*For settings section*/
+#Home sidebar section#setting{
+    height: 10%;
+    width: 100%;
+}
+#Home sidebar section#setting h3{
+    background-color: rgba(0,0,0,0);
+    font-size: 2.3vh;
+    position: relative;
+    width: 48%;
+    display: inline-block;
+    margin: auto;
+}
+
+/*Home Body*/
+#HomeBody {
+    width: 82%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #f3f4ff;
+}
+#HomeBody header {
+    width: 100%;
+    padding: 1% 0;
+    height: 16%;
+    background-color: #c7ccf5;
+    color: #1a1a92;
+    text-align: center;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+}
+#HomeBody header:hover{
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
+    background-color:#9AA4EE;
+}
+#HomeBody header h1 {
+    height: 50%;
+    background-color: white;
+    margin: auto;
+    width: 70%;
+    font-size: 6.5vh;
+    padding: 0.5%;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+}
+#HomeBody header h1:hover{
+    color: #101B54;
+    font-size: 6.7vh;
+}
+#HomeBody header h2 {
+    height: 48%;
+    padding: 1% 0;
+    margin: auto;
+    width: 100%;
+    font-size: 4.3vh;
+}
+#HomeCheckList{
+    width: 60%;
+    height: 80%;
+    position: absolute;
+    left: 0;
+}
+#HomeCheckList h3{
+    font-size: 5.5vh;
+    color: #0D0D4E;
+    text-align: center;
+    height: fit-content;
+    padding-top: 3%;
+    overflow: hidden;
+}
+#HomeCheckList ul{
+    margin: auto;
+    width: 90%;
+    height: 80%;
+    font-size: 5vh;
+    list-style: none;
+    overflow: auto;
+    overflow-x: hidden;
+    border-bottom: 2px solid #0F0F61;
+    
+}
+#HomeCheckList ul li{
+    padding: 2% 0;
+    width: 100%;
+    color: #5259A8;
+    overflow-x:hidden;
+    white-space: nowrap;
+}
+#HomeResources{
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    right: 0;
+}
+#HomeResurces ul{
+    list-style: none;
+    overflow: auto;
+}
+
+/*________________HOME END________________*/
 
 
 
+
+
+/*________________SETTINGS START________________*/
+
+#Settings{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+/*________________SETTINGS END________________*/
+
+
+
+
+
+/*________________CHAT START________________*/
+
+#Chat{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    transform: translateY(100vh);
+    /*The transformation is a test thing*/
+}
+#MessageList{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 23%;
+    background-color: #1e255b; 
+}
+#MessageList header{
+    width: 100%;
+    text-align: center;
+    height: 7%;
+    padding-top: 3%;
+}
+#MessageList section#group{
+    height: 19%;
+    margin-bottom: 4%;
+    width: 98%;
+}
+#MessageList section#individual{
+    height: 60%;
+}
+#MessageList h3{
+    color: white;
+    background-color: #9A9AC6;
+    font-size: 2.8vh;
+    text-align: center;
+    width: 60%;
+    height: 4%;
+}
+#MessageList section ul{
+    margin: auto;
+    margin-bottom: 2%;
+    width: 95%;
+    height: 95%;
+    font-size: 3.5vh;
+    color: white;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+#MessageList section ul.lined{
+    list-style-position: inside;
+    color: gray;
+}
+#MessageList section ul.lined li span{
+    color: white;
+}
+#MessageList section ul li{
+    width: 100%;
+    padding: 3%;
+    overflow: hidden;
+    overflow-x:hidden;
+    white-space: nowrap;
+}
+#MessageList section ul li:hover{
+    background-color: #2d3363;
+}
+
+/*the messaging center*/
+#ChatBody{
+    width: 65%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 25%;
+    left: 15%;
+    bottom: 0;
+    background-color: #e6e7f3;
+}
+#ChatBody section{
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    overflow-x:hidden;
+}
+#ChatBody section h1 {
+    font-size: 4vh;
+    text-align: center;
+    color: #0A1342;
+    width: 100%;
+    border-bottom:3px solid #8AA2AD; 
+}
+div.receive{
+    width: 100%;
+    margin: 2% 0;
+    border-bottom: 2px solid rgba(77, 77, 128, 0.33);
+}
+div.sender{
+    padding: 1% 0;
+}
+div.sender img {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    padding: 0 2%;
+}
+div.sender h3{
+    display: inline-block;
+    width: fit-content;
+}
+div.receive p{
+    padding: 1% 2%;
+    width: fit-content;
+    height: fit-content;
+    color: #2B4877;
+    font-size: 2.5vh;
+}
+#ChatBody form{
+    height: 10%;
+    background-color: #e6e7f3;
+    width: 100%;
+}
+#ChatBody form div{
+    width: fit-content;
+    margin: auto;
+}
+#ChatBody form div textarea{
+    outline: none;
+    border-width: 0;
+    border-bottom: 3px solid rgba(6, 6, 66, 0.11);
+    padding: 1%;
+    resize: none;
+    background-color: #e6e7f3;
+    overflow: hidden;
+}
+#ChatBody form div textarea:focus{
+    border-bottom: 3px solid rgba(6, 6, 66, 0.3);
+}
+#ChatBody form div input#file{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+label#fileBtn{
+    font-size: 1.8vh;
+    color: #6D67A5;
+    padding: 0.5%;
+    background-color: #CBCBF1;
+    display: inline-block;
+}
+
+label#fileBtn:hover {
+    background-color: #342B83;
+    color: #E0E0E0;
+}
+label#fileBtn:active{
+    background-color:#261E6D;
+    color: white;
+}
+#ChatBody form div input#file:active{
+    background-color:#D8D8D8;
+}
+/*The group details and call initializer*/
+#CallInit{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 22%;
+    background-color: #5b66ab;
+}
+#CallInit div{
+    margin-top: 3vh;
+    width: 100%;
+    height: 30%;
+}
+#CallInit div span{
+    width: 100%;
+    height: 33.333%;
+    display: block;
+    white-space: nowrap;
+}
+#CallInit div span:hover{
+    background-color: #535ea3;
+}
+#CallInit div span img{
+    -webkit-transform: translate(25px);
+    -moz-transform: translate(25px);
+    -ms-transoform: translate(25px);
+    width: 60px;
+    height: 60px;
+    padding: 0 2%;
+    border-radius: 50%;
+}
+#CallInit div span p{
+    width: fit-content;
+    font-size: 3.2vh;
+    -webkit-transform: translate(7px);
+    -moz-transform: translate(7px);
+    -ms-transform: translate(7px);
+    padding: 0 1%;
+    display: inline-block;
+    color: white;
+    white-space: nowrap;
+}
+figure{
+    margin: auto;
+    width: 50%;
+    margin-top: 9vh;
+}
+figure img{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+figure figcaption{
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 4vh;
+}
+/*________________CHAT END________________*/
+
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+
+
+/*Initial, Web Styles*/
+@media screen and (min-width: 1250px){
 /*________________HOME START________________*/
 /*Home Sidebar*/
 #Home {
@@ -79,7 +518,8 @@ h1, h2, h3, h4, h5, h6{
 #Home sidebar header {
     width: 100%;
     text-align: center;
-    font-size: 3vh;
+    font-size: 1.7vw;
+    white-space: none;
     height: 7%;
     padding-top: 3%;
     color: white;
@@ -87,7 +527,6 @@ h1, h2, h3, h4, h5, h6{
 #Home sidebar section {
     margin: auto;
     width: 95%;
-    font-size: 1.5em;
     height: 83%;
 }
 /*for the lists*/
@@ -235,7 +674,6 @@ h1, h2, h3, h4, h5, h6{
 #HomeResurces ul{
     list-style: none;
     overflow: auto;
-    
 }
 
 /*________________HOME END________________*/
@@ -490,3 +928,4 @@ figure figcaption{
     font-size: 4vh;
 }
 /*________________CHAT END________________*/
+}
