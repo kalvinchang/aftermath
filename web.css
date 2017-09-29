@@ -23,7 +23,7 @@ a {
     color: black;
     font-style: none;
 }
-body, header, section, nav {
+body, header, section, nav, footer {
     width: 100%;
 }
 .hide {
@@ -72,7 +72,7 @@ nav ul li:hover{
 
 /*Header*/
 header{
-    height: 90%;
+    height: 90vh;
     background-image: url(assets/Index_Jumbotronbg.jpg);
     background-repeat: none;
     background-size: cover;
@@ -120,13 +120,13 @@ header div a:hover{
 }
 /*Information*/
 section{
-   padding: 2%;
-   height: 40%;
+   height: 40vh;
 }
 section h3{
     font-size: 4.5vh;
     color: #171771;
     padding: 2%;
+    height: fit-content;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -161,7 +161,23 @@ section.right{
     background-color: #9292ff;
     float: right;
 }
-
+section.centerTwo {    
+    text-align: center;
+    background-color: #efefef;
+}
+footer{
+    background-color: #1A1A1A;
+    justify-content: space-around;
+}
+footer div{
+    height: 8vh;
+    font-size: 2.5vh;
+    color: #EBEBEB;
+}
+footer div a:hover{
+    background-color: #494949;
+    border-bottom: 2px solid #91CEFF;
+}
 
 
 
