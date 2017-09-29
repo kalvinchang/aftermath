@@ -1,31 +1,31 @@
+//source: socket.io
+
 'use strict';
 
-(function() {
-
+(function($) {
   var socket = io();
+  //DOM
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
+  //context
   var context = canvas.getContext('2d');
 
+  //object to store current settings
   var current = {
     color: 'black'
   };
   var drawing = false;
-
+  //DOM - update settings
   canvas.addEventListener('mousedown', onMouseDown, false);
   canvas.addEventListener('mouseup', onMouseUp, false);
   canvas.addEventListener('mouseout', onMouseUp, false);
   canvas.addEventListener('mousemove', throttle(onMouseMove, 10), false);
-
   for (var i = 0; i < colors.length; i++){
     colors[i].addEventListener('click', onColorUpdate, false);
   }
-
   socket.on('drawing', onDrawingEvent);
-
   window.addEventListener('resize', onResize, false);
   onResize();
-
 
   function drawLine(x0, y0, x1, y1, color, emit){
     context.beginPath();
