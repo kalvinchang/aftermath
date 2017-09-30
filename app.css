@@ -91,7 +91,7 @@ ul{
     width: 100%;
     text-align: center;
     font-size: 1.7vw;
-    white-space: none;
+    white-space: nowrap;
     height: 7%;
     padding-top: 3%;
     color: white;
@@ -159,6 +159,9 @@ ul{
     height: 48%;
     line-height: 4;
     display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #setting img{
     position: absolute;
@@ -195,6 +198,7 @@ ul{
 #HomeBody header h1 {
     height: 50%;
     background-color: white;
+    box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
     width: 70%;
     font-size: 5.2vh;
@@ -205,6 +209,7 @@ ul{
 #HomeBody header h1:hover{
     color: #101B54;
     font-size: 5.7vh;
+    box-shadow: 0 5px 13px 5px rgba(0, 0, 0, 0.19);
 }
 #HomeBody header h2 {
     height: 48%;
@@ -411,7 +416,7 @@ div.receive p{
     font-size: 2.5vh;
 }
 #ChatBody form{
-    height: 10%;
+    height: 5%;
     background-color: #e6e7f3;
     width: 100%;
 }
@@ -485,7 +490,7 @@ label#fileBtn:active{
 }
 figure{
     margin: auto;
-    width: 30%;
+    width: 50%;
     margin-top: 9vh;
     height: 30%;
 }
