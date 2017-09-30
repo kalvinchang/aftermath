@@ -66,7 +66,7 @@ li {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 15%;
+    width: 25%;
     background-color: #1e255b;
     transition-duration: 0.8s;
     -webkit-transition-duration: 0.8s;
@@ -116,7 +116,7 @@ li {
     margin-bottom: 2%;
     width: 95%;
     height: 42%;
-    font-size: 2.8vh;
+    font-size: 3.2vh;
     color: white;
     overflow: auto;
     overflow-x:hidden;
@@ -160,7 +160,7 @@ li {
 }
 /*Home Body*/
 #HomeBody {
-    width: 85%;
+    width: 75%;
     height: 100%;
     position: absolute;
     right: 0;
@@ -171,7 +171,7 @@ li {
 #HomeBody header {
     width: 100%;
     padding: 1% 0;
-    height: 16%;
+    height: 20%;
     background-color: #c7ccf5;
     color: #1a1a92;
     text-align: center;
@@ -186,19 +186,19 @@ li {
     background-color:#9AA4EE;
 }
 #HomeBody header h1 {
-    height: 50%;
+    height: 60%;
     background-color: white;
     box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
     width: 70%;
-    font-size: 5.2vh;
+    font-size: 6.2vh;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
 #HomeBody header h1:hover{
     color: #101B54;
-    font-size: 5.7vh;
+    font-size: 6.7vh;
     box-shadow: 0 5px 13px 5px rgba(0, 0, 0, 0.19);
 }
 #HomeBody header h2 {
@@ -210,12 +210,12 @@ li {
 }
 #HomeCheckList{
     width: 60%;
-    height: 80%;
+    height: 76%;
     position: absolute;
     left: 0;
 }
 #HomeCheckList h3{
-    font-size: 3.5vh;
+    font-size: 3.8vh;
     color: #0D0D4E;
     text-align: center;
     height: fit-content;
@@ -226,7 +226,7 @@ li {
     margin: auto;
     width: 90%;
     height: 80%;
-    font-size: 4vh;
+    font-size: 4.5vh;
     list-style-type:none;
     overflow: auto;
     overflow-x: hidden;
@@ -244,7 +244,7 @@ li {
 }
 #HomeResources{
     width: 40%;
-    height: 80%;
+    height: 76%;
     position: absolute;
     right: 0;
 }
@@ -288,11 +288,11 @@ li {
 }
 #Settings section{
     padding: 2%;
-    width: 60%;
+    width: 50%;
     height: 20%;
     border-bottom: 3px solid #D4D4D4;
     margin: auto;
-    font-size: 3vh;
+    font-size: 3.3vh;
     color: #525288;
 }
 
@@ -315,7 +315,7 @@ li {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 15%;
+    width: 20%;
     background-color: #1e255b; 
 }
 #MessageList header{
@@ -345,7 +345,7 @@ li {
     background-color: #9A9AC6;
     font-size: 3vh;
     text-align: center;
-    width: 50%;
+    width: 100%;
     height: 4%;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
@@ -386,12 +386,12 @@ li {
 
 /*the messaging center*/
 #ChatBody{
-    width: 60%;
+    width: 50%;
     height: 100%;
     position: absolute;
     top: 0;
-    right: 25%;
-    left: 15%;
+    right: 30%;
+    left: 20%;
     bottom: 0;
     background-color: #e6e7f3;
 }
@@ -488,7 +488,7 @@ label#fileBtn:active{
     right: 0;
     top: 0;
     bottom: 0;
-    width: 25%;
+    width: 30%;
     background-color: #5b66ab;
 }
 #CallInit div{
@@ -578,7 +578,7 @@ div#schedule{
 }
 
 /*________________CHAT END________________*/
-}
+
 
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
