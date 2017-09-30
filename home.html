@@ -114,7 +114,8 @@
 <!--Groups and DM's-->
 <sidebar id="MessageList">
     <header>
-        <!--Home and search icons-->
+        <img src="assets/home.svg">
+        <img src="assets/search.svg">
     </header>
      <h3>Groups</h3>
     <section id="group">
@@ -190,9 +191,26 @@
     </div>
     <!--Call Init-->
     <figure>
-        <a><img src="#" title="Call a Study Session"></a>
+        <a><img src="assets/call.svg" title="Call a Study Session"></a>
         <figcaption>Start a Study Session!</figcaption>
     </figure>
+    <div id="schedule">
+        <!--make schedule-->
+        <div id="makeSchedule">
+            <h5>Schedule A Session!</h5>
+            <div id="scheduleInput">
+                <input type="date" name="date" id="date" value="date">
+                <input type="submit" value="Schedule" name="submit" id="addSchedule">
+            </div>
+        </div>
+        <!--scheduled-->
+        <div id="showSchedule">
+            <h3>Study Session On:</h3>
+            <p>Tuesday</p>
+            <p>9/21/17</p>
+        </div>
+    </div>
+
 </sidebar>
 
 <!--____________END OF CHAT MODULE____________-->
