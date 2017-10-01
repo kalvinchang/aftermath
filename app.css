@@ -67,7 +67,8 @@ li {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 25%;
+    width: 95%;
+    z-index: 1;
     background-color: #1e255b;
     transition-duration: 0.8s;
     -webkit-transition-duration: 0.8s;
@@ -81,7 +82,7 @@ li {
 #Home sidebar header {
     width: 100%;
     text-align: center;
-    font-size: 1.7vw;
+    font-size: 5.7vw;
     white-space: nowrap;
     height: 7%;
     padding-top: 3%;
@@ -99,31 +100,27 @@ li {
     background-color: #9A9AC6;
     font-size: 3vh;
     text-align: center;
-    width: 50%;
+    width: 100%;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
-#Home sidebar section img:hover {
-    background-color: #40456f;
-}
-#Home sidebar section h3:hover{
-    -webkit-tranform: translate(5%);
-    -moz-transform: translate(5%);
-    -ms-transoform: translate(5%);
+#Home sidebar section img{
+    display: none;
 }
 #Home sidebar section ul {
+    text-align: center;
     margin: auto;
     margin-bottom: 2%;
     width: 95%;
     height: 42%;
-    font-size: 3.2vh;
+    font-size: 2.8vh;
     color: white;
     overflow: auto;
     overflow-x:hidden;
 }
 #Home sidebar section ul.lined{
-    list-style-position: inside;
+    list-style-position: none;
     color: gray;
 }
 #Home sidebar section ul.lined li span{
@@ -131,7 +128,7 @@ li {
 }
 #Home sidebar section ul li {
     width: 100%;
-    padding: 3%;
+    padding: 2%;
     white-space: nowrap;
     overflow-x:hidden;
 }
@@ -155,13 +152,14 @@ li {
     white-space: nowrap;
 }
 #setting img{
+    display: inline-block;
     position: absolute;
-    left: 60%;
-    bottom: 6.5%;
+    left: 70%;
+    bottom: 3.5%;
 }
 /*Home Body*/
 #HomeBody {
-    width: 75%;
+    width: 100%;
     height: 100%;
     position: absolute;
     right: 0;
@@ -192,14 +190,16 @@ li {
     box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
     width: 70%;
-    font-size: 5.8vh;
+    font-size: 3.9vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
 #HomeBody header h1:hover{
     color: #101B54;
-    font-size: 6.0vh;
     box-shadow: 0 5px 13px 5px rgba(0, 0, 0, 0.19);
 }
 #HomeBody header h2 {
@@ -249,7 +249,7 @@ li {
     position: absolute;
     right: 0;
 }
-#HomeResurces ul{
+#HomeResources ul{
     list-style: none;
     overflow: auto;
 }
@@ -727,14 +727,14 @@ div#schedule{
     box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
     width: 70%;
-    font-size: 5.8vh;
+    line-height: 2;
+    font-size: 5.6vw;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
 #HomeBody header h1:hover{
     color: #101B54;
-    font-size: 6.0vh;
     box-shadow: 0 5px 13px 5px rgba(0, 0, 0, 0.19);
 }
 #HomeBody header h2 {
@@ -1265,6 +1265,7 @@ div#schedule{
     margin: auto;
     width: 70%;
     font-size: 5.2vh;
+    line-height: 1;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
