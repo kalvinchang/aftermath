@@ -7,13 +7,15 @@
   //DOM
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
+  var thick = document.getElementById('thickness-slider');
   var context = canvas.getContext('2d');
   var undo = document.getElementById('undo');
   var redo = document.getElementById('redo');
 
   //object to store current settings
   var current = {
-    color: 'black'
+    color: 'black',
+    thickness: 2
   };
   var drawing = false;
 
@@ -67,16 +69,18 @@
   for (var i = 0; i < colors.length; i++){
     colors[i].addEventListener('click', onColorUpdate, false);
   }
+  thick.addEventListener('input', onThickUpdate, false);
+
   socket.on('drawing', onDrawingEvent);
   window.addEventListener('resize', onResize, false);
   onResize();
 
-  function drawLine(x0, y0, x1, y1, color, emit){
+  function drawLine(x0, y0, x1, y1, color, thickness, emit){
     context.beginPath();
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
     context.strokeStyle = color;
-    context.lineWidth = 2;
+    context.lineWidth = thickness;
     context.stroke();
     context.closePath();
 
@@ -89,7 +93,8 @@
       y0: y0 / h,
       x1: x1 / w,
       y1: y1 / h,
-      color: color
+      color: color,
+      thickness: thickness
     });
   }
 
@@ -102,13 +107,13 @@
   function onMouseUp(e){
     if (!drawing) { return; }
     drawing = false;
-    drawLine(current.x, current.y, e.clientX, e.clientY, current.color, true);
+    drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
     //store the line in an array
   }
 
   function onMouseMove(e){
     if (!drawing) { return; }
-    drawLine(current.x, current.y, e.clientX, e.clientY, current.color, true);
+    drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
     current.x = e.clientX;
     current.y = e.clientY;
   }
@@ -116,6 +121,10 @@
   function onColorUpdate(e){
     current.color = e.target.className.split(' ')[1];
   }
+
+  function onThickUpdate(e){
+    current.thickness = e.target.value; 
+  }  
 
   // limit the number of events per second
   function throttle(callback, delay) {
@@ -133,7 +142,7 @@
   function onDrawingEvent(data){
     var w = canvas.width;
     var h = canvas.height;
-    drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
+    drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color, data.thickness);
     //store line in array
   }
 

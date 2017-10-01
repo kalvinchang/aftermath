@@ -56,7 +56,7 @@
 			padding: 0;
 			margin: 0;*/
 		}
-		.color {
+		.tool {
 			width: 50px;
 			height: 50px;
 		}
@@ -121,15 +121,22 @@
 		<button id="undo">Undo</button>
 		<button id="redo">Redo</button>
 		<div class="colors">
-			<div class="color red"></div>
-			<div class="color orange"></div>
-			<div class="color yellow"></div>
-			<div class="color green"></div>
-			<div class="color blue"></div>
-			<div class="color violet"></div>
-			<div class="color black"></div>
+			<div class="color red tool"></div>
+			<div class="color orange tool"></div>
+			<div class="color yellow tool"></div>
+			<div class="color green tool"></div>
+			<div class="color blue tool"></div>
+			<div class="color violet tool"></div>
+			<div class="color black tool"></div>
 		</div>
-		<!-- color -->
+		<div class="thickness tool">
+			<!-- <div class="thick small tool">small</div>
+			<div class="thick medium tool">medium</div>
+			<div class="thick large tool">large</div> -->
+			<!-- drag -->
+			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">
+			<output id="thickness-value">2</output>
+		</div>
 	</div>
 </div>
 
@@ -150,6 +157,18 @@
 	        }
 	    }
 	}
+
+	window.onload = function() {
+		updateSlider();
+	}
+	function updateSlider() {
+		var input = document.getElementById('thickness-slider');
+		var output = document.getElementById('thickness-value');
+		output.value = input.value;
+	}
+
+	//make colors collapsible
+
 </script>
 
 </body>
