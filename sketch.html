@@ -56,6 +56,31 @@
 			padding: 0;
 			margin: 0;*/
 		}
+		.color {
+			width: 50px;
+			height: 50px;
+		}
+		.black {
+			background-color: #000000;
+		}
+		.red {
+			background-color: #ff0000;
+		}
+		.orange {
+			background-color: #ffa500;
+		}
+		.yellow {
+			background-color: #ffff00;
+		}
+		.green {
+			background-color: #00ff00;
+		}
+		.blue {
+			background-color: #0000ff;
+		}
+		.violet {
+			background-color: #ff00ff;
+		}
 	</style>
 	<link rel="icon" href="assets/favicon.png">
 </head>
@@ -92,33 +117,24 @@
 			<li><!-- Youtube videos --></li>
 		</ul>
 	</div>
-	<div id="tools">
+	<div id="tools"> <!-- style as toolbar later, remove from right hand panel?? -->
 		<button id="undo">Undo</button>
 		<button id="redo">Redo</button>
+		<div class="colors">
+			<div class="color red"></div>
+			<div class="color orange"></div>
+			<div class="color yellow"></div>
+			<div class="color green"></div>
+			<div class="color blue"></div>
+			<div class="color violet"></div>
+			<div class="color black"></div>
+		</div>
+		<!-- color -->
 	</div>
 </div>
 
-
 <script src="https://socketio-whiteboard.now.sh/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>
-
-<!-- 
-<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var firebaseKey = config.FIREBASE_KEY;
-
-  var config = {
-    apiKey: firebaseKey,
-    authDomain: "aftermathcac.firebaseapp.com",
-    databaseURL: "https://aftermathcac.firebaseio.com",
-    projectId: "aftermathcac",
-    storageBucket: "aftermathcac.appspot.com",
-    messagingSenderId: "386683841943"
-  };
-  firebase.initializeApp(config);
-</script>
- -->
 <script type="text/javascript">
 	var acc = document.getElementsByClassName("accordion");
 	var i;
