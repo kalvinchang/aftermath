@@ -58,12 +58,35 @@
 			padding: 0;
 			margin: 0;*/
 		}
+		#toolbar {
+			position: absolute;
+			text-align: center;
+			width: 15vh;
+			transform: translateX(2.5vh) translateY(2.5vh);
+			border-radius: 15px;
+			background-color: #7fbeff;
+		}
 		.tool {
-			width: 50px;
+			width: 50px;	/*use vh*/
 			height: 50px;
 			border: 1px solid #000;
 			border-radius: 5px;
+			margin: auto;
 			/*box-shadow*/
+		}
+		.colors {/*
+			display: inline-flex;
+			transform: translateX(2vh);*/
+		}
+		.currentColor {
+			background-color: #000;
+		}
+		#colorBar {
+			background-color: inherit;
+			border: 1px solid black;
+			border-radius: 5px;
+			display: inline-flex;
+			position: relative; /*fix to be right next to .currentColor*/
 		}
 		.black {
 			background-color: #000000;
@@ -89,6 +112,9 @@
 		.thickness {
 			background-image: url('assets/graph.png');
 		}
+		.plain {
+			background-color: #F1F1F1;
+		}
 		.graph {
 			background-image: url('assets/graph.png');
 		}
@@ -98,10 +124,39 @@
 	</style>
 	<link rel="icon" href="assets/favicon.png">
 </head>
-<body>
+<body>	
 <div>
-	<canvas class="whiteboard">
+	<canvas class="whiteboard"></canvas>
 </div>
+<div id="toolbar"> <!-- style as toolbar later, remove from right hand panel?? -->
+		<div id="undo" class="tool">Undo</div>
+		<div id="redo" class="tool">Redo</div>
+		<div class="colors">
+			<div class="currentColor tool"></div>
+			<div id="colorBar">
+				<div class="color red tool"></div>
+				<div class="color orange tool"></div>
+				<div class="color yellow tool"></div>
+				<div class="color green tool"></div>
+				<div class="color blue tool"></div>
+				<div class="color violet tool"></div>
+				<div class="color black tool"></div>
+			</div>
+		</div>
+		<div class="thickness tool">
+			<!-- <div class="thick small tool">small</div>
+			<div class="thick medium tool">medium</div>
+			<div class="thick large tool">large</div> -->
+			<!-- drag -->
+		<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">			
+		<output id="thickness-value">2</output>
+		</div>
+		<div class="papers tool">
+			<div class="paper plain tool"></div>
+			<div class="paper graph tool"></div>
+			<div class="paper lined tool"></div>
+		</div>
+	</div>
 <h1 id="topic">Ch1 - Review of Algebra</h1>
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
@@ -131,33 +186,6 @@
 			<li><!-- Youtube videos --></li>
 		</ul>
 	</div>
-	<div id="tools"> <!-- style as toolbar later, remove from right hand panel?? -->
-		<div id="undo" class="tool">Undo</button>
-		<div id="redo" class="tool">Redo</button>
-		<div class="colors">
-			<div id="current-color"></div>
-			<div class="color red tool"></div>
-			<div class="color orange tool"></div>
-			<div class="color yellow tool"></div>
-			<div class="color green tool"></div>
-			<div class="color blue tool"></div>
-			<div class="color violet tool"></div>
-			<div class="color black tool"></div>
-		</div>
-		<div class="thickness tool">
-			<!-- <div class="thick small tool">small</div>
-			<div class="thick medium tool">medium</div>
-			<div class="thick large tool">large</div> -->
-			<!-- drag -->
-			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">
-			<output id="thickness-value">2</output>
-		</div>
-		<div class="papers tool">
-			<div class="paper plain tool"></div>
-			<div class="paper graph tool"></div>
-			<div class="paper lined tool"></div>
-		</div>
-	</div>
 </div>
 
 <script src="https://socketio-whiteboard.now.sh/socket.io/socket.io.js"></script>
@@ -185,17 +213,6 @@
 		var output = document.getElementById('thickness-value');
 		output.value = input.value;
 	}
-
-	//make colors collapsible
-	var color = document.getElementsByClassName('color');
-	//current-color set to current color
-	//
-	// for (var i = 0; i < color.length; i++) {
-	// 	color[i].onclick = function() {
-	// 		this.classList.toggle('active');
-	// 	}
-	// }
-
 </script>
 
 </body>
