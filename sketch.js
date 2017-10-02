@@ -8,6 +8,8 @@
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
   var thick = document.getElementById('thickness-slider');
+  var papers = document.getElementsByClassName('papers');
+
   var context = canvas.getContext('2d');
   var undo = document.getElementById('undo');
   var redo = document.getElementById('redo');
@@ -15,7 +17,8 @@
   //object to store current settings
   var current = {
     color: 'black',
-    thickness: 2
+    thickness: 2,
+    paper: 'plain'
   };
   var drawing = false;
 
@@ -70,10 +73,16 @@
     colors[i].addEventListener('click', onColorUpdate, false);
   }
   thick.addEventListener('input', onThickUpdate, false);
+  for (var i = 0; i < papers.length; i++){
+    papers[i].addEventListener('click', onPaperUpdate, false);
+  }
 
   socket.on('drawing', onDrawingEvent);
   window.addEventListener('resize', onResize, false);
   onResize();
+
+  //switch paper
+  var papers = ['plain', 'assets/graph.png', 'assets/lined.jpg'];
 
   function drawLine(x0, y0, x1, y1, color, thickness, emit){
     context.beginPath();
@@ -125,6 +134,18 @@
   function onThickUpdate(e){
     current.thickness = e.target.value; 
   }  
+
+  function onPaperUpdate(e) {
+    current.paper = e.target.className.split(' ')[1];
+    if (current.paper == 'plain') {
+      canvas.style.background = 'none';
+    }
+    else {
+      canvas.style.backgroundImage = 'url(assets/' + current.paper + '.png)';
+    }
+
+    //.addEventListener('click', onPaperUpdate('white'), false);
+  }
 
   // limit the number of events per second
   function throttle(callback, delay) {

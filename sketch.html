@@ -49,6 +49,8 @@
 		}
 		canvas {
 			position: absolute;
+			background-image: url('assets/graph.png');
+			background-repeat: repeat;
 			 /*make adaptable w/o %*/
 			/*left: 0;
 			right: 0;
@@ -59,6 +61,9 @@
 		.tool {
 			width: 50px;
 			height: 50px;
+			border: 1px solid #000;
+			border-radius: 5px;
+			/*box-shadow*/
 		}
 		.black {
 			background-color: #000000;
@@ -81,14 +86,23 @@
 		.violet {
 			background-color: #ff00ff;
 		}
+		.thickness {
+			background-image: url('assets/graph.png');
+		}
+		.graph {
+			background-image: url('assets/graph.png');
+		}
+		.lined {
+			background-image: url('assets/lined.png');
+		}
 	</style>
 	<link rel="icon" href="assets/favicon.png">
 </head>
 <body>
-<h1 id="topic">Ch1 - Review of Algebra</h1>
 <div>
 	<canvas class="whiteboard">
 </div>
+<h1 id="topic">Ch1 - Review of Algebra</h1>
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
 	<div class="panel" id="topic-checklist">
@@ -118,9 +132,10 @@
 		</ul>
 	</div>
 	<div id="tools"> <!-- style as toolbar later, remove from right hand panel?? -->
-		<button id="undo">Undo</button>
-		<button id="redo">Redo</button>
+		<div id="undo" class="tool">Undo</button>
+		<div id="redo" class="tool">Redo</button>
 		<div class="colors">
+			<div id="current-color"></div>
 			<div class="color red tool"></div>
 			<div class="color orange tool"></div>
 			<div class="color yellow tool"></div>
@@ -137,16 +152,23 @@
 			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">
 			<output id="thickness-value">2</output>
 		</div>
+		<div class="papers tool">
+			<div class="paper plain tool"></div>
+			<div class="paper graph tool"></div>
+			<div class="paper lined tool"></div>
+		</div>
 	</div>
 </div>
 
 <script src="https://socketio-whiteboard.now.sh/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>
 <script type="text/javascript">
-	var acc = document.getElementsByClassName("accordion");
-	var i;
+	window.onload = function() {
+		updateSlider();
+	}
 
-	for (i = 0; i < acc.length; i++) {
+	var acc = document.getElementsByClassName("accordion");
+	for (var i = 0; i < acc.length; i++) {
 	    acc[i].onclick = function() {
 	        this.classList.toggle("active");
 	        var panel = this.nextElementSibling;
@@ -158,9 +180,6 @@
 	    }
 	}
 
-	window.onload = function() {
-		updateSlider();
-	}
 	function updateSlider() {
 		var input = document.getElementById('thickness-slider');
 		var output = document.getElementById('thickness-value');
@@ -168,6 +187,14 @@
 	}
 
 	//make colors collapsible
+	var color = document.getElementsByClassName('color');
+	//current-color set to current color
+	//
+	// for (var i = 0; i < color.length; i++) {
+	// 	color[i].onclick = function() {
+	// 		this.classList.toggle('active');
+	// 	}
+	// }
 
 </script>
 
