@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://fonts.googleapis.com/css?family=Muli");
 @import url("https://fonts.googleapis.com/css?family=Mukta+Vaani");
-
+@import url("https://fonts.googleapis.com/css?family=Arvo|Raleway");
 /*Scroll Bar*/
 *::-webkit-scrollbar-track
 {
@@ -30,7 +30,7 @@
     padding: 0;
     z-index: 0;
     font-size: 100%;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 a {
     text-decoration: none;
@@ -44,7 +44,7 @@ button, input, a {
     font-family: 'Ubuntu', sans-serif;
 }
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Mukta Vaani', sans-serif;
+    font-family: 'Arvo', sans-serif;
 }
 ul{
     text-overflow:ellipsis;
@@ -64,15 +64,28 @@ li {
 }
 #Home sidebar {
     position: absolute;
-    left: 0;
+    left: -90%;
     top: 0;
     bottom: 0;
     width: 95%;
     z-index: 1;
     background-color: #1e255b;
-    transition-duration: 0.8s;
-    -webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-delay: 1.3s;
+  
+}
+#Home sidebar:hover{
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-delay: 0.3s;
+    transition-delay: 0.0s;
+    left: 0;
+}
+#Home sidebar.toggled{
+    left: -90%;
 }
 #Home sidebar:hover {
     -webkit-transform: scale(105%);
@@ -112,7 +125,7 @@ li {
     text-align: center;
     margin: auto;
     margin-bottom: 2%;
-    width: 95%;
+    width: 98%;
     height: 42%;
     font-size: 2.8vh;
     color: white;
@@ -159,7 +172,7 @@ li {
 }
 /*Home Body*/
 #HomeBody {
-    width: 100%;
+    width: 95%;
     height: 100%;
     position: absolute;
     right: 0;
@@ -273,7 +286,7 @@ li {
     background-color: #1e255d;
     height: 10%;
     color: white;
-    font-size: 4.5vh;
+    font-size: 3.5vh;
 }
 #Settings header img{
     width: 5.5vh;
@@ -289,11 +302,11 @@ li {
 }
 #Settings section{
     padding: 2%;
-    width: 50%;
+    width: 90%;
     height: 20%;
     border-bottom: 3px solid #D4D4D4;
     margin: auto;
-    font-size: 3.3vh;
+    font-size: 2.5vh;
     color: #525288;
 }
 
@@ -639,6 +652,9 @@ div#schedule{
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
+#Home sidebar section img{
+    display: inline-block;
+}
 #Home sidebar section img:hover {
     background-color: #40456f;
 }
@@ -652,6 +668,7 @@ div#schedule{
     margin-bottom: 2%;
     width: 95%;
     height: 42%;
+    text-align: left;
     font-size: 3.2vh;
     color: white;
     overflow: auto;
@@ -727,7 +744,7 @@ div#schedule{
     box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
     width: 70%;
-    line-height: 2;
+    line-height: 1;
     font-size: 5.6vw;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
@@ -762,7 +779,7 @@ div#schedule{
     margin: auto;
     width: 90%;
     height: 80%;
-    font-size: 4.5vh;
+    font-size: 3.5vw;
     list-style-type:none;
     overflow: auto;
     overflow-x: hidden;
