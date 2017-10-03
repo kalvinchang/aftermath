@@ -2,7 +2,6 @@
 
 /*imports*/
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
-@import url("https://fonts.googleapis.com/css?family=Muli");
 @import url("https://fonts.googleapis.com/css?family=Mukta+Vaani");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Raleway");
 /*Scroll Bar*/
@@ -39,6 +38,8 @@ a {
 }
 body {
     width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
 }
 button, input, a {
     font-family: 'Ubuntu', sans-serif;
@@ -61,6 +62,7 @@ li {
 #Home {
     width: 100%;
     height: 100%;
+    background-color:#1e255b;
 }
 #Home sidebar {
     position: absolute;
@@ -278,7 +280,7 @@ li {
 #Settings{
     height: 100%;
     width: 100%;
-    z-index: 1;   
+    z-index: 2;   
     background-color: #E9E9E9;
 }
 #Settings header{
@@ -320,17 +322,31 @@ li {
 #Chat{
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     transform: translateY(100vh);
+    background-color: #1e255b;
     /*The transformation is a test thing*/
 }
 #MessageList{
     position: absolute;
-    left: 0;
+    left: -90%;
     top: 0;
     bottom: 0;
-    width: 20%;
+    z-index: 4;
+    width: 95%;
     background-color: #1e255b; 
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-delay: 1.3s;
+}
+#MessageList:hover{
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-delay: 0.3s;
+    transition-delay: 0.0s;
+    left: 0;
 }
 #MessageList header{
     width: 100%;
@@ -357,7 +373,7 @@ li {
 #MessageList h3{
     color: white;
     background-color: #9A9AC6;
-    font-size: 3.0vh;
+    font-size: 3vh;
     text-align: center;
     width: 100%;
     height: 4%;
@@ -375,7 +391,7 @@ li {
     margin-bottom: 2%;
     width: 95%;
     height: 95%;
-    font-size: 3.2vh;
+    font-size: 2.8vh;
     color: white;
     overflow: auto;
     overflow-x:hidden;
@@ -400,12 +416,12 @@ li {
 
 /*the messaging center*/
 #ChatBody{
-    width: 50%;
+    width: 95%;
     height: 100%;
     position: absolute;
     top: 0;
-    right: 30%;
-    left: 20%;
+    right: 0%;
+    left: 5%;
     bottom: 0;
     background-color: #e6e7f3;
 }
@@ -502,7 +518,7 @@ label#fileBtn:active{
     right: 0;
     top: 0;
     bottom: 0;
-    width: 30%;
+    display: none;
     background-color: #5b66ab;
 }
 #CallInit div{
@@ -1041,6 +1057,7 @@ label#fileBtn:active{
     right: 0;
     top: 0;
     bottom: 0;
+    display: block;
     width: 30%;
     background-color: #5b66ab;
 }
