@@ -1,12 +1,6 @@
-function resize() {
-    if (window.innerWidth >= 1250){
-        document.getElementByTagName("textarea").setAttribute("cols", "95");
-    }
-    else if (window.innerWidth >= 700 && window.innerWidth < 1250){
-        document.getElementByTagName("textarea").setAttribute("cols", "70");
-    }
-    else {
-        document.getElementByTagName("textarea").setAttribute("cols", "35");
-    }
-    
-}
+var list = document.querySelectorAll('#HomeCheckList');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'IMG') {
+    ev.target.src='assets/checked.svg';
+  }
+}, false);
