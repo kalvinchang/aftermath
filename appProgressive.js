@@ -6,4 +6,4 @@ $("#HomeCheckList ul li img").click(function(){
   else{
     $(this).attr("src", "assets/checked.svg");
   }
-})
+});
