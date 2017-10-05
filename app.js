@@ -22,8 +22,15 @@
 		const pass = txtPassword.value;
 		const auth = firebase.auth();
 		//sign in
-		const promise = auth.signInWithEmailAndPassword(email, pass);
-		promise.catch(e => console.log(e.message));
+		// const promise = auth.signInWithEmailAndPassword(email, pass);
+		// promise.catch(e => console.log(e.message));
+
+		auth.signInWithEmailAndPassword(email, pass).then(function(user) {
+			console.log('signed in');
+			window.location.href = 'home.html';
+		}).catch(function(error) {
+			console.log(error.message);
+		})
 	});
 
 	//add signup event
@@ -41,15 +48,15 @@
 		firebase.auth().signOut();
 	});
 
-	firebase.auth().onAuthStateChanged(firebaseUser => {
-		if (firebaseUser) {
-			console.log(firebaseUser);
-			btnLogout.classList.remove('hide');
-		} else {
-			console.log('not logged in');
-			btnLogout.classList.add('hide');
-		}
-	});
+	// firebase.auth().onAuthStateChanged(firebaseUser => {
+	// 	if (firebaseUser) {
+	// 		console.log(firebaseUser);
+	// 		//btnLogout.classList.remove('hide');
+	// 	} else {
+	// 		console.log('not logged in');
+	// 		//btnLogout.classList.add('hide');
+	// 	}
+	// });
 
 }());
 
