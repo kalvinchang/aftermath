@@ -1,6 +1,9 @@
-var list = document.querySelectorAll('#HomeCheckList');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'IMG') {
-    ev.target.src='assets/checked.svg';
+//for the checkmarks
+$("#HomeCheckList ul li img").click(function(){
+  if($(this).attr("src")==="assets/checked.svg"){
+    $(this).attr("src", "assets/unchecked.svg");
   }
-}, false);
+  else{
+    $(this).attr("src", "assets/checked.svg");
+  }
+})
