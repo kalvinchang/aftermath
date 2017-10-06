@@ -122,6 +122,7 @@
 			background-image: url('assets/lined.png');
 		}
 	</style>
+	<script src="https://simplewebrtc.com/latest-v2.js"></script> 
 	<link rel="icon" href="assets/favicon.png">
 </head>
 <body>	
@@ -187,10 +188,24 @@
 		</ul>
 	</div>
 </div>
+<video height="0" id="localVideo"></video>
+<div id="remotesVideos"></div>
 
 <script src="https://socketio-whiteboard.now.sh/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>
 <script type="text/javascript">
+	var webrtc = new SimpleWebRTC({
+		localVideoEl: 'localVideo',	// the id/element dom element that will hold "our" video
+		remoteVideosEl: 'remotesVideos', // the id/element dom element that will hold remote videos
+  		autoRequestMedia: true, // immediately ask for camera access
+  		media: { audio: true, video: false }
+	});
+	// we have to wait until it's ready
+	webrtc.on('readyToCall', function () {
+	  // you can name it anything
+	  webrtc.joinRoom('your awesome room name');
+	});
+
 	window.onload = function() {
 		updateSlider();
 	}
