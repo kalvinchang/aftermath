@@ -113,7 +113,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   currentColor.onclick = function() {
     barDisplay = !barDisplay;
     if (barDisplay) {
-      colorBar.style.display = 'none';
+      colorBar.style.display = 'none';  //immediately close after clicking on color
     } else {
       colorBar.style.display = 'inline-flex';
     }
