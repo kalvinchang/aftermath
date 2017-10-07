@@ -1,6 +1,4 @@
 //for the checkmarks
-setTimeout(function(){ alert("Hello"); }, 5000);
-
 $("#HomeCheckList ul li img").click(function(){
   if($(this).attr("src")==="assets/checked.svg"){
     $(this).attr("src", "assets/unchecked.svg");
@@ -64,7 +62,7 @@ var get = gapi.client.youtube.search.list(
   {
     maxResults: '7',
     part: 'id',
-    q: q,
+    q: 'q',
     type: video
   }
 )
