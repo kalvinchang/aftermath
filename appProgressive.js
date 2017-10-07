@@ -34,7 +34,6 @@ function onYouTubeApiLoad() {
   gapi.client.setApiKey('AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8');
   searcher();
 }
-  searcher();
 
 //placeholder search function with the essetial values we need
 //maxReults to type are the important values
@@ -48,8 +47,6 @@ function search() {
   });
 }
 */
-
-searcher();
 
 //this tests checkMarks method
 console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
@@ -66,10 +63,6 @@ function searcher() {
     q: $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32),
     type: 'video',
     key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
-    
-    function(data){
-      var nextToken = data.nextPageToken;
-      var prevToken = data.prevPageToken;
 
       console.log(data);
 
@@ -79,15 +72,13 @@ function searcher() {
       })      
 
     }
-  
-}
 function getOutput(item){
       var videoId = item.id.videoId;
       var title = item.snippet.title;
 
-      var output = '<li class=""resourceitem>'+
+      var output = '<li class="resourceitem">'+
       '<a href="https://www.youtube.com/watch?v="' +videoId+ '>'+
       title +
       '</a>'+
-      '</li>'
+      '</li>';
 }
