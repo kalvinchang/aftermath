@@ -55,6 +55,37 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 //https://www.youtube.com/watch?v=AF_SzRN6fYM&pbjreload=10
 //look at above link
 
+var q =  $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
+
+console.log(q);
+var data = gapi.client.youtube.search.list(
+  {
+    maxResults: '7',
+    part: 'id',
+    q: q,
+    type: video
+  }
+)
+console.log(data);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function searcher() { 
   console.log("entered");
