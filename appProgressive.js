@@ -1,4 +1,6 @@
 //for the checkmarks
+setTimeout(function(){ alert("Hello"); }, 5000);
+
 $("#HomeCheckList ul li img").click(function(){
   if($(this).attr("src")==="assets/checked.svg"){
     $(this).attr("src", "assets/unchecked.svg");
