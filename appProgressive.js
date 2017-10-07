@@ -82,3 +82,13 @@ function searcher() {
   
   )
 }
+function getOutput(item){
+      var videoId = item.id.videoId;
+      var title = item.snippet.title;
+
+      var output = '<li class=""resourceitem>'+
+      '<a href="https://www.youtube.com/watch?v="' +videoId+ '>'+
+      title +
+      '</a>'+
+      '</li>'
+    }
