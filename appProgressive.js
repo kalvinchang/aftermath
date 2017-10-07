@@ -47,8 +47,28 @@ function search() {
   });
 }
 
+request.execute(function (response) {
+  console.log(response);
+})
+
 //this tests checkMarks method
 console.log($('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32));
 
+//working on alternate search because previous search is not working
+//https://www.youtube.com/watch?v=AF_SzRN6fYM&pbjreload=10
+//look at above link
 
-//some code above is important, below is authentication and the sample search process
+
+function searcher() { 
+  $get("https://www.googleapis.com/youtube/v3/search", {
+    maxResults: '7',
+    part: 'id, snippet',
+    q: $('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32),
+    type: 'video',
+    key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
+    function(){
+      // not done, data & tokens
+    }
+  
+  )
+}
