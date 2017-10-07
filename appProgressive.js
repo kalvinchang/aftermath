@@ -57,15 +57,20 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 
 
 function searcher() { 
+  console.log("entered");
 
-  $.GET, "https://www.googleapis.com/youtube/v3/search", {
+   var q =  $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
+  
+   console.log(q);
+
+   $.GET, "https://www.googleapis.com/youtube/v3/search", {
     maxResults: '7',
     part: 'id, snippet',
-    q: $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32),
+    q: q,
     type: 'video',
     key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
 
-      console.log(this);
+    console.log("doned");
 
       $.each(data.items, function(i, item){
         var output = getOutput(item);
