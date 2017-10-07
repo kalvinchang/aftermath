@@ -321,6 +321,8 @@ li {
 }
 #MessageList{
     position: absolute;
+    text-align: center;
+    list-style-type: none;
     left: -90%;
     top: 0;
     bottom: 0;
@@ -700,6 +702,7 @@ div#schedule{
     /*The transformation is a test thing*/
 }
 #MessageList{
+    text-align: left;
     left: 0;
     width: 20%;
 }
