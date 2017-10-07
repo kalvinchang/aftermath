@@ -58,7 +58,7 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 var q =  $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
 
 console.log(q);
-var data = gapi.client.youtube.search.list(
+var get = gapi.client.youtube.search.list(
   {
     maxResults: '7',
     part: 'id',
@@ -66,17 +66,7 @@ var data = gapi.client.youtube.search.list(
     type: video
   }
 )
-console.log(data);
-
-
-
-
-
-
-
-
-
-
+console.log(get);
 
 
 
