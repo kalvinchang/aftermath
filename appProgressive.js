@@ -32,9 +32,9 @@ function onClientLoad() {
 
 function onYouTubeApiLoad() {
   gapi.client.setApiKey('AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8');
-
+  searcher();
 }
-  search();
+  searcher();
 
 //placeholder search function with the essetial values we need
 //maxReults to type are the important values
@@ -66,8 +66,18 @@ function searcher() {
     q: $('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32),
     type: 'video',
     key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
-    function(){
+    function(data){
       // not done, data & tokens
+      var nextToken = data.nextPageToken;
+      var prevToken = data.prevPageToken;
+
+      console.log(data);
+
+      $.each(data.items, function(i, item){
+        var output = getOutput(item);
+        $('#result').append(output);
+      })      
+
     }
   
   )
