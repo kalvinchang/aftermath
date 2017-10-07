@@ -113,12 +113,13 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 
 
 function searcher() { 
-  $.get("https://www.googleapis.com/youtube/v3/search", {
+  'GET', "https://www.googleapis.com/youtube/v3/search", {
     maxResults: '7',
     part: 'id, snippet',
     q: $('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32),
     type: 'video',
     key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
+    
     function(data){
       var nextToken = data.nextPageToken;
       var prevToken = data.prevPageToken;
@@ -132,7 +133,6 @@ function searcher() {
 
     }
   
-  )
 }
 function getOutput(item){
       var videoId = item.id.videoId;
