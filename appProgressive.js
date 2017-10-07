@@ -18,7 +18,7 @@ $("#HomeCheckList ul li img").click(function(){
 var recentUnchecked = 0;
 function checkMarks(){
   for(var i = 0; i <= $('#HomeBody ul li img').length; i ++){
-    if ($('#HomeChecklist ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
+    if ($('#HomeCheckList ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
       recentUnchecked = i;
       break;
     }
@@ -105,7 +105,7 @@ function loadAPIClientInterfaces() {
 auth.js
 
 //this tests checkMarks method
-console.log($('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32));
+console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 
 //working on alternate search because previous search is not working
 //https://www.youtube.com/watch?v=AF_SzRN6fYM&pbjreload=10
