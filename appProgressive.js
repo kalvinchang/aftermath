@@ -57,6 +57,7 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 
 
 function searcher() { 
+
   $.GET, "https://www.googleapis.com/youtube/v3/search", {
     maxResults: '7',
     part: 'id, snippet',
@@ -64,7 +65,7 @@ function searcher() {
     type: 'video',
     key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
 
-      console.log(data);
+      console.log(this);
 
       $.each(data.items, function(i, item){
         var output = getOutput(item);
