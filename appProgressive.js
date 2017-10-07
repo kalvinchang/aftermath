@@ -113,7 +113,7 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 
 
 function searcher() { 
-  'GET', "https://www.googleapis.com/youtube/v3/search", {
+  $.GET, "https://www.googleapis.com/youtube/v3/search", {
     maxResults: '7',
     part: 'id, snippet',
     q: $('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32),
