@@ -32,9 +32,9 @@ function onClientLoad() {
 
 function onYouTubeApiLoad() {
   gapi.client.setApiKey('AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8');
-  search();
-}
 
+}
+  search();
 
 //placeholder search function with the essetial values we need
 //maxReults to type are the important values
@@ -52,9 +52,3 @@ console.log($('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32));
 
 
 //some code above is important, below is authentication and the sample search process
-
-
-  request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
-  });
