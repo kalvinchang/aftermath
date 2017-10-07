@@ -51,10 +51,6 @@ function search() {
 
 searcher();
 
-request.execute(function (response) {
-  console.log(response);
-})
-
 //this tests checkMarks method
 console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 
