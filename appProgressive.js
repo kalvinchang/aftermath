@@ -63,7 +63,7 @@ var get = gapi.client.youtube.search.list(
     maxResults: '7',
     part: 'id',
     q: 'q',
-    type: video
+    type: 'video'
   }
 )
 console.log(get);
