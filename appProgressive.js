@@ -60,7 +60,7 @@ console.log($('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32));
 
 
 function searcher() { 
-  $get("https://www.googleapis.com/youtube/v3/search", {
+  $.get("https://www.googleapis.com/youtube/v3/search", {
     maxResults: '7',
     part: 'id, snippet',
     q: $('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32),
