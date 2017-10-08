@@ -32,21 +32,11 @@ function onClientLoad() {
 
 function onYouTubeApiLoad() {
   gapi.client.setApiKey('AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8');
-  searcher();
+  console.log("API Key set");
+  search();
+  console.log("search called");
 }
 
-//placeholder search function with the essetial values we need
-//maxReults to type are the important values
-/*
-function search() {
-  var request = gapi.client.youtube.search.list({
-      maxResults: '7',
-      part: 'id',
-      q: $('#HomeBody ul li')[recentUnchecked].innerHTML.substring(32),
-      type: 'video'
-  });
-}
-*/
 
 //this tests checkMarks method
 console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
@@ -58,54 +48,16 @@ console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
 var q =  $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
 
 console.log(q);
-var get = gapi.client.youtube.search.list(
-  {
-    maxResults: '7',
-    part: 'id',
-    q: 'q',
-    type: 'video'
-  }
-)
-console.log(get);
 
-
-
-
-
-
-
-
-
-
-function searcher() { 
-  console.log("entered");
-
-   var q =  $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
-  
-   console.log(q);
-
-   $.GET, "https://www.googleapis.com/youtube/v3/search", {
-    maxResults: '7',
-    part: 'id, snippet',
+function search() {
+  var request = gapi.client.youtube.search.list({
     q: q,
-    type: 'video',
-    key: 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8'},
+    part: 'snippet, id',
+    type: 'video'
+  });
 
-    console.log("doned");
-
-      $.each(data.items, function(i, item){
-        var output = getOutput(item);
-        $('#result').append(output);
-      })      
-
-    }
-function getOutput(item){
-      var videoId = item.id.videoId;
-      var title = item.snippet.title;
-
-      var output = '<li class="resourceitem">'+
-      '<a href="https://www.youtube.com/watch?v="' +videoId+ '>'+
-      title +
-      '</a>'+
-      '</li>';
+  request.execute(function(response) {
+    var str = JSON.stringify(response.result);
+    $('#HomeResources').html('<pre>' + str + '</pre>');
+  });
 }
