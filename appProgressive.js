@@ -13,6 +13,46 @@ $("#HomeCheckList ul li img").click(function(){
 
 //for the YouTube
 
+
+
+function start() {
+  // 2. Initialize the JavaScript client library.
+  gapi.client.init({
+    'apiKey': 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8',
+    // Your API key will be automatically added to the Discovery Document URLs.
+    'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+  }).then(function() {
+    // 3. Initialize and make the API request.
+    return gapi.client.people.people.get({
+      'resourceName': 'people/me',
+      'requestMask.includeField': 'person.names'
+    });
+  }).then(function(response) {
+    console.log(response.result);
+  }, function(reason) {
+    console.log('Error: ' + reason.result.error.message);
+  });
+};
+// 1. Load the JavaScript client library.
+gapi.load('client', start);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //finds the most recent unchecked checklist item and records
 //it's 'index' with recentUnchecked
 var recentUnchecked = 0;
@@ -25,40 +65,3 @@ function checkMarks(){
   }
 }
 
-
-function onClientLoad() {
-  gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
-}
-
-function onYouTubeApiLoad() {
-  gapi.client.setApiKey('AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8');
-  console.log("API Key set");
-  search();
-  console.log("search called");
-}
-
-
-//this tests checkMarks method
-console.log($('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32));
-
-//working on alternate search because previous search is not working
-//https://www.youtube.com/watch?v=AF_SzRN6fYM&pbjreload=10
-//look at above link
-
-var q =  $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
-
-console.log(q);
-
-function search() {
-  var request = gapi.client.youtube.search.list({
-    maxResults: '7',
-    q: q,
-    part: 'snippet, id',
-    type: 'video'
-  });
-
-  request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    $('#HomeResources').html('<pre>' + str + '</pre>');
-  });
-}
