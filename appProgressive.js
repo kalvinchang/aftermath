@@ -51,6 +51,7 @@ console.log(q);
 
 function search() {
   var request = gapi.client.youtube.search.list({
+    maxResults: '7',
     q: q,
     part: 'snippet, id',
     type: 'video'
