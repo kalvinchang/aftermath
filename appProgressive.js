@@ -10,22 +10,38 @@ $("#HomeCheckList ul li img").click(function(){
   checkMarks();
 });
 
+//Navigation
 
+$('#Home sidebar section div a').click(function(){
+  $('#Chat').css('transform', 'none');
+});
+
+$('#Home sidebar #setting img').click(function(){
+  $('#Settings').css('transform', 'translateY(-100%)');
+});
+
+$('#Settings header img').click(function(){
+  $('#Settings').css('transform', 'none');
+});
+
+$('#Chat #MessageList #back').click(function(){
+  $('#Chat').css('transform', 'translateY(100vh)');
+});
 //for the YouTube
 
-
+// 1. Load the JavaScript client library.
+gapi.load('client', start);
 
 function start() {
   // 2. Initialize the JavaScript client library.
   gapi.client.init({
     'apiKey': 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8',
     // Your API key will be automatically added to the Discovery Document URLs.
-    'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+    'discoveryDocs': ['https://apis.google.com/js/client.js'],
   }).then(function() {
     // 3. Initialize and make the API request.
-    return gapi.client.people.people.get({
-      'resourceName': 'people/me',
-      'requestMask.includeField': 'person.names'
+    return gapi.client.search.list({
+      
     });
   }).then(function(response) {
     console.log(response.result);
@@ -33,11 +49,6 @@ function start() {
     console.log('Error: ' + reason.result.error.message);
   });
 };
-// 1. Load the JavaScript client library.
-gapi.load('client', start);
-
-
-
 
 
 
