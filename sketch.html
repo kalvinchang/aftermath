@@ -61,7 +61,7 @@
 		#toolbar {
 			position: absolute;
 			text-align: center;
-			width: 15vh;
+			width: 8vw;
 			transform: translateX(2.5vh) translateY(2.5vh);
 			border-radius: 15px;
 			background-color: #7fbeff;
@@ -74,7 +74,12 @@
 			margin: auto;
 			/*box-shadow*/
 		}
-		.colors {/*
+		.colors {
+			z-index: 1;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+		/*
 			display: inline-flex;
 			transform: translateX(2vh);*/
 		}
@@ -85,8 +90,9 @@
 			background-color: inherit;
 			border: 1px solid black;
 			border-radius: 5px;
-			display: inline-flex;
+			display: inline;
 			position: relative; /*fix to be right next to .currentColor*/
+			transform: rotateZ(90%);
 		}
 		.black {
 			background-color: #000000;
@@ -133,8 +139,8 @@
 		<div id="undo" class="tool">Undo</div>
 		<div id="redo" class="tool">Redo</div>
 		<div class="colors">
-			<div class="currentColor tool"></div>
 			<div id="colorBar">
+				<div class="currentColor tool"></div>
 				<div class="color red tool"></div>
 				<div class="color orange tool"></div>
 				<div class="color yellow tool"></div>
@@ -191,7 +197,7 @@
 <video height="0" id="localVideo"></video>
 <div id="remotesVideos"></div>
 
-<script src="https://socketio-whiteboard.now.sh/socket.io/socket.io.js"></script>
+<script src="https://socket-io-whiteboard.now.sh/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>
 <script type="text/javascript">
 	var webrtc = new SimpleWebRTC({
