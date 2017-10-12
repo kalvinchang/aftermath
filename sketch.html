@@ -100,6 +100,7 @@
 		.currentColor {
 			background-color: #000;
 			transform: translateY(-456px);
+			visibility: visible;
 		}
 		#colorBar {
 			background-color: inherit;
@@ -112,31 +113,31 @@
 		}
 		#black {
 			background-color: #000000;
-			transform: translateY(-399px);
+			transform: translateY(-399px) translateX(399px);
 		}
 		#red {
 			background-color: #ff0000;
-			transform: translateY(-57px);
+			transform: translateY(-57px) translateX(57px);
 		}
 		#orange {
 			background-color: #ffa500;
-			transform: translateY(-114px);
+			transform: translateY(-114px) translateX(114px);
 		}
 		#yellow {
 			background-color: #ffff00;
-			transform: translateY(-171px);
+			transform: translateY(-171px) translateX(171px);
 		}
 		#green {
 			background-color: #00ff00;
-			transform: translateY(-228px);
+			transform: translateY(-228px) translateX(228px);
 		}
 		#blue {
 			background-color: #0000ff;
-			transform: translateY(-285px);
+			transform: translateY(-285px) translateX(285px);
 		}
 		#violet {
 			background-color: #ff00ff;
-			transform: translateY(-342px);
+			transform: translateY(-342px) translateX(342px);
 		}
 		.thickness {
 			background-image: url('assets/graph.png');
@@ -174,7 +175,7 @@
 				<div class="color tool" id="blue"></div>
 				<div class="color tool" id="violet"></div>
 				<div class="color tool" id="black"></div>
-				<div class="currentColor tool"></div>
+				<div class="currentColor tool" id="currentColor"></div>
 			</div>
 		</div>
 		<div class="thickness tool">
@@ -228,7 +229,26 @@
 <video height="0" id="localVideo"></video>
 <div id="remotesVideos"></div>
 
+<script type="text/javascript">
 
+function expand(){
+		if(colortrack===false){
+			colortrack=true;
+			document.getElementById("red").style.transform="translateY(-57px),translateX(57px)";
+		}
+		else if(colortrack===true){
+			colortrack=false;
+			document.getElementById("red").style.transform="translateY(-57px)";
+		}
+		
+	}
+
+var colortrack = false;
+	
+	document.getElementById("colorBar").addEventListener("click", expand());
+
+
+</script>
 <script src="https://socket-io-whiteboard.now.sh/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>
 <script type="text/javascript">
@@ -268,23 +288,6 @@
 	}
 
 </script>
-<script type="text/javascript">
-var colortrack = false;
-	
-	document.getElementById("colorBar").addEventListener("click", expand());
 
-	function expand(){
-		if(colortrack=false){
-			colortrack=true;
-			document.getElementById("red").style.transform="translateX(57px)";
-		}
-		else{
-			colortrack=false;
-			document.getElementById("red").style.transform="";
-		}
-		
-	}
-
-</script>
 </body>
 </html>
