@@ -5,12 +5,22 @@
 	<style type="text/css">
 		body {
 			background: #F1F1F1;
+			overflow: hidden;
+			margin:0;
+			padding: 0 ;
+			z-index: 1;
+			user-select: none;
+			cursor: default;
+		}
+		canvas.whiteboard{
+			z-index: 0;
 		}
 		#topic {
 			position: absolute;
-			width: 80%;
+			font-size: 3.8vh;
+			width: 23%;
 			top: 0;
-			left: 0;
+			left: 33%;
 			text-align: center;
 			margin: 0;
 		}
@@ -60,15 +70,18 @@
 		}
 		#toolbar {
 			position: absolute;
+			left: 0;
+			top:0;
+			bottom:0;
+			padding:0.7%;
 			text-align: center;
-			width: 8vw;
+			width: 6.5%;
 			transform: translateX(2.5vh) translateY(2.5vh);
-			border-radius: 15px;
 			background-color: #7fbeff;
 		}
 		.tool {
-			width: 50px;	/*use vh*/
-			height: 50px;
+			width: 55px;	/*use vh*/
+			height: 55px;
 			border: 1px solid #000;
 			border-radius: 5px;
 			margin: auto;
@@ -78,42 +91,52 @@
 			z-index: 1;
 			margin: 0;
 			padding: 0;
-			display: inline-block;
+			display: block;
+			transition-duration: 0.3s;
 		/*
 			display: inline-flex;
 			transform: translateX(2vh);*/
 		}
 		.currentColor {
 			background-color: #000;
+			transform: translateY(-456px);
 		}
 		#colorBar {
 			background-color: inherit;
 			border: 1px solid black;
 			border-radius: 5px;
-			display: inline;
+			width: 55px;
+			height: 55px;
+			margin:auto;
 			position: relative; /*fix to be right next to .currentColor*/
-			transform: rotateZ(90%);
 		}
-		.black {
+		#black {
 			background-color: #000000;
+			transform: translateY(-399px);
 		}
-		.red {
+		#red {
 			background-color: #ff0000;
+			transform: translateY(-57px);
 		}
-		.orange {
+		#orange {
 			background-color: #ffa500;
+			transform: translateY(-114px);
 		}
-		.yellow {
+		#yellow {
 			background-color: #ffff00;
+			transform: translateY(-171px);
 		}
-		.green {
+		#green {
 			background-color: #00ff00;
+			transform: translateY(-228px);
 		}
-		.blue {
+		#blue {
 			background-color: #0000ff;
+			transform: translateY(-285px);
 		}
-		.violet {
+		#violet {
 			background-color: #ff00ff;
+			transform: translateY(-342px);
 		}
 		.thickness {
 			background-image: url('assets/graph.png');
@@ -131,6 +154,9 @@
 	<script src="https://simplewebrtc.com/latest-v2.js"></script> 
 	<link rel="icon" href="assets/favicon.png">
 </head>
+
+
+
 <body>	
 <div>
 	<canvas class="whiteboard"></canvas>
@@ -141,13 +167,14 @@
 		<div class="colors">
 			<div id="colorBar">
 				<div class="currentColor tool"></div>
-				<div class="color red tool"></div>
-				<div class="color orange tool"></div>
-				<div class="color yellow tool"></div>
-				<div class="color green tool"></div>
-				<div class="color blue tool"></div>
-				<div class="color violet tool"></div>
-				<div class="color black tool"></div>
+				<div class="color tool" id="red"></div>
+				<div class="color tool" id="orange"></div>
+				<div class="color tool" id="yellow"></div>
+				<div class="color tool" id="green"></div>
+				<div class="color tool" id="blue"></div>
+				<div class="color tool" id="violet"></div>
+				<div class="color tool" id="black"></div>
+				<div class="currentColor tool"></div>
 			</div>
 		</div>
 		<div class="thickness tool">
@@ -164,7 +191,11 @@
 			<div class="paper lined tool"></div>
 		</div>
 	</div>
+
+
 <h1 id="topic">Ch1 - Review of Algebra</h1>
+
+
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
 	<div class="panel" id="topic-checklist">
@@ -196,6 +227,7 @@
 </div>
 <video height="0" id="localVideo"></video>
 <div id="remotesVideos"></div>
+
 
 <script src="https://socket-io-whiteboard.now.sh/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>
@@ -234,7 +266,25 @@
 		var output = document.getElementById('thickness-value');
 		output.value = input.value;
 	}
-</script>
 
+</script>
+<script type="text/javascript">
+var colortrack = false;
+	
+	document.getElementById("colorBar").addEventListener("click", expand());
+
+	function expand(){
+		if(colortrack=false){
+			colortrack=true;
+			document.getElementById("red").style.transform="translateX(57px)";
+		}
+		else{
+			colortrack=false;
+			document.getElementById("red").style.transform="";
+		}
+		
+	}
+
+</script>
 </body>
 </html>
