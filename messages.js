@@ -1,6 +1,8 @@
+//client-side JS
+
 var socket = io(); // initiating request from client to server to open socket and stores into var
 
-socket.on('connect',function (){
+socket.on('connect', function (){
   console.log('Connected to server');
 });
 
@@ -22,7 +24,7 @@ jQuery('#message-form').on('submit', function(e){
   e.preventDefault();// prevent default behavior of button that refreshes page
 
   socket.emit('createMessage', {
-    from: 'User',
+    from: 'User', //replace w/ actual username
     text: jQuery('[name=message]').val() // jquery selects any obj with name message, and val() grabs that value
   }, function(){
 
@@ -32,4 +34,17 @@ socket.on('createMessage', (message,callback) => { // the thing in the 2nd argum
   console.log('createMessage', message);
   socket.emit('newMessage', generatedMessage(message.from, message.text))
   callback('This is from the server');
+});
+
+var messageTextbox = jQuery('[name=message]');
+
+jQuery('#message-form').on('submit', function(e) {
+  e.preventDefault();
+
+  socket.emit('createMessage', {
+    from: 'User',
+    text: messageTextbox.val()
+  }, function() {
+    messageTextbox.val('');
+  });
 });

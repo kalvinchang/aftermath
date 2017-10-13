@@ -5,7 +5,6 @@ const socketIO = require('socket.io');
 
 const {generatedMessage} = require('../utils/message') //import function, from another directory
 
-
 const publicPath = path.join(__dirname, '../');
 const port = process.env.PORT || 3000;
 var app = express();

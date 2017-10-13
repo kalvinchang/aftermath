@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "express": "^4.16.2",
     "nodemon": "^1.12.1",
+    "path": "^0.12.7",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
@@ -14,6 +16,9 @@
     "start": "node server/server.js",
     "test": "mocha server/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'"
+  },
+  "engines": {
+    "node": "6.11.1"
   },
   "repository": {
     "type": "git",
