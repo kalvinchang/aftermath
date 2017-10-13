@@ -109,15 +109,35 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   //make colors collapsible
   var colorBar = document.getElementById('colorBar');
   //clicking on current-color -> display the colors horizontally (unhide)
-  var barDisplay = true;
-  currentColor.onclick = function() {
-    barDisplay = !barDisplay;
-    if (barDisplay) {
-      colorBar.style.display = 'none';  //immediately close after clicking on color
+  var colortrack = true;
+  console.log(colortrack);
+  var expanderTarget = document.getElementById('currentColor');
+  console.log(expanderTarget);
+  expanderTarget.addEventListener('click', function(){
+    if (colortrack) {
+      document.getElementById('red').style.visibility='inheret';
+      document.getElementById('orange').style.visibility='inheret';
+      document.getElementById('yellow').style.visibility='inheret';
+      document.getElementById('green').style.visibility='inheret';
+      document.getElementById('blue').style.visibility='inheret';
+      document.getElementById('violet').style.visibility='inheret';
+      document.getElementById('black').style.visibility='inheret';
+    
+        //immediately close after clicking on color
     } else {
-      colorBar.style.display = 'inline-flex';
+      document.getElementById('red').style.visibility='hidden';
+      document.getElementById('orange').style.visibility='hidden';
+      document.getElementById('yellow').style.visibility='hidden';
+      document.getElementById('green').style.visibility='hidden';
+      document.getElementById('blue').style.visibility='hidden';
+      document.getElementById('violet').style.visibility='hidden';
+      document.getElementById('black').style.visibility='hidden';
     }
-  }
+    colortrack = !colortrack;
+  });
+
+    
+
   // for (var i = 0; i < color.length; i++) {
   //  color[i].onclick = function() {
   //    this.classList.toggle('active');
