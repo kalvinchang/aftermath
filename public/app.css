@@ -320,7 +320,7 @@ li {
     width: 100%;
     z-index: 3;
     transition-duration: 0.9s;
-    transform: translateY(100vh);
+    transform: translateY(100%);
     background-color: #1e255b;
     /*The transformation is a test thing*/
 }
@@ -435,6 +435,7 @@ li {
     text-align: center;
     color: #0A1342;
     width: 100%;
+    height:6%;
     border-bottom:3px solid #8AA2AD; 
 }
 div.receive{
@@ -463,6 +464,10 @@ div.receive p{
     color: #2B4877;
     font-size: 2.5vh;
 }
+#ChatBody ol#messages{
+    width: 100%;
+    height: 90%;
+}
 #ChatBody form{
     height: 5%;
     background-color: #e6e7f3;
@@ -471,44 +476,34 @@ div.receive p{
 #ChatBody form div{
     width: fit-content;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
-#ChatBody form div textarea{
+#ChatBody form div input{
+    border: none;
+    border-bottom: 3px solid rgba(6, 6, 66, 0);
+    padding: 2%;
+    color: #797292;
+    font-size: 1.5vw;
     outline: none;
-    border-width: 0;
-    border-bottom: 3px solid rgba(6, 6, 66, 0.11);
-    padding: 1%;
-    resize: none;
-    background-color: #e6e7f3;
-    overflow: hidden;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0);
+    transition-duration: 0.3s;
 }
-#ChatBody form div textarea:focus{
+#ChatBody form div input:focus{
     border-bottom: 3px solid rgba(6, 6, 66, 0.3);
+    outline:none;
 }
-#ChatBody form div input#file{
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: relative;
-    z-index: -1;
-}
-label#fileBtn{
-    font-size: 1.8vh;
-    color: #6D67A5;
-    padding: 0.5%;
-    background-color: #CBCBF1;
-    display: inline-block;
-}
-label#fileBtn:hover {
-    background-color: #342B83;
-    color: #E0E0E0;
-}
-label#fileBtn:active{
-    background-color:#261E6D;
+#ChatBody form div button{
+    background-color: #C5C1EE;
+    outline: none;
+    border: none;
+    width: fit-content;
+    margin: 0;
+    border-radius: 3px;
     color: white;
-}
-#ChatBody form div input#file:active{
-    background-color:#D8D8D8;
+    padding: 1.5%;
+    font-size: 1.5vw;
 }
 /*The group details and call initializer*/
 #CallInit{
