@@ -31,7 +31,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   var colors = document.getElementsByClassName('color');
   var thick = document.getElementById('thickness-slider');
   var papers = document.getElementsByClassName('papers');
-  var currentColor = document.getElementsByClassName('currentColor')[0];
+  var currentColor = document.getElementsByClassName('currentColor');
 
   var context = canvas.getContext('2d');
   var undo = document.getElementById('undo');
@@ -137,7 +137,46 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     colortrack = !colortrack;
   });
 
+  document.getElementById('red').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('red').style.backgroundColor;
+  });
+  document.getElementById('orange').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('orange').style.backgroundColor;
+  });
+  document.getElementById('yellow').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('yellow').style.backgroundColor;
+  });
+  document.getElementById('green').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('green').style.backgroundColor;
+  });
+  document.getElementById('blue').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('blue').style.backgroundColor;
+  });
+  document.getElementById('violet').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('violet').style.backgroundColor;
+  });
+  document.getElementById('black').addEventListener('click', function(){
+    currentColor.style.backgroundColor = document.getElementById('black').style.backgroundColor;
+  });
     
+var papertrack = true;
+var expandTarget = document.getElementByClassName('papers');
+console.log(expandTarget);
+expandTarget.AddEventListener('click', function(){
+  if(papertrack){
+    document.getElementByClassName('plain').style.visibiliy='visible';
+    document.getElementByClassName('graph').style.visibility='visible';
+    document.getElementByClassname('lined').style.visibility='visible';
+  }
+  else{
+    document.getElementByClassName('plain').style.visibiliy='hidden';
+    document.getElementByClassName('graph').style.visibility='hidden';
+    document.getElementByClassname('lined').style.visibility='hidden';
+  }
+  papertrack=!papertrack
+});
+
+
 
   // for (var i = 0; i < color.length; i++) {
   //  color[i].onclick = function() {

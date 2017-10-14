@@ -8,7 +8,9 @@
 			overflow: hidden;
 			margin:0;
 			padding: 0 ;
-			z-index: 1;
+			z-index: 0;
+			width: 100%;
+			height: 100%;
 			user-select: none;
 			cursor: default;
 		}
@@ -70,6 +72,7 @@
 		}
 		#toolbar {
 			position: absolute;
+			z-index: 1;
 			left: 0;
 			top:0;
 			bottom:0;
@@ -148,20 +151,29 @@
 			visibility: hidden;
 		}
 		.thickness {
-			background-image: url('assets/graph.png');
 			transform: translateY(57px);
 		}
+		#thickness-slider{
+			transform: translateY(15px) translateX(-30%);
+		}
 		.papers{
+			background-image: url('assets/graph.png');
 			transform: translateY(57px);
 		}
 		.plain {
 			background-color: #F1F1F1;
+			transform: translateX(56px);
+			visibility: hidden;
 		}
 		.graph {
 			background-image: url('assets/graph.png');
+			transform: translateY(-57px) translateX(113px);
+			visibility: hidden;
 		}
 		.lined {
 			background-image: url('assets/lined.png');
+			transform: translateY(-114px) translateX(170px);
+			visibility: hidden;
 		}
 	</style>
 	<script src="https://simplewebrtc.com/latest-v2.js"></script> 

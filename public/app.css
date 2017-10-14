@@ -319,7 +319,7 @@ li {
     height: 100%;
     width: 100%;
     z-index: 3;
-    transition-duration: 0.3s;
+    transition-duration: 0.9s;
     transform: translateY(100vh);
     background-color: #1e255b;
     /*The transformation is a test thing*/
