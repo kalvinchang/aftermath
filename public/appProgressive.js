@@ -40,7 +40,7 @@ $('#Settings header img').click(function(){
 });
 
 $('#Chat #MessageList #back').click(function(){
-  $('#Chat').css('transform', 'translateY(100vh)');
+  $('#Chat').css('transform', 'translateY(-100%)');
 });
 //for the YouTube
 

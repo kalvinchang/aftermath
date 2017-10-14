@@ -40,7 +40,6 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /*overflow: hidden;*/
 }
 button, input, a {
     font-family: 'Raleway', sans-serif;
@@ -231,6 +230,9 @@ li {
     height: fit-content;
     padding-top: 3%;
     overflow: hidden;
+    animation-name: down;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
 }
 #HomeCheckList ul{
     margin: auto;
@@ -241,6 +243,9 @@ li {
     overflow: auto;
     overflow-x: hidden;
     border-bottom: 2px solid #0F0F61;
+    animation-name: down;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
 }
 #HomeCheckList ul li{
     padding: 2% 0;
@@ -251,6 +256,17 @@ li {
 }
 #HomeCheckList ul li img{
     width: 5vh;
+    animation-name: down;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes down{
+    from{
+        transform: translateY(-5px);
+    }
+    to{
+        transform: none;
+    }
 }
 #HomeResources{
     width: 40%;
@@ -298,6 +314,11 @@ li {
     line-height: 2;
 }
 #Settings section{
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#Settings section section{
     padding: 2%;
     width: 90%;
     height: 20%;
@@ -318,8 +339,8 @@ li {
     height: 100%;
     width: 100%;
     z-index: 3;
-    transition-duration: 0.9s;
-    transform: translateY(100%);
+    transition-duration: 0.3s;
+    transform: translateY(-100%);
     background-color: #1e255b;
     /*The transformation is a test thing*/
 }
@@ -701,8 +722,6 @@ div#schedule{
 
 #Chat{
     z-index: 2;
-    transform: translateY(100vh);
-    /*The transformation is a test thing*/
 }
 #MessageList{
     text-align: left;
@@ -799,10 +818,6 @@ div#schedule{
 
 /*________________CHAT START________________*/
 
-#Chat{
-    transform: translateY(100vh);
-    /*The transformation is a test thing*/
-}
 #MessageList{
     width: 15%;
 }
