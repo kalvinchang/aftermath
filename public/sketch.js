@@ -109,19 +109,20 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   //make colors collapsible
   var colorBar = document.getElementById('colorBar');
   //clicking on current-color -> display the colors horizontally (unhide)
+  
+  
   var colortrack = true;
-  console.log(colortrack);
   var expanderTarget = document.getElementById('currentColor');
   console.log(expanderTarget);
   expanderTarget.addEventListener('click', function(){
     if (colortrack) {
-      document.getElementById('red').style.visibility='inheret';
-      document.getElementById('orange').style.visibility='inheret';
-      document.getElementById('yellow').style.visibility='inheret';
-      document.getElementById('green').style.visibility='inheret';
-      document.getElementById('blue').style.visibility='inheret';
-      document.getElementById('violet').style.visibility='inheret';
-      document.getElementById('black').style.visibility='inheret';
+      document.getElementById('red').style.visibility='inherit';
+      document.getElementById('orange').style.visibility='inherit';
+      document.getElementById('yellow').style.visibility='inherit';
+      document.getElementById('green').style.visibility='inherit';
+      document.getElementById('blue').style.visibility='inherit';
+      document.getElementById('violet').style.visibility='inherit';
+      document.getElementById('black').style.visibility='inherit';
     
         //immediately close after clicking on color
     } else {
