@@ -10,10 +10,19 @@ socket.on('disconnect', function (){
   console.log('Connected dropped/ Disconnected from Server');
 });
 
+/*The original stuff
 socket.on('newMessage', function (message){
   console.log('New message arrived.', message); // prints email and its object data
   var li = jQuery('<li></li>'); //creates html object
   li.text(message.from + ': ' + message.text);  // gets the edata
+
+  jQuery('#messages').append(li); //gets the html li data onto the html ordered list
+});
+*/
+
+socket.on('newMessage', function (message){
+  console.log('New message arrived.', message); // prints email and its object data
+  var li = jQuery('<li><div class="receive"><div class="sender"><img src="" alt="'+message.from+'"><h3>' +message.from+ '</h3></div><p>'+message.text+'</p></div></li>'); //creates html object
 
   jQuery('#messages').append(li); //gets the html li data onto the html ordered list
 });
