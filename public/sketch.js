@@ -164,12 +164,12 @@ var expandTarget = document.getElementByClassName('papers');
 console.log(expandTarget);
 expandTarget.AddEventListener('click', function(){
   if(papertrack){
-    document.getElementByClassName('plain').style.visibiliy='visible';
+    document.getElementByClassName('plain').style.visibility='visible';
     document.getElementByClassName('graph').style.visibility='visible';
     document.getElementByClassname('lined').style.visibility='visible';
   }
   else{
-    document.getElementByClassName('plain').style.visibiliy='hidden';
+    document.getElementByClassName('plain').style.visibility='hidden';
     document.getElementByClassName('graph').style.visibility='hidden';
     document.getElementByClassname('lined').style.visibility='hidden';
   }
