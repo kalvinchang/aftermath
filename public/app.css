@@ -447,8 +447,8 @@ div.sender{
 }
 div.sender img {
     position: relative;
-    width: 7vh;
-    height: 7vh;
+    width: 5vh;
+    height: 5vh;
     border-radius: 50%;
     padding: 0 2%;
 }
