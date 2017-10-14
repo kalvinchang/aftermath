@@ -1,7 +1,6 @@
 /*NOTE: INSERT FONTS LATER*/
 
 /*imports*/
-@import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://fonts.googleapis.com/css?family=Mukta+Vaani");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Raleway");
 /*Scroll Bar*/
@@ -44,7 +43,7 @@ body {
     /*overflow: hidden;*/
 }
 button, input, a {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: 'Arvo', sans-serif;
