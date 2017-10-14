@@ -192,24 +192,21 @@
 		<div class="colors">
 			<div id="colorBar">
 				<div class="currentColor tool" id="currentColor"></div>
-				<div class="color tool" id="red"></div>
-				<div class="color tool" id="orange"></div>
-				<div class="color tool" id="yellow"></div>
-				<div class="color tool" id="green"></div>
-				<div class="color tool" id="blue"></div>
-				<div class="color tool" id="violet"></div>
-				<div class="color tool" id="black"></div>
+				<div class="color red tool" id="red"></div>
+				<div class="color orange tool" id="orange"></div>
+				<div class="color yellow tool" id="yellow"></div>
+				<div class="color green tool" id="green"></div>
+				<div class="color blue tool" id="blue"></div>
+				<div class="color violet tool" id="violet"></div>
+				<div class="color black tool" id="black"></div>
 			</div>
 		</div>
 		<div class="thickness tool">
-			<!-- <div class="thick small tool">small</div>
-			<div class="thick medium tool">medium</div>
-			<div class="thick large tool">large</div> -->
-			<!-- drag -->
-		<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">			
-		<output id="thickness-value">2</output>
+			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">			
+			<output id="thickness-value">2</output>
 		</div>
 		<div class="papers tool">
+			<div class="paper currentPaper tool" id="currentPaper"></div>
 			<div class="paper plain tool"></div>
 			<div class="paper graph tool"></div>
 			<div class="paper lined tool"></div>
@@ -247,11 +244,10 @@
 		<ul>
 			<li><!-- Youtube videos --></li>
 		</ul>
+		<video height="0" id="localVideo"></video>
+		<div id="remotesVideos"></div>
 	</div>
 </div>
-<video height="0" id="localVideo"></video>
-<div id="remotesVideos"></div>
-
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="sketch.js"></script>

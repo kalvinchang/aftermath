@@ -31,7 +31,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   var colors = document.getElementsByClassName('color');
   var thick = document.getElementById('thickness-slider');
   var papers = document.getElementsByClassName('papers');
-  var currentColor = document.getElementsByClassName('currentColor');
 
   var context = canvas.getContext('2d');
   var undo = document.getElementById('undo');
@@ -106,84 +105,43 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   //switch paper
   var papers = ['plain', 'assets/graph.png', 'assets/lined.jpg'];
-  //make colors collapsible
-
-  document.getElementById('red').style.backgroundColor='#ff0000';
-  document.getElementById('orange').style.backgroundColor='#ffa500';
-  document.getElementById('yellow').backgroundColor='#ffff00';
-  document.getElementById('green').backgroundColor='ooffoo';
-  document.getElementById('blue').backgroundColor='0000ff';
-  document.getElementById('violet').backgroundColor='ff00ff';
-  document.getElementById('black').backgroundColor='000000';
-
-  var colorBar = document.getElementById('colorBar');
+  //var colorBar = document.getElementById('colorBar');   - unused line
+  
   //clicking on current-color -> display the colors horizontally (unhide)
-  
-  
+
+  //make colors collapsible
   var colortrack = true;
-  var expanderTarget = document.getElementById('currentColor');
-  console.log(expanderTarget);
-  expanderTarget.addEventListener('click', function(){
+  var currentColor = document.getElementById('currentColor');   //expanderTarget
+  currentColor.addEventListener('click', function(){
     if (colortrack) {
-      document.getElementById('red').style.visibility='inherit';
-      document.getElementById('orange').style.visibility='inherit';
-      document.getElementById('yellow').style.visibility='inherit';
-      document.getElementById('green').style.visibility='inherit';
-      document.getElementById('blue').style.visibility='inherit';
-      document.getElementById('violet').style.visibility='inherit';
-      document.getElementById('black').style.visibility='inherit';
-    
-        //immediately close after clicking on color
+      for (var i = 0; i < colors.length; i++){
+        colors[i].style.visibility = 'inherit';
+      }
     } else {
-      document.getElementById('red').style.visibility='hidden';
-      document.getElementById('orange').style.visibility='hidden';
-      document.getElementById('yellow').style.visibility='hidden';
-      document.getElementById('green').style.visibility='hidden';
-      document.getElementById('blue').style.visibility='hidden';
-      document.getElementById('violet').style.visibility='hidden';
-      document.getElementById('black').style.visibility='hidden';
+      for (var i = 0; i < colors.length; i++){
+        colors[i].style.visibility = 'hidden';
+      }
     }
     colortrack = !colortrack;
   });
 
-  document.getElementById('red').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('red').style.backgroundColor;
+      
+  var papertrack = true;
+  var expandTarget = document.getElementsByClassName('papers');
+  console.log(expandTarget);
+  expandTarget.addEventListener('click', function(){
+    if(papertrack){
+      document.getElementByClassName('plain').style.visibility='visible';
+      document.getElementByClassName('graph').style.visibility='visible';
+      document.getElementByClassname('lined').style.visibility='visible';
+    }
+    else{
+      document.getElementByClassName('plain').style.visibility='hidden';
+      document.getElementByClassName('graph').style.visibility='hidden';
+      document.getElementByClassname('lined').style.visibility='hidden';
+    }
+    papertrack = !papertrack;
   });
-  document.getElementById('orange').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('orange').style.backgroundColor;
-  });
-  document.getElementById('yellow').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('yellow').style.backgroundColor;
-  });
-  document.getElementById('green').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('green').style.backgroundColor;
-  });
-  document.getElementById('blue').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('blue').style.backgroundColor;
-  });
-  document.getElementById('violet').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('violet').style.backgroundColor;
-  });
-  document.getElementById('black').addEventListener('click', function(){
-    currentColor.style.backgroundColor = document.getElementById('black').style.backgroundColor;
-  });
-    
-var papertrack = true;
-var expandTarget = document.getElementByClassName('papers');
-console.log(expandTarget);
-expandTarget.AddEventListener('click', function(){
-  if(papertrack){
-    document.getElementByClassName('plain').style.visibility='visible';
-    document.getElementByClassName('graph').style.visibility='visible';
-    document.getElementByClassname('lined').style.visibility='visible';
-  }
-  else{
-    document.getElementByClassName('plain').style.visibility='hidden';
-    document.getElementByClassName('graph').style.visibility='hidden';
-    document.getElementByClassname('lined').style.visibility='hidden';
-  }
-  papertrack=!papertrack
-});
 
 
 
@@ -192,8 +150,6 @@ expandTarget.AddEventListener('click', function(){
   //    this.classList.toggle('active');
   //  }
   // }
-
-
 
   function drawLine(x0, y0, x1, y1, color, thickness, emit){
     context.beginPath();
@@ -240,7 +196,16 @@ expandTarget.AddEventListener('click', function(){
 
   function onColorUpdate(e){
     current.color = e.target.className.split(' ')[1];
+    console.log(current.color);
     currentColor.style.background = current.color;
+    if (current.color == 'green') {
+      currentColor.style.background = '#00ff00';
+    }
+    //immediately close after clicking on color
+    for (var i = 0; i < colors.length; i++){
+      colors[i].style.visibility = 'hidden';
+      colortrack = !colortrack;
+    }
   }
 
   function onThickUpdate(e){
