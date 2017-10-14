@@ -107,6 +107,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   //switch paper
   var papers = ['plain', 'assets/graph.png', 'assets/lined.jpg'];
   //make colors collapsible
+
+  document.getElementById('red').style.backgroundColor='#ff0000';
+  document.getElementById('orange').style.backgroundColor='#ffa500';
+  document.getElementById('yellow').backgroundColor='#ffff00';
+  document.getElementById('green').backgroundColor='ooffoo';
+  document.getElementById('blue').backgroundColor='0000ff';
+  document.getElementById('violet').backgroundColor='ff00ff';
+  document.getElementById('black').backgroundColor='000000';
+
   var colorBar = document.getElementById('colorBar');
   //clicking on current-color -> display the colors horizontally (unhide)
   
