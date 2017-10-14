@@ -2,185 +2,10 @@
 <html>
 <head>
 	<title>Sketchpad</title>
-	<style type="text/css">
-		body {
-			background: #F1F1F1;
-			overflow: hidden;
-			margin:0;
-			padding: 0 ;
-			z-index: 0;
-			width: 100%;
-			height: 100%;
-			user-select: none;
-			cursor: default;
-		}
-		canvas.whiteboard{
-			z-index: 0;
-		}
-		#topic {
-			position: absolute;
-			font-size: 3.8vh;
-			width: 23%;
-			top: 0;
-			left: 33%;
-			text-align: center;
-			margin: 0;
-		}
-		#sidebar {
-			background: #E5E5E5;
-			width: 20%; /*make width draggable by mouse*/
-			position: absolute;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			height: 100%;
-			font-size: 1.2em;
-		}
-
-		button.accordion {
-			background-color: inherit;
-			padding: 10px;
-			width: 100%;
-			text-align: left;
-			border: none;
-			outline: none;
-			transition: 0.4s;
-			font-size: 1em;
-		}
-
-		button.accordion.active,  button.accordion:hover {
-			background-color: #ccc;
-		}
-
-		div.panel {
-			padding: 0 10px;
-			background-color: inherit;
-			max-height: 0;
-			overflow: hidden;
-			transition: max-height 0.2s ease-out;
-		}
-		canvas {
-			position: absolute;
-			background-image: url('assets/graph.png');
-			background-repeat: repeat;
-			 /*make adaptable w/o %*/
-			/*left: 0;
-			right: 0;
-			bottom: 0;
-			padding: 0;
-			margin: 0;*/
-		}
-		#toolbar {
-			position: absolute;
-			z-index: 1;
-			left: 0;
-			top:0;
-			bottom:0;
-			padding:0.7%;
-			text-align: center;
-			width: 6.5%;
-			transform: translateX(2.5vh) translateY(2.5vh);
-			background-color: #7fbeff;
-		}
-		.tool {
-			width: 55px;	/*use vh*/
-			height: 55px;
-			border: 1px solid #000;
-			border-radius: 5px;
-			margin: auto;
-			/*box-shadow*/
-		}
-		.colors {
-			z-index: 1;
-			padding: 0;
-			display: block;
-			transition-duration: 0.3s;
-			position: absolute;
-			right: 31%;
-			visibility: visible;
-		/*
-			display: inline-flex;
-			transform: translateX(2vh);*/
-		}
-		div.currentColor {
-			background-color: #000;
-			visibility: visible;
-		}
-		#colorBar {
-			background-color: inherit;
-			border: 1px solid black;
-			border-radius: 5px;
-			width: 55px;
-			height: 55px;
-			margin:auto;
-			position: relative; /*fix to be right next to .currentColor*/
-		}
-		#black {
-			background-color: #000000;
-			transform: translateY(-399px) translateX(399px);
-			visibility: hidden;
-		}
-		#red {
-			background-color: #ff0000;
-			transform: translateY(-57px) translateX(57px);
-			visibility: hidden;
-		}
-		#orange {
-			background-color: #ffa500;
-			transform: translateY(-114px) translateX(114px);
-			visibility: hidden;
-		}
-		#yellow {
-			background-color: #ffff00;
-			transform: translateY(-171px) translateX(171px);
-			visibility: hidden;
-		}
-		#green {
-			background-color: #00ff00;
-			transform: translateY(-228px) translateX(228px);
-			visibility: hidden;
-		}
-		#blue {
-			background-color: #0000ff;
-			transform: translateY(-285px) translateX(285px);
-			visibility: hidden;
-		}
-		#violet {
-			background-color: #ff00ff;
-			transform: translateY(-342px) translateX(342px);
-			visibility: hidden;
-		}
-		.thickness {
-			transform: translateY(57px);
-		}
-		#thickness-slider{
-			transform: translateY(15px) translateX(-30%);
-		}
-		.papers{
-			background-image: url('assets/graph.png');
-			transform: translateY(57px);
-		}
-		.plain {
-			background-color: #F1F1F1;
-			transform: translateX(56px);
-			visibility: hidden;
-		}
-		.graph {
-			background-image: url('assets/graph.png');
-			transform: translateY(-57px) translateX(113px);
-			visibility: hidden;
-		}
-		.lined {
-			background-image: url('assets/lined.png');
-			transform: translateY(-114px) translateX(170px);
-			visibility: hidden;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="sketch.css">
 	<script src="https://simplewebrtc.com/latest-v2.js"></script> 
 	<link rel="icon" href="assets/favicon.png">
 </head>
-
-
 
 <body>	
 <div>
@@ -202,14 +27,15 @@
 			</div>
 		</div>
 		<div class="thickness tool">
+			<div id=""></div>
 			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">			
 			<output id="thickness-value">2</output>
 		</div>
 		<div class="papers tool">
-			<div class="paper currentPaper tool" id="currentPaper"></div>
-			<div class="paper plain tool"></div>
-			<div class="paper graph tool"></div>
-			<div class="paper lined tool"></div>
+			<div class="currentPaper tool" id="currentPaper"></div>
+			<div class="paper plain tool" id="plain"></div>
+			<div class="paper graph tool" id="graph"></div>
+			<div class="paper lined tool" id="lined"></div>
 		</div>
 	</div>
 
