@@ -34,10 +34,12 @@ var messageTextbox = jQuery('[name=message]');
 jQuery('#message-form').on('submit', function(e) {
   e.preventDefault();
 
-  socket.emit('createMessage', {
-    from: 'User', //replace w/ actual user later
-    text: messageTextbox.val()
-  }, function() {
-    messageTextbox.val('');
-  });
+  if (messageTextbox.val() != '') {
+    socket.emit('createMessage', {
+      from: 'User', //replace w/ actual user later
+      text: messageTextbox.val()
+    }, function() {
+      messageTextbox.val('');
+    });
+  }
 });

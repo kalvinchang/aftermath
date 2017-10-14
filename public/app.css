@@ -480,14 +480,15 @@ div.receive p{
     justify-content: center;
 }
 #ChatBody form div input{
-    border: none;
-    border-bottom: 3px solid rgba(6, 6, 66, 0);
+    border: 1px solid rgba(77, 77, 128, 0.25);
+    border-radius: 5px;
     padding: 2%;
     color: #797292;
     font-size: 1.5vw;
     outline: none;
     background-color: rgba(0,0,0,0);
     transition-duration: 0.3s;
+    margin-right: 1.5vw;
 }
 #ChatBody form div input:focus{
     border-bottom: 3px solid rgba(6, 6, 66, 0.3);
