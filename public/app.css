@@ -440,15 +440,15 @@ li {
 div.receive{
     width: 100%;
     margin: 2% 0;
-    border-bottom: 2px solid rgba(77, 77, 128, 0.33);
+    border-bottom: 2px solid rgba(77, 77, 128, 0.13);
 }
 div.sender{
     padding: 1% 0;
 }
 div.sender img {
     position: relative;
-    width: 65px;
-    height: 65px;
+    width: 10vh;
+    height: 10vh;
     border-radius: 50%;
     padding: 0 2%;
 }
