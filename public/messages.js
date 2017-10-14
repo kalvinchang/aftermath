@@ -32,7 +32,7 @@ jQuery('#message-form').on('submit', function(e){
 });
 socket.on('createMessage', (message,callback) => { // the thing in the 2nd argument's parentheses is the event
   console.log('createMessage', message);
-  socket.emit('newMessage', generatedMessage(message.from, message.text))
+  socket.emit('newMessage', generatedMessage(message.from, message.text));
   callback('This is from the server');
 });
 
