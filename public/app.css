@@ -40,7 +40,6 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /*overflow: hidden;*/
 }
 button, input, a {
     font-family: 'Raleway', sans-serif;
@@ -73,11 +72,14 @@ li {
     bottom: 0;
     width: 95%;
     z-index: 1;
+    color: rgba(255, 255, 255, 0.67);
     background-color: #1e255b;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
+    /*
     transition-delay: 1.3s;
+    */
     cursor: pointer;
 }
 #Home sidebar:hover{
@@ -94,8 +96,8 @@ li {
     font-size: 5.7vw;
     white-space: nowrap;
     height: 7%;
-    padding-top: 3%;
     color: white;
+    padding-top: 3%;
 }
 #Home sidebar section {
     margin: auto;
@@ -124,7 +126,6 @@ li {
     width: 98%;
     height: 42%;
     font-size: 2.8vh;
-    color: white;
     overflow: auto;
     overflow-x:hidden;
 }
@@ -133,7 +134,7 @@ li {
     color: gray;
 }
 #Home sidebar section ul.lined li span{
-    color: white;
+    color: rgba(255, 255, 255, 0.67);;
 }
 #Home sidebar section ul li {
     width: 100%;
@@ -163,8 +164,8 @@ li {
 #setting img{
     display: inline-block;
     position: absolute;
-    left: 70%;
-    bottom: 3.5%;
+    left: 68%;
+    bottom: 4.5%;
 }
 /*Home Body*/
 #HomeBody {
@@ -183,6 +184,9 @@ li {
     background-color: #c7ccf5;
     color: #1a1a92;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     transition-duration: 1s;
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
@@ -194,7 +198,7 @@ li {
     background-color:#9AA4EE;
 }
 #HomeBody header h1 {
-    height: 60%;
+    height: 5vw;
     background-color: white;
     box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
@@ -231,16 +235,22 @@ li {
     height: fit-content;
     padding-top: 3%;
     overflow: hidden;
+    animation-name: down;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
 }
 #HomeCheckList ul{
     margin: auto;
     width: 90%;
     height: 80%;
-    font-size: 4.5vh;
+    font-size: 2.7vh;
     list-style-type:none;
     overflow: auto;
     overflow-x: hidden;
     border-bottom: 2px solid #0F0F61;
+    animation-name: down;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
 }
 #HomeCheckList ul li{
     padding: 2% 0;
@@ -251,6 +261,17 @@ li {
 }
 #HomeCheckList ul li img{
     width: 5vh;
+    animation-name: down;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes down{
+    from{
+        transform: translateY(-5px);
+    }
+    to{
+        transform: none;
+    }
 }
 #HomeResources{
     width: 40%;
@@ -286,7 +307,7 @@ li {
     font-size: 3.5vh;
 }
 #Settings header img{
-    width: 5.5vh;
+    width: 5vh;
     padding: 0.8%;
 }
 #Settings header img:hover{
@@ -298,6 +319,13 @@ li {
     line-height: 2;
 }
 #Settings section{
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: auto;
+    width: fit-content;
+}
+#Settings section section{
     padding: 2%;
     width: 90%;
     height: 20%;
@@ -318,8 +346,8 @@ li {
     height: 100%;
     width: 100%;
     z-index: 3;
-    transition-duration: 0.9s;
-    transform: translateY(100%);
+    transition-duration: 0.3s;
+    transform: translateY(-100%);
     background-color: #1e255b;
     /*The transformation is a test thing*/
 }
@@ -336,7 +364,7 @@ li {
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
-    transition-delay: 1.3s;
+    /*transition-delay: 1.3s;*/
 }
 #MessageList:hover{
     transition-duration: 0.5s;
@@ -390,16 +418,12 @@ li {
     width: 95%;
     height: 95%;
     font-size: 2.8vh;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     overflow: auto;
     overflow-x:hidden;
 }
-#MessageList section ul.lined{
-    list-style-position: inside;
-    color: gray;
-}
 #MessageList section ul.lined li span{
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
 }
 #MessageList section ul li{
     width: 100%;
@@ -435,7 +459,7 @@ li {
     color: #0A1342;
     width: 100%;
     height:6%;
-    border-bottom:3px solid #8AA2AD; 
+    border-bottom:3px solid rgba(47, 31, 116, 0.19); 
 }
 div.receive{
     width: 100%;
@@ -506,12 +530,19 @@ div.receive p{
 }
 /*The group details and call initializer*/
 #CallInit{
+    z-index: 5;
     position: absolute;
-    right: 0;
+    right: -82%;
     top: 0;
     bottom: 0;
-    display: none;
+    width: 85%;
+    display: block;
     background-color: #5b66ab;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+}
+#CallInit:hover{
+    right: 0;
 }
 #CallInit div{
     margin-top: 3vh;
@@ -536,8 +567,8 @@ figure{
     height: 30%;
 }
 figure img{
-    width: 100px;
-    height: 100px;
+    width: 7.5vh;
+    height: 7vh;
     display: block;
     margin: auto;
     padding: 3%;
@@ -555,7 +586,7 @@ div#schedule{
     height: 35%;
     margin: 0;
     background-color: #6E7ABB;
-    font-size: 4.5vh;
+    font-size: 3vh;
     text-align: center;
     color: white;
     line-height: 2;
@@ -619,18 +650,22 @@ div#schedule{
     -moz-transition-duration: 0.8s;
     z-index: 0;
 }
+
+
 #Home sidebar:hover {
     -webkit-transform: scale(105%);
     -moz-transform: scale(105%);
     -ms-transform: scale(105%);
 }
 #Home sidebar header {
-    font-size: 1.7vw;
+    font-size: 1.5vh;
+    height: 3.5%
 }
 
 /*for the lists*/
 #Home sidebar section h3 {
-    width: 50%;
+    width: 53.5%;
+    font-size: 3vw;
 }
 #Home sidebar section img{
     display: inline-block;
@@ -638,14 +673,9 @@ div#schedule{
 #Home sidebar section img:hover {
     background-color: #40456f;
 }
-#Home sidebar section h3:hover{
-    -webkit-tranform: translate(5%);
-    -moz-transform: translate(5%);
-    -ms-transoform: translate(5%);
-}
 #Home sidebar section ul {
     text-align: left;
-    font-size: 3.2vh;
+    font-size: 2.3vh;
 }
 #Home sidebar section ul.lined{
     list-style-position: inside;
@@ -655,16 +685,16 @@ div#schedule{
 }
 /*For settings section*/
 #setting img{
-    left: 60%;
-    bottom: 6.5%;
+    left: 66%;
+    bottom: 9.5%;
 }
 /*Home Body*/
 #HomeBody {
     width: 75%;
 }
 #HomeBody header h1 {
-    line-height: 1;
     font-size: 5.6vw;
+    height: 8vw;
 }
 #HomeCheckList ul{
     font-size: 3.5vw;
@@ -701,8 +731,6 @@ div#schedule{
 
 #Chat{
     z-index: 2;
-    transform: translateY(100vh);
-    /*The transformation is a test thing*/
 }
 #MessageList{
     text-align: left;
@@ -713,24 +741,70 @@ div#schedule{
     font-size: 3vh;
 }
 #MessageList section ul{
-    font-size: 3.2vh;
+    font-size: 2.2vh;
+}
+#MessageList section ul.lined{
+    list-style-position: inside;
+    color: gray;
+}
+#MessageList section ul li{
+    padding: 6% 3%;
 }
 
 /*the messaging center*/
 #ChatBody{
-    width: 50%;
-    right: 30%;
+    width: 80%;
+    right: 0;
     left: 20%;
 }
 /*The group details and call initializer*/
 #CallInit{
     display: block;
-    width: 30%;
+    width: 80%;
+    right: -77%;
+    -webkit-transition-duration:0.3s;
+    -moz-transition-duration: 0.3s;
+}
+#CallInit:hover{
+    right: 0;
+}
+#CallInit div p{
+    font-size: 2.5vh;
+}
+figure figcaption{
+    font-size: 2.3vh;
 }
 }/*End query*/
 
 /*________________CHAT END________________*/
 
+
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+
+
+@media screen and (min-width: 870px){
+
+    #ChatBody{
+        width: 60%;
+        right: 30%;
+        left: 20%;
+    }
+    /*The group details and call initializer*/
+    #CallInit{
+        display: block;
+        width: 20%;
+        right: 0;
+    }
+    #CallInit div p{
+        font-size: 2.5vh;
+    }
+    figure figcaption{
+        font-size: 2.3vh;
+    }
+
+}/*End Query*/
 
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
@@ -744,6 +818,9 @@ div#schedule{
     width: 15%;
 }
 /*for the lists*/
+#Home sidebar section h3{
+    font-size: 1.7vw;
+}
 #Home sidebar section ul {
     width: 95%;
 }
@@ -799,17 +876,15 @@ div#schedule{
 
 /*________________CHAT START________________*/
 
-#Chat{
-    transform: translateY(100vh);
-    /*The transformation is a test thing*/
-}
 #MessageList{
     width: 15%;
 }
 #MessageList h3{
-    width: 50%;
+    width: 63%;
 }
-
+#MessageList section ul li{
+    padding: 6% 0;
+}
 /*the messaging center*/
 #ChatBody{
     width: 60%;

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px"
+	 height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<g id="pi" display="none">
+	<circle display="inline" fill="#45459C" cx="250" cy="250" r="249.75"/>
+	<path display="inline" fill="#FFFFFF" d="M466.594,156.342c0,15.415-12.496,27.912-27.911,27.912H61.318
+		c-15.415,0-27.912-12.497-27.912-27.912V142.2c0-15.415,12.497-27.912,27.912-27.912h377.365c15.415,0,27.911,12.497,27.911,27.912
+		V156.342z"/>
+	<path display="inline" fill="#FFFFFF" d="M150.611,434.255c-9.932,0-17.981-8.051-17.981-17.982V173.157
+		c0-9.931,8.05-17.983,17.981-17.983h9.112c9.93,0,17.981,8.052,17.981,17.983v243.115c0,9.932-8.051,17.982-17.981,17.982H150.611z
+		"/>
+	<path display="inline" fill="#FFFFFF" d="M342.087,434.255c-9.933,0-17.982-8.051-17.982-17.982V173.157
+		c0-9.931,8.05-17.983,17.982-17.983h9.111c9.93,0,17.981,8.052,17.981,17.983v243.115c0,9.932-8.052,17.982-17.981,17.982H342.087z
+		"/>
+</g>
+<g id="e" display="none">
+	<circle display="inline" fill="#45459C" cx="250.25" cy="249.75" r="249.75"/>
+	
+		<text transform="matrix(0.9718 -0.236 0.236 0.9718 136.0996 423.0078)" display="inline" fill="#FFFFFF" font-family="'PlantagenetCherokee'" font-size="600">e</text>
+</g>
+<g id="_x2B__1_">
+	<circle fill="none" stroke="#21409A" stroke-width="14" stroke-miterlimit="10" cx="250" cy="250.187" r="242.333"/>
+	<path fill="none" stroke="#21409A" stroke-width="3" stroke-miterlimit="10" d="M285.334,277.667
+		c0,12.151-14.643,22.003-32.706,22.003c-18.063,0-32.706-9.852-32.706-22.003"/>
+	<circle fill="#2E3192" stroke="#21409A" stroke-width="3" stroke-miterlimit="10" cx="65.057" cy="266.667" r="29.852"/>
+	<circle fill="#2E3192" stroke="#21409A" stroke-width="3" stroke-miterlimit="10" cx="432.39" cy="266.667" r="29.852"/>
+</g>
+</svg>
