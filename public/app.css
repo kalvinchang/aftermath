@@ -322,6 +322,8 @@ li {
     height: 90%;
     overflow-x: hidden;
     overflow-y: auto;
+    margin: auto;
+    width: fit-content;
 }
 #Settings section section{
     padding: 2%;
