@@ -164,8 +164,8 @@ li {
 #setting img{
     display: inline-block;
     position: absolute;
-    left: 70%;
-    bottom: 3.5%;
+    left: 68%;
+    bottom: 4.5%;
 }
 /*Home Body*/
 #HomeBody {
@@ -184,6 +184,9 @@ li {
     background-color: #c7ccf5;
     color: #1a1a92;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     transition-duration: 1s;
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
@@ -195,7 +198,7 @@ li {
     background-color:#9AA4EE;
 }
 #HomeBody header h1 {
-    height: 60%;
+    height: 5vw;
     background-color: white;
     box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.19);
     margin: auto;
@@ -359,7 +362,7 @@ li {
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
-    transition-delay: 1.3s;
+    /*transition-delay: 1.3s;*/
 }
 #MessageList:hover{
     transition-duration: 0.5s;
@@ -416,10 +419,6 @@ li {
     color: white;
     overflow: auto;
     overflow-x:hidden;
-}
-#MessageList section ul.lined{
-    list-style-position: inside;
-    color: gray;
 }
 #MessageList section ul.lined li span{
     color: white;
@@ -529,12 +528,19 @@ div.receive p{
 }
 /*The group details and call initializer*/
 #CallInit{
+    z-index: 5;
     position: absolute;
-    right: 0;
+    right: -82%;
     top: 0;
     bottom: 0;
-    display: none;
+    width: 85%;
+    display: block;
     background-color: #5b66ab;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+}
+#CallInit:hover{
+    right: 0;
 }
 #CallInit div{
     margin-top: 3vh;
@@ -560,7 +566,7 @@ figure{
 }
 figure img{
     width: 7.5vh;
-    height: 7.5vh;
+    height: 7vh;
     display: block;
     margin: auto;
     padding: 3%;
@@ -578,7 +584,7 @@ div#schedule{
     height: 35%;
     margin: 0;
     background-color: #6E7ABB;
-    font-size: 4.5vh;
+    font-size: 3vh;
     text-align: center;
     color: white;
     line-height: 2;
@@ -642,18 +648,22 @@ div#schedule{
     -moz-transition-duration: 0.8s;
     z-index: 0;
 }
+
+
 #Home sidebar:hover {
     -webkit-transform: scale(105%);
     -moz-transform: scale(105%);
     -ms-transform: scale(105%);
 }
 #Home sidebar header {
-    font-size: 1.7vw;
+    font-size: 1.5vh;
+    height: 3.5%
 }
 
 /*for the lists*/
 #Home sidebar section h3 {
-    width: 50%;
+    width: 53.5%;
+    font-size: 3vw;
 }
 #Home sidebar section img{
     display: inline-block;
@@ -661,14 +671,9 @@ div#schedule{
 #Home sidebar section img:hover {
     background-color: #40456f;
 }
-#Home sidebar section h3:hover{
-    -webkit-tranform: translate(5%);
-    -moz-transform: translate(5%);
-    -ms-transoform: translate(5%);
-}
 #Home sidebar section ul {
     text-align: left;
-    font-size: 3.2vh;
+    font-size: 2.3vh;
 }
 #Home sidebar section ul.lined{
     list-style-position: inside;
@@ -678,16 +683,16 @@ div#schedule{
 }
 /*For settings section*/
 #setting img{
-    left: 60%;
-    bottom: 6.5%;
+    left: 66%;
+    bottom: 9.5%;
 }
 /*Home Body*/
 #HomeBody {
     width: 75%;
 }
 #HomeBody header h1 {
-    line-height: 1;
     font-size: 5.6vw;
+    height: 8vw;
 }
 #HomeCheckList ul{
     font-size: 3.5vw;
@@ -734,24 +739,67 @@ div#schedule{
     font-size: 3vh;
 }
 #MessageList section ul{
-    font-size: 3.2vh;
+    font-size: 2.2vh;
+}
+#MessageList section ul.lined{
+    list-style-position: inside;
+    color: gray;
 }
 
 /*the messaging center*/
 #ChatBody{
-    width: 50%;
-    right: 30%;
+    width: 80%;
+    right: 0;
     left: 20%;
 }
 /*The group details and call initializer*/
 #CallInit{
     display: block;
-    width: 30%;
+    width: 80%;
+    right: -77%;
+    -webkit-transition-duration:0.3s;
+    -moz-transition-duration: 0.3s;
+}
+#CallInit:hover{
+    right: 0;
+}
+#CallInit div p{
+    font-size: 2.5vh;
+}
+figure figcaption{
+    font-size: 2.3vh;
 }
 }/*End query*/
 
 /*________________CHAT END________________*/
 
+
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+/*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
+
+
+@media screen and (min-width: 870px){
+
+    #ChatBody{
+        width: 60%;
+        right: 30%;
+        left: 20%;
+    }
+    /*The group details and call initializer*/
+    #CallInit{
+        display: block;
+        width: 20%;
+        right: 0;
+    }
+    #CallInit div p{
+        font-size: 2.5vh;
+    }
+    figure figcaption{
+        font-size: 2.3vh;
+    }
+
+}/*End Query*/
 
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
@@ -765,6 +813,9 @@ div#schedule{
     width: 15%;
 }
 /*for the lists*/
+#Home sidebar section h3{
+    font-size: 1.7vw;
+}
 #Home sidebar section ul {
     width: 95%;
 }
@@ -824,7 +875,7 @@ div#schedule{
     width: 15%;
 }
 #MessageList h3{
-    width: 50%;
+    width: 63%;
 }
 
 /*the messaging center*/
