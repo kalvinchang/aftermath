@@ -72,6 +72,7 @@ li {
     bottom: 0;
     width: 95%;
     z-index: 1;
+    color: rgba(255, 255, 255, 0.67);
     background-color: #1e255b;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
@@ -95,8 +96,8 @@ li {
     font-size: 5.7vw;
     white-space: nowrap;
     height: 7%;
-    padding-top: 3%;
     color: white;
+    padding-top: 3%;
 }
 #Home sidebar section {
     margin: auto;
@@ -125,7 +126,6 @@ li {
     width: 98%;
     height: 42%;
     font-size: 2.8vh;
-    color: white;
     overflow: auto;
     overflow-x:hidden;
 }
@@ -134,7 +134,7 @@ li {
     color: gray;
 }
 #Home sidebar section ul.lined li span{
-    color: white;
+    color: rgba(255, 255, 255, 0.67);;
 }
 #Home sidebar section ul li {
     width: 100%;
@@ -243,7 +243,7 @@ li {
     margin: auto;
     width: 90%;
     height: 80%;
-    font-size: 4.5vh;
+    font-size: 2.7vh;
     list-style-type:none;
     overflow: auto;
     overflow-x: hidden;
@@ -418,12 +418,12 @@ li {
     width: 95%;
     height: 95%;
     font-size: 2.8vh;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     overflow: auto;
     overflow-x:hidden;
 }
 #MessageList section ul.lined li span{
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
 }
 #MessageList section ul li{
     width: 100%;
@@ -459,7 +459,7 @@ li {
     color: #0A1342;
     width: 100%;
     height:6%;
-    border-bottom:3px solid #8AA2AD; 
+    border-bottom:3px solid rgba(47, 31, 116, 0.19); 
 }
 div.receive{
     width: 100%;
@@ -747,6 +747,9 @@ div#schedule{
     list-style-position: inside;
     color: gray;
 }
+#MessageList section ul li{
+    padding: 6% 0;
+}
 
 /*the messaging center*/
 #ChatBody{
@@ -879,7 +882,9 @@ figure figcaption{
 #MessageList h3{
     width: 63%;
 }
-
+#MessageList section ul li{
+    padding: 6% 0;
+}
 /*the messaging center*/
 #ChatBody{
     width: 60%;
