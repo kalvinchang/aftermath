@@ -57,6 +57,7 @@
 		canvas {
 			position: absolute;
 			background-image: url('assets/graph.png');
+			background-size: 300px;
 			opacity: 0.6;
 			background-repeat: repeat;
 			 /*make adaptable w/o %*/
