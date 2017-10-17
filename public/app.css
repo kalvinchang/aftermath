@@ -74,7 +74,7 @@ li {
     width: 95%;
     z-index: 1;
     color: rgba(255, 255, 255, 0.67);
-    background-color: #1e255b;
+    background-color: #5c63a5;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -144,7 +144,7 @@ li {
     overflow-x:hidden;
 }
 #Home sidebar section ul li:hover{
-    background-color: #2d3363;
+    background-color: #565ea1;
 }
 /*For settings section*/
 #Home sidebar section#setting{
@@ -302,7 +302,7 @@ li {
 }
 #Settings header{
     width: 100%;
-    background-color: #1e255d;
+    background-color: #5c63a5;
     height: 10%;
     color: white;
     font-size: 3.5vh;
@@ -312,7 +312,7 @@ li {
     padding: 0.8%;
 }
 #Settings header img:hover{
-    background-color: #40456f;
+    background-color: #565ea1;
 }
 #Settings header p{
     display: inline-block;
@@ -361,7 +361,7 @@ li {
     bottom: 0;
     z-index: 4;
     width: 95%;
-    background-color: #1e255b; 
+    background-color: #5c63a5; 
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -388,7 +388,7 @@ li {
     padding: 2%;
 }
 #MessageList header img:hover{
-    background-color: #40456f;
+    background-color: #565ea1;
 }
 #MessageList section#group{
     height: 19%;
@@ -434,7 +434,7 @@ li {
     white-space: nowrap;
 }
 #MessageList section ul li:hover{
-    background-color: #2d3363;
+    background-color: #565ea1;
 }
 
 /*the messaging center*/
@@ -575,7 +575,7 @@ figure img{
     padding: 3%;
 }
 figure img:hover{
-    background-color: #6a75bc;
+    background-color: #565ea1;
 }
 figure figcaption{
     text-align: center;
@@ -672,7 +672,7 @@ div#schedule{
     display: inline-block;
 }
 #Home sidebar section img:hover {
-    background-color: #40456f;
+    background-color: #565ea1;
 }
 #Home sidebar section ul {
     text-align: left;

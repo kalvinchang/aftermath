@@ -1,4 +1,4 @@
-body {
+		body {
 			background: #F1F1F1;
 			overflow: hidden;
 			margin:0;
@@ -57,6 +57,7 @@ body {
 		canvas {
 			position: absolute;
 			background-image: url('assets/graph.png');
+			opacity: 0.6;
 			background-repeat: repeat;
 			 /*make adaptable w/o %*/
 			/*left: 0;
@@ -85,6 +86,18 @@ body {
 			border-radius: 5px;
 			margin: auto;
 			/*box-shadow*/
+		}
+		#undo{
+			background-image: url("assets/undo.svg");
+			background-size: 55px;
+			background-repeat: no-repeat;
+			border: none;
+		}
+		#redo{
+			background-image: url("assets/redo.svg");
+			background-size: 55px;
+			background-repeat: no-repeat;
+			border: none;
 		}
 		.colors {
 			z-index: 1;
@@ -141,6 +154,9 @@ body {
 		}
 		#thickness-slider{
 			transform: translateY(15px) translateX(-30%);
+		}
+		.thickness{
+			background-image: url("assets/thickness.svg");
 		}
 		.papers{
 			background-image: url('assets/graph.png');
