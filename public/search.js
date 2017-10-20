@@ -31,6 +31,7 @@ function search() {
     // Send the request to the API server,
     // and invoke onSearchRepsonse() with the response.
     request.execute(onSearchResponse);
+    document.getElementById('youtubeVideo').src = document.getElementById('youtubeVideo').src + request.items.id.videoId;
 }
 
 // Called automatically with the response of the YouTube API request.
