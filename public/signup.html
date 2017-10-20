@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="eng-US">
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-auth.js"></script>
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <link rel="icon" href="assets/favicon.png">
+</head>
+
+<body style="background-color: #f7f7f7;">
+    <!--Back to Index-->
+<nav>
+    <ul>
+        <a href="index.html"><li class="logo"><img src="assets/logo.svg" alt="A"></li></a>
+    </ul>
+</nav>
+
+<div>
+    <!--Signup form-->
+
+    <!--Can change greeting via DOM/Welcome!-->
+    <h2 class="userGreet">Sign up</h2>
+    <div id="signup-area">
+        <div id="form">
+            <p id="loginWrong">*Username or Password incorrect</p>
+            <input type="text" id="name-first" required placeholder="First name">
+            <input type="text" id="name-last" required placeholder="Last name">
+            <input type="text" id="classcode" required placeholder="Classroom code">
+            <label for="math-level">Math course</label>
+            <select id="math-level" required>
+                <!-- math 6 cannot be default -->
+                <option value="math-6">Math 6</option>
+                <option value="math-7">Math 7</option>
+                <option value="math-8">Math 8</option>
+                <option value="math-1">Integrated Math 1</option>
+                <option value="math-2">Integrated Math 2</option>
+                <option value="math-3">Integrated Math 3</option>
+                <option value="pre-algebra">Pre-Algebra</option>
+                <option value="algebra-1">Algebra 1</option>
+                <option value="geometry">Geometry</option>
+                <option value="algebra-2">Algebra 2</option>
+                <option value="precalc-trig">Precalc / Trig / Math Analysis</option>
+                <option value="calc-ab">AP Calc AB</option>
+                <option value="calc-bc">AP Calc BC</option>
+                <option value="stats">Stats / AP Stats</option>
+                <option value="ib-math-studies">IB Math Studies SL</option>
+                <option value="ib-math-sl">IB Math SL</option>
+                <option value="ib-math-hl">IB Math HL</option>
+            </select>
+            <input type="email" name="email" id="inEmail" required placeholder="Email address">
+            <input type="email" name="email" id="inEmail" required placeholder="Cell phone">
+            <!-- explain why we need cell phone - to send reminders-->
+            <input type="password" name="password" id="inPass" required placeholder="Password">
+            <label>How much do you struggle with math?</label>
+            <input id="struggle" type="range" min="1" max="5" step="1">
+        </div>
+        <div class="btn-container"><button id="btnSignUp" class="login-btn">Sign up</button></div>
+        <!-- when this button is pressed, send + write data to the database w/ onclick() 
+            use firebase sign up function
+            then redirect user to login.html-->
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

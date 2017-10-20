@@ -1,0 +1,43 @@
+[debug] [2017-10-16T02:50:47.706Z] ----------------------------------------------------------------------
+[debug] [2017-10-16T02:50:47.709Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kalvin Chang\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-10-16T02:50:47.709Z] CLI Version:   3.13.1
+[debug] [2017-10-16T02:50:47.709Z] Platform:      win32
+[debug] [2017-10-16T02:50:47.709Z] Node Version:  v6.11.1
+[debug] [2017-10-16T02:50:47.710Z] Time:          Sun Oct 15 2017 19:50:47 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-10-16T02:50:47.710Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-16T02:50:47.722Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-16T02:50:47.723Z] > authorizing via signed-in user
+[debug] [2017-10-16T02:50:47.724Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-16T02:50:47.725Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/8bGyqNwDXvOQ1FAb8OwUclyAJ6hRUwFBo6tW6NjKvtE',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Oct 15 2017 19:50:47 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-10-16T02:50:47.950Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T02:50:47.957Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/aftermathcac  
+ Sun Oct 15 2017 19:50:47 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-10-16T02:50:48.530Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T02:50:48.531Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/aftermathcac/tokens  
+ Sun Oct 15 2017 19:50:48 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-10-16T02:50:48.966Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kalvin Chang\Documents\CAC\aftermath'...
+[info] 
+[debug] [2017-10-16T02:50:48.974Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aftermathcac  
+ Sun Oct 15 2017 19:50:48 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-10-16T02:50:49.507Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T02:50:49.508Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/386683841943/clients/_:getWebAppConfig  
+ Sun Oct 15 2017 19:50:49 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-10-16T02:50:49.979Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T02:50:50.005Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (C:\Users\Kalvin Chang\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\hosting.js:34:17)
+    at Server.g (events.js:292:16)
+    at emitNone (events.js:86:13)
+    at Server.emit (events.js:185:7)
+    at emitListeningNT (net.js:1284:10)
+    at _combinedTickCallback (internal/process/next_tick.js:77:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+[error] 
+[error] Error: An unexpected error has occurred.
