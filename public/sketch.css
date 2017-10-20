@@ -57,7 +57,7 @@
 		canvas {
 			position: absolute;
 			background-image: url('assets/graph.png');
-			background-size: 300px;
+			background-size: 200px;
 			opacity: 0.6;
 			background-repeat: repeat;
 			 /*make adaptable w/o %*/
@@ -83,20 +83,26 @@
 		.tool {
 			width: 55px;	/*use vh*/
 			height: 55px;
-			border: 0.5px solid #003366;
+			border: 0.0px solid #003366;
 			border-radius: 5px;
 			margin: auto;
 			/*box-shadow*/
 		}
 		#undo{
 			background-image: url("assets/undo.svg");
-			background-size: 55px;
+			background-size: 27px;
+			width: 21px;
+			height: 54px;
+			display: inline-block;
 			background-repeat: no-repeat;
 			border: none;
 		}
 		#redo{
 			background-image: url("assets/redo.svg");
-			background-size: 55px;
+			background-size: 27px;
+			width: 21px;
+			height: 54px;
+			display: inline-block;
 			background-repeat: no-repeat;
 			border: none;
 		}
@@ -106,6 +112,7 @@
 			display: block;
 			transition-duration: 0.3s;
 			visibility: visible;
+			transform: translateY(5px) translateX(10px);
 		}
 		div.currentColor {
 			background-color: #000;
@@ -154,13 +161,17 @@
 			visibility: hidden;
 		}
 		#thickness-slider{
-			transform: translateY(15px) translateX(-30%);
+			transform: translateY(15px);
 		}
 		.thickness{
 			background-image: url("assets/thickness.svg");
+			background-size: 55px;
+			background-repeat: none;
+			transform: translateY(10px);
 		}
 		.papers{
 			background-image: url('assets/graph.png');
+			transform: translateY(15px);
 		}
 		.plain {
 			background-color: #F1F1F1;

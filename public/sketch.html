@@ -12,8 +12,10 @@
 	<canvas class="whiteboard"></canvas>
 </div>
 <div id="toolbar"> <!-- style as toolbar later, remove from right hand panel?? -->
-		<div id="undo" class="tool"></div>
-		<div id="redo" class="tool"></div>
+		<div class="tool">
+			<div id="undo"></div>
+			<div id="redo"></div>
+		</div>
 		<div class="colors">
 			<div id="colorBar">
 				<div class="currentColor tool" id="currentColor"></div>
@@ -29,7 +31,7 @@
 		<div class="thickness tool">
 			<div id=""></div>
 			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">			
-			<output id="thickness-value">2</output>
+			<!--<output id="thickness-value">2</output>-->
 		</div>
 		<div class="papers tool">
 			<div class="currentPaper tool" id="currentPaper"></div>
