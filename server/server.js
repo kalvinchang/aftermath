@@ -3,9 +3,9 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
-const {generatedMessage} = require('../utils/message') //import function, from another directory
+const {generatedMessage} = require('./utils/message'); //import function, from another directory
 
-const publicPath = path.join(__dirname, '../');
+const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 var app = express();
 var server = http.createServer(app);
@@ -23,7 +23,7 @@ io.on('connection', function (socket) { //called w/ socket, usually only one io.
   // socket.broadcast.emit from ADmin text New user joined
   socket.broadcast.emit('newMessage', generatedMessage('Admin', 'New User joined.'))
 
-
+  socket.on('drawing', (data) => socket.broadcast.emit('drawing', data)); //makes the drawing collaborative
 
   socket.on('createMessage', (message,callback) => { // the thing in the 2nd argument's parentheses is the event
     console.log('createMessage', message);

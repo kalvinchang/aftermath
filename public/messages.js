@@ -15,6 +15,10 @@ socket.on('newMessage', function (message){
   console.log('New message arrived.', message); // prints email and its object data
   var li = jQuery('<li></li>'); //creates html object
   li.text(message.from + ': ' + message.text);  // gets the edata
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb31c351b31a2173ce073a140e8175559a45f54d
   jQuery('#messages').append(li); //gets the html li data onto the html ordered list
 });
 */
@@ -41,3 +45,7 @@ jQuery('#message-form').on('submit', function(e) {
       messageTextbox.val('');
     });
   }
+<<<<<<< HEAD
+=======
+});
+>>>>>>> cb31c351b31a2173ce073a140e8175559a45f54d

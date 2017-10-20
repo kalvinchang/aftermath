@@ -30,8 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
   var thick = document.getElementById('thickness-slider');
-  var papers = document.getElementsByClassName('papers');
-  var currentColor = document.getElementsByClassName('currentColor')[0];
+  var papers = document.getElementsByClassName('paper');
 
   var context = canvas.getContext('2d');
   var undo = document.getElementById('undo');
@@ -104,47 +103,47 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   window.addEventListener('resize', onResize, false);
   onResize();
 
-  //switch paper
-  var papers = ['plain', 'assets/graph.png', 'assets/lined.jpg'];
   //make colors collapsible
-  var colorBar = document.getElementById('colorBar');
-  //clicking on current-color -> display the colors horizontally (unhide)
   var colortrack = true;
-  console.log(colortrack);
-  var expanderTarget = document.getElementById('currentColor');
-  console.log(expanderTarget);
-  expanderTarget.addEventListener('click', function(){
+  var currentColor = document.getElementById('currentColor');
+  currentColor.addEventListener('click', function(){
     if (colortrack) {
-      document.getElementById('red').style.visibility='inheret';
-      document.getElementById('orange').style.visibility='inheret';
-      document.getElementById('yellow').style.visibility='inheret';
-      document.getElementById('green').style.visibility='inheret';
-      document.getElementById('blue').style.visibility='inheret';
-      document.getElementById('violet').style.visibility='inheret';
-      document.getElementById('black').style.visibility='inheret';
-    
-        //immediately close after clicking on color
+      for (var i = 0; i < colors.length; i++){
+        colors[i].style.visibility = 'inherit';
+      }
     } else {
-      document.getElementById('red').style.visibility='hidden';
-      document.getElementById('orange').style.visibility='hidden';
-      document.getElementById('yellow').style.visibility='hidden';
-      document.getElementById('green').style.visibility='hidden';
-      document.getElementById('blue').style.visibility='hidden';
-      document.getElementById('violet').style.visibility='hidden';
-      document.getElementById('black').style.visibility='hidden';
+      for (var i = 0; i < colors.length; i++){
+        colors[i].style.visibility = 'hidden';
+      }
     }
     colortrack = !colortrack;
   });
 
-    
+  //make paper collapsible
+  var papertrack = true;
+  var currentPaper = document.getElementById('currentPaper');
+  currentPaper.addEventListener('click', function() {
+    if (papertrack) {
+      for (var i = 0; i < papers.length; i++) {
+        console.log(papers[i]);
+        papers[i].style.visibility = 'inherit';
+      }
+    }
+    else {
+      for (var i = 0; i < papers.length; i++) {
+        papers[i].style.visibility = 'hidden';
+      }
+    }
+    papertrack = !papertrack;
+  });
+
+
 
   // for (var i = 0; i < color.length; i++) {
   //  color[i].onclick = function() {
   //    this.classList.toggle('active');
   //  }
   // }
-
-
 
   function drawLine(x0, y0, x1, y1, color, thickness, emit){
     context.beginPath();
@@ -191,7 +190,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   function onColorUpdate(e){
     current.color = e.target.className.split(' ')[1];
+    if (current.color == 'green') {
+      current.color = '#00ff00';;
+    }
     currentColor.style.background = current.color;
+    //immediately close after clicking on color
+    for (var i = 0; i < colors.length; i++){
+      colors[i].style.visibility = 'hidden';
+      colortrack = !colortrack;
+    }
   }
 
   function onThickUpdate(e){
@@ -202,12 +209,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     current.paper = e.target.className.split(' ')[1];
     if (current.paper == 'plain') {
       canvas.style.background = 'none';
+      currentPaper.style.background = '#F1F1F1';
     }
     else {
       canvas.style.backgroundImage = 'url(assets/' + current.paper + '.png)';
+      currentPaper.style.backgroundImage = 'url(assets/' + current.paper + '.png)'
     }
-
-    //.addEventListener('click', onPaperUpdate('white'), false);
+    //immediately close after clicking on paper
+    for (var i = 0; i < papers.length; i++) {
+      papers[i].style.visibility = 'hidden';
+      papertrack = !papertrack;
+    }
   }
 
   // limit the number of events per second

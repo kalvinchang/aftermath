@@ -1,3 +1,18 @@
+//user info
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyD0Fh_eak1Z-Lm_dDf_aXlhXWtToO-APD4",
+  authDomain: "aftermathcac.firebaseapp.com",
+  databaseURL: "https://aftermathcac.firebaseio.com",
+  projectId: "aftermathcac",
+  storageBucket: "aftermathcac.appspot.com",
+  messagingSenderId: "386683841943"
+};
+firebase.initializeApp(config);
+
+
+
 //for the checkmarks
 $("#HomeCheckList ul li img").click(function(){
   if($(this).attr("src")==="assets/checked.svg"){
@@ -25,7 +40,7 @@ $('#Settings header img').click(function(){
 });
 
 $('#Chat #MessageList #back').click(function(){
-  $('#Chat').css('transform', 'translateY(100vh)');
+  $('#Chat').css('transform', 'translateY(-100%)');
 });
 //for the YouTube
 
