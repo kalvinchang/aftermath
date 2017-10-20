@@ -56,7 +56,7 @@ function start() {
   }).then(function() {
     // 3. Initialize and make the API request.
     return gapi.client.search.list({
-      
+
     });
   }).then(function(response) {
     console.log(response.result);
@@ -90,4 +90,3 @@ function checkMarks(){
     }
   }
 }
-
