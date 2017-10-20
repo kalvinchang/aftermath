@@ -9,8 +9,10 @@ var config = {
   storageBucket: "aftermathcac.appspot.com",
   messagingSenderId: "386683841943"
 };
-firebase.initializeApp(config);
+var app = firebase.initializeApp(config);
+console.log(app.name);
 
+var database = app.database();
 
 
 //for the checkmarks
@@ -26,7 +28,6 @@ $("#HomeCheckList ul li img").click(function(){
 });
 
 //Navigation
-
 $('#Home sidebar section div a').click(function(){
   $('#Chat').css('transform', 'none');
 });
@@ -64,19 +65,6 @@ function start() {
     console.log('Error: ' + reason.result.error.message);
   });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //finds the most recent unchecked checklist item and records

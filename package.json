@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.16.2",
+    "firebase": "^4.5.1",
     "nodemon": "^1.12.1",
     "path": "^0.12.7",
     "socket.io": "^2.0.3"
