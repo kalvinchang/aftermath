@@ -93,11 +93,19 @@
             <li><img src="assets/unchecked.svg">The Quotient Rule</li>    
         </ul>
     </section>
-    <section id="HomeResources">
-        <!--Youtube vids-->
-            <ul id ="#result">
-                   
-            </ul>
+    <section id="HomeResources" src="search3.html">
+        <header>
+            <h3>Resources</h3>
+        </header>
+        <div>
+            <div>
+                <form action="#" id="You">
+                    <p><input type="text" id="searcher" value="math" autocomplete="off" class="form-control" id="load"/></p>
+                    <p><input type="submit" value="Show Results"></p>
+                </form>
+                <div id="results"></div>
+            </div>
+        </div>
     </section>
 
     
@@ -237,6 +245,9 @@
     <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-database.js"></script>
 
+    <!--YouTube-->
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="search3.js"></script>
     <script type="text/javascript" src="appProgressive.js"></script>
 </body>
 </html>

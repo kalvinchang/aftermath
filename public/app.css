@@ -280,10 +280,21 @@ li {
     position: absolute;
     right: 0;
 }
+#HomeResources header{
+    background-color: #f4f5ff;
+    font-size: 3.5vh;
+}
+#HomeResources header:hover{
+    background-color: #f4f5ff;
+}
 #HomeResources ul{
     list-style: none;
     overflow: auto;
 }
+#HomeResources input{
+    outline: none;
+}
+
 
 /*________________HOME END________________*/
 

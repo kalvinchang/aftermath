@@ -14,7 +14,7 @@ console.log(app.name);
 
 var database = app.database();
 
-
+/*
 //for the checkmarks
 $("#HomeCheckList ul li img").click(function(){
   if($(this).attr("src")==="assets/checked.svg"){
@@ -23,9 +23,10 @@ $("#HomeCheckList ul li img").click(function(){
   else{
     $(this).attr("src", "assets/checked.svg");
   }
-  //calls to update when uesr checks off items
+  //calls to update when user checks off items
   checkMarks();
 });
+*/
 
 //Navigation
 $('#Home sidebar section div a').click(function(){
@@ -46,27 +47,11 @@ $('#Chat #MessageList #back').click(function(){
 //for the YouTube
 
 // 1. Load the JavaScript client library.
-gapi.load('client', start);
-
-function start() {
-  // 2. Initialize the JavaScript client library.
-  gapi.client.init({
-    'apiKey': 'AIzaSyD7NybHdEUpObHST_6kkWtK3TYVWZnYKV8',
-    // Your API key will be automatically added to the Discovery Document URLs.
-    'discoveryDocs': ['https://apis.google.com/js/client.js'],
-  }).then(function() {
-    // 3. Initialize and make the API request.
-    return gapi.client.search.list({
-
-    });
-  }).then(function(response) {
-    console.log(response.result);
-  }, function(reason) {
-    console.log('Error: ' + reason.result.error.message);
-  });
-};
 
 
+
+
+/*
 //finds the most recent unchecked checklist item and records
 //it's 'index' with recentUnchecked
 var recentUnchecked = 0;
@@ -78,3 +63,4 @@ function checkMarks(){
     }
   }
 }
+*/

@@ -1,14 +1,55 @@
 function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
+//for the checkmarks
+$("#HomeCheckList ul li img").click(function(){
+    if($(this).attr("src")==="assets/checked.svg"){
+      $(this).attr("src", "assets/unchecked.svg");
+    }
+    else{
+      $(this).attr("src", "assets/checked.svg");
+    }
+    //calls to update when user checks off items
+    checkMarks();
+    extract();
+    loader();
+  });
+
+
+//finds the most recent unchecked checklist item and records
+//it's 'index' with recentUnchecked
+var recentUnchecked = 0;
+function checkMarks(){
+  for(var i = 0; i <= $('#HomeBody ul li img').length; i ++){
+    if ($('#HomeCheckList ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
+      recentUnchecked = i;
+      break;
+    }
+  }
+}
+//gets thing to search
+var topic = $('#HomeCheckList ul li')[0].innerHTML.substring(32);
+function extract(){
+    topic = $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
+}
+//loads topic
+function loader(){
+    $('#load').attr('value', topic);
+}
+
+
+
+
 $(function() {
-    $("form").on("submit", function(e) {
+    $("#You").on("submit", function(e) {
        e.preventDefault();
        // prepare the request
+
+       $("#searcher").val()
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
-            q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-            maxResults: 3,
+            q: topic,
+            maxResults: 7,
             order: "viewCount",
             publishedAfter: "2015-01-01T00:00:00Z"
        });
