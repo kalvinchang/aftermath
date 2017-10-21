@@ -33,20 +33,15 @@ function extract(){
 }
 //loads topic
 function loader(){
-    $('#load').attr('value', topic);
+    $('#searcher').attr('value', topic);
 }
 
 
 
-var inCheck = 0;
 $(function() {
     $("#You").on("submit", function(e) {
        e.preventDefault();
        // prepare the request
-        if(inCheck==0){
-            init();
-            inCheck++;
-        }
        $("searcher").val()
        var request = gapi.client.youtube.search.list({
             part: "snippet",
