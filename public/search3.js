@@ -1,5 +1,9 @@
 function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
+checkMarks();
+extract();
+loader();
+
 //for the checkmarks
 $("#HomeCheckList ul li img").click(function(){
     if($(this).attr("src")==="assets/checked.svg"){
@@ -39,14 +43,14 @@ function loader(){
 
 
 $(function() {
-    $("#You").on("submit", function(e) {
+    $("#You").on('submit', function(e) {
        e.preventDefault();
        // prepare the request
        $("searcher").val()
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
-            q: topic,
+            q: topic + " math",
             maxResults: 7,
             order: "viewCount",
             publishedAfter: "2015-01-01T00:00:00Z"
@@ -57,7 +61,7 @@ $(function() {
           $("#results").html("");
           $.each(results.items, function(index, item) {
             $.get("tpl/item.html", function(data) {
-                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId, "thumb":item.snippet.thumbnails.default}]));
             });
           });
           resetVideoHeight();
