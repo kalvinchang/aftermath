@@ -3,6 +3,10 @@ function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{
 checkMarks();
 extract();
 loader();
+setTimeout(function(){
+    $("#HomeCheckList ul li img")[0].click();
+    $("#HomeCheckList ul li img")[0].click();
+}, 700);
 
 //for the checkmarks
 $("#HomeCheckList ul li img").click(function(){
@@ -16,7 +20,7 @@ $("#HomeCheckList ul li img").click(function(){
     checkMarks();
     extract();
     loader();
-
+    $("#You").trigger("submit");
   });
 
 
