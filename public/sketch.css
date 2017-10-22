@@ -14,15 +14,21 @@
 		}
 		#topic {
 			position: absolute;
-			font-size: 3.8vh;
-			width: 23%;
+			font-size: 3.9vh;
+			width: 100%;
 			top: 0;
-			left: 33%;
+			left: -10%;
+			color: rgb(85, 85, 85);
 			text-align: center;
 			margin: 0;
+			background-color: rgba(105, 200, 255, 0.39);
+			transition-duration: 0.3s;
+		}
+		#topic:hover{
+			padding-top: .5%;
 		}
 		#sidebar {
-			background: #E5E5E5;
+			background: #7f87c8;
 			width: 20%; /*make width draggable by mouse*/
 			position: absolute;
 			right: 0;
@@ -30,6 +36,8 @@
 			bottom: 0;
 			height: 100%;
 			font-size: 1.2em;
+			overflow: hidden;
+			overflow-y: auto;
 		}
 
 		button.accordion {
@@ -40,19 +48,25 @@
 			border: none;
 			outline: none;
 			transition: 0.4s;
-			font-size: 1em;
+			font-size: 3vh;;
+			color: #2e356d;
 		}
 
 		button.accordion.active,  button.accordion:hover {
-			background-color: #ccc;
+			background-color: #8a92cf
 		}
 
 		div.panel {
 			padding: 0 10px;
+			font-size: 2.3vh;
 			background-color: inherit;
 			max-height: 0;
+			color: #e3e3f5;
 			overflow: hidden;
 			transition: max-height 0.2s ease-out;
+		}
+		div.panel li{
+			padding: 1.5% 0;
 		}
 		canvas {
 			position: absolute;
@@ -70,14 +84,12 @@
 		#toolbar {
 			position: absolute;
 			z-index: 1;
-			left: 0;
-			top:0;
-			bottom:0;
-			padding:1.5%;
+			top: 15%;
+			left: 1vh;
+			padding:.5%;
 			text-align: center;
 			width: 4%;
-			height: 50%;
-			transform: translateX(2.5vh) translateY(2.5vh);
+			height: 40%;
 			background-color: #7fbeff;
 		}
 		.tool {
@@ -88,10 +100,13 @@
 			margin: auto;
 			/*box-shadow*/
 		}
+		#do{
+			width: 90%;
+		}
 		#undo{
 			background-image: url("assets/undo.svg");
-			background-size: 27px;
-			width: 21px;
+			background-size: 100%;
+			width: 40%;
 			height: 54px;
 			display: inline-block;
 			background-repeat: no-repeat;
@@ -99,8 +114,8 @@
 		}
 		#redo{
 			background-image: url("assets/redo.svg");
-			background-size: 27px;
-			width: 21px;
+			background-size: 100%;
+			width: 40%;
 			height: 54px;
 			display: inline-block;
 			background-repeat: no-repeat;

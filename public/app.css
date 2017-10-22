@@ -236,22 +236,16 @@ li {
     height: fit-content;
     padding-top: 3%;
     overflow: hidden;
-    animation-name: down;
-    animation-duration: 0.7s;
-    animation-iteration-count: 1;
 }
 #HomeCheckList ul{
     margin: auto;
     width: 90%;
-    height: 80%;
+    height: fit-content;
+    max-height: 90%;
     font-size: 2.7vh;
     list-style-type:none;
     overflow: auto;
     overflow-x: hidden;
-    border-bottom: 2px solid #0F0F61;
-    animation-name: down;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
 }
 #HomeCheckList ul li{
     padding: 2% 0;
@@ -262,18 +256,8 @@ li {
 }
 #HomeCheckList ul li img{
     width: 5vh;
-    animation-name: down;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
 }
-@keyframes down{
-    from{
-        transform: translateY(-5px);
-    }
-    to{
-        transform: none;
-    }
-}
+
 #HomeResources{
     width: 40%;
     height: 76%;
@@ -318,15 +302,8 @@ li {
 #You input#searcher{
     display: none;
 }
-#You input{
-    background-color: rgb(31, 31, 116);
-    display: block;
-    color: white;
-    margin: auto;
-    width: 55%;
-    outline: none;
-    border:none;
-    border-radius: 5px;
+#HomeResources #You p input#load{
+    display: none;
 }
 
 /*________________HOME END________________*/
