@@ -5,7 +5,7 @@ extract();
 loader();
 setTimeout(function(){
     $("#HomeCheckList ul li img")[0].click();
-    $("#HomeCheckList ul li img")[0].click();
+    setTimeout(function(){$("#HomeCheckList ul li img")[0].click();}, 100);
 }, 700);
 
 //for the checkmarks
