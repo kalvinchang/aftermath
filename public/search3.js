@@ -16,6 +16,7 @@ $("#HomeCheckList ul li img").click(function(){
     checkMarks();
     extract();
     loader();
+
   });
 
 
@@ -70,6 +71,11 @@ $(function() {
 
     $(window).on("resize", resetVideoHeight);
 });
+
+
+function find(){
+    
+}
 
 function resetVideoHeight() {
     $(".video").css("height", $("#results").width() * 9/16);

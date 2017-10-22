@@ -283,7 +283,8 @@ li {
     overflow: auto;
     overflow-X: hidden;
 }
-#HomeResources header{
+#HomeBody #HomeResources header{
+    height: fit-content;
     font-size: 3.5vh;
     background-color: #f4f5ff;
 }
@@ -309,7 +310,19 @@ li {
 #HomeResources .item:hover{
     background-color:#dddff0;
 }
-
+#You input#searcher{
+    display: none;
+}
+#You input{
+    background-color: rgb(31, 31, 116);
+    display: block;
+    color: white;
+    margin: auto;
+    width: 55%;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+}
 
 /*________________HOME END________________*/
 
