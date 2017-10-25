@@ -24,6 +24,9 @@ socket.on('newMessage', function (message){
   var li = jQuery('<li><div class="receive"><div class="sender"><img src="assets/DefaultProfile.svg" alt="'+message.from+'"><h3>' +message.from+ '</h3></div><p>'+message.text+'</p></div></li>'); //creates html object
 
   jQuery('#messages').append(li); //gets the html li data onto the html ordered list
+
+  $("#ChatBody section").animate({scrollTop: $('#messages').prop("scrollHeight")}, 1000);
+
 });
 
 // the object in the function arguments = thing used in the console.log to display the object
