@@ -203,3 +203,13 @@
 			transform: translateY(-168px) translateX(170px);
 			visibility: hidden;
 		}
+		.drawingTools{
+
+		}
+		#pencil{
+				background-image: url('assets/pencil.png');
+				transform: translateY(-224px) translateX(237px);
+		}
+		#highlighter{
+
+		}
