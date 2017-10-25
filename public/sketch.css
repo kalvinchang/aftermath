@@ -207,7 +207,8 @@
 
 		}
 		#pencil{
-
+				background-image: url('assets/pencil.png');
+				transform: translateY(-224px) translateX(237px);
 		}
 		#highlighter{
 
