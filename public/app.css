@@ -144,7 +144,7 @@ li {
     overflow-x:hidden;
 }
 #Home sidebar section ul li:hover{
-    background-color: #565ea1;
+    background-color: #30278a;
 }
 /*For settings section*/
 #Home sidebar section#setting{
@@ -690,7 +690,7 @@ div#schedule{
 /*for the lists*/
 #Home sidebar section h3 {
     width: 53.5%;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 #Home sidebar section img{
     display: inline-block;
@@ -718,11 +718,11 @@ div#schedule{
     width: 75%;
 }
 #HomeBody header h1 {
-    font-size: 5.6vw;
+    font-size: 3.9vw;
     height: 8vw;
 }
 #HomeCheckList ul{
-    font-size: 3.5vw;
+    font-size: 2.8vw;
 }
 #HomeCheckList ul li img{
     width: 5vh;

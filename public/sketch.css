@@ -18,7 +18,7 @@
 			width: 100%;
 			top: 0;
 			left: -10%;
-			color: rgb(85, 85, 85);
+			color: rgb(61, 61, 61);
 			text-align: center;
 			margin: 0;
 			background-color: rgba(105, 200, 255, 0.39);
@@ -127,7 +127,7 @@
 			display: block;
 			transition-duration: 0.3s;
 			visibility: visible;
-			transform: translateY(5px) translateX(10px);
+			transform: translateY(5px) translateX(23%);
 		}
 		div.currentColor {
 			background-color: #000;

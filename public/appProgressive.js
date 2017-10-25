@@ -39,19 +39,6 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-/*
-//for the checkmarks
-$("#HomeCheckList ul li img").click(function(){
-  if($(this).attr("src")==="assets/checked.svg"){
-    $(this).attr("src", "assets/unchecked.svg");
-  }
-  else{
-    $(this).attr("src", "assets/checked.svg");
-  }
-  //calls to update when user checks off items
-  checkMarks();
-});
-*/
 
 //Navigation
 $('#Home sidebar section div a').click(function(){
@@ -69,23 +56,3 @@ $('#Settings header img').click(function(){
 $('#Chat #MessageList #back').click(function(){
   $('#Chat').css('transform', 'translateY(-100%)');
 });
-//for the YouTube
-
-// 1. Load the JavaScript client library.
-
-
-
-
-/*
-//finds the most recent unchecked checklist item and records
-//it's 'index' with recentUnchecked
-var recentUnchecked = 0;
-function checkMarks(){
-  for(var i = 0; i <= $('#HomeBody ul li img').length; i ++){
-    if ($('#HomeCheckList ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
-      recentUnchecked = i;
-      break;
-    }
-  }
-}
-*/
