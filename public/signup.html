@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-database.js"></script>
     <link rel="stylesheet" type="text/css" href="web.css">
     <link rel="icon" href="assets/favicon.png">
 </head>
@@ -29,7 +30,9 @@
             <p id="loginWrong">*Username or Password incorrect</p>
             <input type="text" id="name-first" required placeholder="First name">
             <input type="text" id="name-last" required placeholder="Last name">
+            <!-- first/last name should be on same line -->
             <input type="text" id="classcode" required placeholder="Classroom code">
+            <!-- classcode should be on same line as math course -->
             <label for="math-level">Math course</label>
             <select id="math-level" required>
                 <!-- math 6 cannot be default -->
@@ -52,11 +55,13 @@
                 <option value="ib-math-hl">IB Math HL</option>
             </select>
             <input type="email" name="email" id="inEmail" required placeholder="Email address">
-            <input type="email" name="email" id="inEmail" required placeholder="Cell phone">
+            <input type="email" name="email" id="inPhone" required placeholder="Cell phone">
             <!-- explain why we need cell phone - to send reminders-->
             <input type="password" name="password" id="inPass" required placeholder="Password">
             <label>How much do you struggle with math?</label>
             <input id="struggle" type="range" min="1" max="5" step="1">
+            <!-- add number - format like Google Forms slider/rating -->
+            <!-- allow for usernames later -->
         </div>
         <div class="btn-container"><button id="btnSignUp" class="login-btn">Sign up</button></div>
         <!-- when this button is pressed, send + write data to the database w/ onclick() 
@@ -64,8 +69,6 @@
             then redirect user to login.html-->
     </div>
 </div>
-
-<script src="app.js"></script>
-
+<script type="text/javascript" src="signup.js"></script>
 </body>
 </html>

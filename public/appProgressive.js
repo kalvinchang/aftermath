@@ -9,36 +9,26 @@ var config = {
   storageBucket: "aftermathcac.appspot.com",
   messagingSenderId: "386683841943"
 };
-
-var app = firebase.initializeApp(config);
-//var database = app.database();
-
-var user;
-var name, emailAddress, photoUrl, uid, emailVerified;
+firebase.initializeApp(config);
 
 //customize home page to user
+var name, email, photoUrl, uid, emailVerified;
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     console.log(user);
     name = user.displayName;
-    emailAddress = user.emailAddress;
-    photoUrl = user.photoURL;
-    emailVerified = user.emailVerified;
+    email = user.email;
     uid = user.uid;
 
-    console.log(name);
-    console.log(emailAddress);
-    console.log(photoUrl);
-    console.log(emailVerified);
-    console.log(uid);
-
+    //display user data
+    document.getElementById('name').textContent = name;
   } else {
     // No user is signed in.
     console.log('No user is signed in.');
   }
 });
-
 
 //Navigation
 $('#Home sidebar section div a').click(function(){

@@ -1,0 +1,76 @@
+{
+	"users": {
+		"fGRYbO2FzoNqe31VrnDDyzRORm23": {
+            "classCode": "@calcbc20162017",
+            "mathLevel": "calc-bc",
+            "struggle": 3
+		},
+		"uid2": {
+            "classCode": "@calcbc20162017",
+            "mathLevel": "calc-bc",
+            "struggle": 2
+		},
+		"uid3": {
+            "classCode": "@calcbc1617",
+            "mathLevel": "calc-bc",
+            "struggle": 4
+		}
+	},
+	"chats": {
+		"calcbc1617-group1": {
+			"title": "Squad",
+			"members": {
+				"fGRYbO2FzoNqe31VrnDDyzRORm23": true,
+				"uid2": true,
+				"uid3": true
+			}
+		}
+	},
+	"messages": {
+		"calcbc1617-group1": {
+			"00001": {
+				"from": "fGRYbO2FzoNqe31VrnDDyzRORm23",
+				"contents": "Let's study",
+				"createdAt": "1508605642000"
+			},
+			"00002": {
+				"from": "uid2",
+				"contents": "No.",
+				"createdAt": "1508605644000"
+			},
+			"00003": {
+				"from": "uid3",
+				"contents": "Sugoi",
+				"createdAt": "1508605646000"
+			}
+		}
+	},
+	"classes": {
+		"@calcbc20162017": {
+			"mathLevel": "calc-bc",
+			"teacherEmail": "yzheng@hlpusdDOTk12DOTcaDOTus",
+			"teacherFirstName": "Yan",
+			"teacherLastName": "Zheng",	
+			"numStudents": 50,
+			"students": {
+				"fGRYbO2FzoNqe31VrnDDyzRORm23": true, 
+				"uid2": true, 
+				"uid3": true
+			}
+		}
+	},
+	"sketches": {
+		"calcbc1617-group1": {
+			"annotations": null
+		}
+	},
+	"sessions": {
+		"calcbc1617-group1": {
+			"upcoming": {
+				"Sat Oct 21 2017 10:36:06 GMT-0700 (Pacific Daylight Time)": true,
+				"Sun Oct 22 2017 11:40:00 GMT-0700 (Pacific Daylight Time)": true
+			}
+		}
+	},
+	"settings": null
+}
