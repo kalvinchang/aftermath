@@ -41,7 +41,7 @@ btnSignUp.addEventListener('click', e => {
         console.log('account created');
 
         //send user data to database        
-        firebase.database().ref('users/' + user.uid).set(userObj).then(
+        database.ref('users/' + user.uid).set(userObj).then(
             function() {
                 console.log('User data successfully stored')
             }).catch(function(error) {

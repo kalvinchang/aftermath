@@ -1,15 +1,4 @@
-//user info
-
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyD0Fh_eak1Z-Lm_dDf_aXlhXWtToO-APD4",
-  authDomain: "aftermathcac.firebaseapp.com",
-  databaseURL: "https://aftermathcac.firebaseio.com",
-  projectId: "aftermathcac",
-  storageBucket: "aftermathcac.appspot.com",
-  messagingSenderId: "386683841943"
-};
-firebase.initializeApp(config);
+//do not initialize / config firebase here b/c it's already initialized in messages.js
 
 //customize home page to user
 var name, email, photoUrl, uid, emailVerified;
