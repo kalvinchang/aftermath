@@ -4,12 +4,12 @@ checkMarks();
 extract();
 loader();
 setTimeout(function(){
-    $("#HomeCheckList ul li img")[0].click();
-    setTimeout(function(){$("#HomeCheckList ul li img")[0].click();}, 100);
+    $("#topic-checklist ul li img")[0].click();
+    setTimeout(function(){$("#topic-checklist ul li img")[0].click();}, 100);
 }, 700);
 
 //for the checkmarks
-$("#HomeCheckList ul li img").click(function(){
+$("#topic-checklist ul li img").click(function(){
     if($(this).attr("src")==="assets/checked.svg"){
       $(this).attr("src", "assets/unchecked.svg");
     }
@@ -28,18 +28,19 @@ $("#HomeCheckList ul li img").click(function(){
 //it's 'index' with recentUnchecked
 var recentUnchecked = 0;
 function checkMarks(){
-  for(var i = 0; i <= $('#HomeBody ul li img').length; i ++){
-    if ($('#HomeCheckList ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
+  for(var i = 0; i <= $('#topic-checklist ul li img').length; i ++){
+    if ($('#topic-checklist ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
       recentUnchecked = i;
       break;
     }
   }
 }
 //gets thing to search
-var topic = $('#HomeCheckList ul li')[0].innerHTML.substring(32);
+var topic = $('#topic-checklist ul li')[0].innerHTML.substring(32);
 function extract(){
-    topic = $('#HomeCheckList ul li')[recentUnchecked].innerHTML.substring(32);
+    topic = $('#topic-checklist ul li')[recentUnchecked].innerHTML.substring(32);
 }
+
 //loads topic
 function loader(){
     $('#searcher').attr('value', topic);
@@ -55,7 +56,7 @@ $(function() {
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
-            q: topic + " math",
+            q: topic + " math" + " english",
             maxResults: 7,
             order: "viewCount",
             publishedAfter: "2015-01-01T00:00:00Z"
