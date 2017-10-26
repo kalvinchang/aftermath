@@ -24,6 +24,17 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('classcode').textContent = classcode;
         //obtain this programmatically in the future
         groupId = classcode + 'group-1';
+
+        //display previous 100 messages -> collect from database
+        var setMessage = function(data) {
+          var val = data.val();
+          var li = jQuery('<li><div class="receive"><div class="sender"><img src="assets/DefaultProfile.svg" alt="' + val.from +'"><h3>' + val.from+ '</h3></div><p>' + val.text+'</p></div></li>'); //creates html object
+          //add timestamp later
+          jQuery('#messages').append(li); //gets the html li data onto the html ordered list
+          $("#ChatBody section").animate({scrollTop: $('#messages').prop("scrollHeight")}, 1000);
+        };
+        database.ref('messages/' + groupId).limitToLast(100).on('child_added', setMessage);
+        database.ref('messages/' + groupId).limitToLast(100).on('child_changed', setMessage);
       },
       function(error) {
         console.log(error.code);
@@ -74,9 +85,6 @@ jQuery('#message-form').on('submit', function(e) {
       messageTextbox.val('');
       //send message to the database - Firebase automatically assigns an id
       database.ref('messages/' + groupId).push(message);
-
     });
   }
 });
-
-//display previous messages -> collect from database (display past 10?? or all for now??)
