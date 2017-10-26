@@ -5,7 +5,7 @@ extract();
 loader();
 setTimeout(function(){
     $("#topic-checklist ul li img")[0].click();
-    setTimeout(function(){$("#topic-checklist ul li img")[0].click();}, 100);
+    setTimeout(function(){$("#topic-checklist ul li img")[0].click();}, 150);
 }, 700);
 
 //for the checkmarks

@@ -70,12 +70,12 @@
 		}
 		#resources{
 			overflow-y:auto;
-			height: fit-content;
+			max-height: 500px;
 		}
 		#results{
-			overflow-y:auto;
+			height: 500px;
 		}
-		button.accordion {
+		button.accordion, button.accord {
 			background-color: inherit;
 			padding: 10px;
 			width: 100%;
@@ -88,7 +88,7 @@
 			background-color: #3c4480;
 		}
 
-		button.accordion.active,  button.accordion:hover {
+		button.accordion.active,  button.accordion:hover, button.accord:hover {
 			background-color: rgb(19, 19, 82);
 		}
 

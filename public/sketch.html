@@ -53,9 +53,11 @@
 	<button class="accordion">Topics</button>
 	<div class="panel" id="topic-checklist">
 		<ul> <!-- turn each icon into a checkbox -->
-			<li><img src="assets/unchecked.svg">Function Operations</li>
+			<li><img src="assets/unchecked.svg">Show Resources</li>
 			<li><img src="assets/unchecked.svg">Formulas</li>
 			<li><img src="assets/unchecked.svg">Notations</li>
+			<li><img src="assets/unchecked.svg">Derivative</li>
+			<li><img src="assets/unchecked.svg">Math Notations</li>
 		</ul>
 	</div>
 	<button class="accordion">Annotations</button>
@@ -65,16 +67,14 @@
 			<li>I don't understand this</li>
 		</ul>
 	</div>
-	<button class="accordion">Resources</button>
+	<button class="accord">Resources</button>
 	<div class="panel" id="resources">
 		<div>
 			<form action="#" id="You"></form>
 				<p><input style="display: none;" type="text" id="searcher" value="math" autocomplete="off" class="form-control"/></p>
 				<p><input style="display: none;" type="submit" value="Show Results" id="load"></p>
 			</form>
-			<div id="results">
-				<!--Videos-->
-			</div>
+			<div id="results"></div>
 		</div>
 		<video height="0" id="localVideo"></video>
 		<div id="remotesVideos"></div>
@@ -96,9 +96,7 @@
 	  webrtc.joinRoom('your awesome room name');
 	});
 
-	window.onload = function() {
-		updateSlider();
-	}
+	
 
 	var acc = document.getElementsByClassName("accordion");
 	for (var i = 0; i < acc.length; i++) {
@@ -112,6 +110,13 @@
 	        }
 	    }
 	}
+
+	window.onload = function() {
+		setTimeout(function(){acc[1].click();},100)
+		updateSlider();
+			
+
+		}
 
 	function updateSlider() {
 		var input = document.getElementById('thickness-slider');
