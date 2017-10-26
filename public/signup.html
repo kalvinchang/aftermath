@@ -28,35 +28,44 @@
     <div id="signup-area">
         <div id="form">
             <p id="loginWrong">*Username or Password incorrect</p>
-            <input type="text" id="name-first" required placeholder="First name">
-            <input type="text" id="name-last" required placeholder="Last name">
+
+            <div id="names">
+                <input type="text" id="name-first" required placeholder="First name">
+                <input type="text" id="name-last" required placeholder="Last name">
+            </div>
             <!-- first/last name should be on same line -->
-            <input type="text" id="classcode" required placeholder="Classroom code">
+           
             <!-- classcode should be on same line as math course -->
-            <label for="math-level">Math course</label>
-            <select id="math-level" required>
-                <!-- math 6 cannot be default -->
-                <option value="math-6">Math 6</option>
-                <option value="math-7">Math 7</option>
-                <option value="math-8">Math 8</option>
-                <option value="math-1">Integrated Math 1</option>
-                <option value="math-2">Integrated Math 2</option>
-                <option value="math-3">Integrated Math 3</option>
-                <option value="pre-algebra">Pre-Algebra</option>
-                <option value="algebra-1">Algebra 1</option>
-                <option value="geometry">Geometry</option>
-                <option value="algebra-2">Algebra 2</option>
-                <option value="precalc-trig">Precalc / Trig / Math Analysis</option>
-                <option value="calc-ab">AP Calc AB</option>
-                <option value="calc-bc">AP Calc BC</option>
-                <option value="stats">Stats / AP Stats</option>
-                <option value="ib-math-studies">IB Math Studies SL</option>
-                <option value="ib-math-sl">IB Math SL</option>
-                <option value="ib-math-hl">IB Math HL</option>
-            </select>
+            <div id="classify">
+                    <select id="math-level" required>
+                        <!-- math 6 cannot be default -->
+                        <option value="Math Course" selected="selected" disabled="disabled">Math Course</option>
+                        <option value="math-6">Math 6</option>
+                        <option value="math-7">Math 7</option>
+                        <option value="math-8">Math 8</option>
+                        <option value="math-1">Integrated Math 1</option>
+                        <option value="math-2">Integrated Math 2</option>
+                        <option value="math-3">Integrated Math 3</option>
+                        <option value="pre-algebra">Pre-Algebra</option>
+                        <option value="algebra-1">Algebra 1</option>
+                        <option value="geometry">Geometry</option>
+                        <option value="algebra-2">Algebra 2</option>
+                        <option value="precalc-trig">Precalc / Trig / Math Analysis</option>
+                        <option value="calc-ab">AP Calc AB</option>
+                        <option value="calc-bc">AP Calc BC</option>
+                        <option value="stats">Stats / AP Stats</option>
+                        <option value="ib-math-studies">IB Math Studies SL</option>
+                        <option value="ib-math-sl">IB Math SL</option>
+                        <option value="ib-math-hl">IB Math HL</option>
+                    </select>
+                    <input type="text" id="classcode" required placeholder="Classroom code">
+            </div>
+
+
             <input type="email" name="email" id="inEmail" required placeholder="Email address">
             <input type="email" name="email" id="inPhone" required placeholder="Cell phone">
             <!-- explain why we need cell phone - to send reminders-->
+
             <input type="password" name="password" id="inPass" required placeholder="Password">
             <label>How much do you struggle with math?</label>
             <input id="struggle" type="range" min="1" max="5" step="1">

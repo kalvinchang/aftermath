@@ -204,7 +204,8 @@ h2.userGreet:hover{
 }
 #signup-area {
     padding: 2%;
-    width: 40%;
+    text-align: center;
+    width: 40vw;
     background-color: #fff;
     color: #22225D;
     margin: auto;
@@ -218,9 +219,17 @@ h2.userGreet:hover{
     margin: auto;
     display: none;
 }
-#form input{
-    display: flex;
-    width: 50vh;
+select{
+    color: #767676;
+}
+label{
+    width: 35vw;
+    font-size: 1.3em;
+    display: block;
+    margin: auto;
+}
+#form input, select{
+    width: 35vw;
     margin:auto;
     margin-bottom: 3%;
     padding: 0.5%;
@@ -231,7 +240,18 @@ h2.userGreet:hover{
     -webkit-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
 }
-#form input:focus{
+#names, #classify{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:nowrap;
+    width: 50vh;
+    margin: auto;
+}
+#names input, select, #classcode{
+    width: 17vw;
+}
+
+#form input:focus, select:focus{
     outline: none;
     border-width: 0;
     border-bottom: 2px solid #00002E;
