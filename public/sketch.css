@@ -28,7 +28,7 @@
 			padding-top: .5%;
 		}
 		#sidebar {
-			background: #7f87c8;
+			background: #dfdfdf;
 			width: 20%; /*make width draggable by mouse*/
 			position: absolute;
 			right: 0;
@@ -84,11 +84,12 @@
 			outline: none;
 			transition: 0.4s;
 			font-size: 3vh;;
-			color: #2e356d;
+			color: #e7e7e7;
+			background-color: #3c4480;
 		}
 
 		button.accordion.active,  button.accordion:hover {
-			background-color: #8a92cf
+			background-color: rgb(19, 19, 82);
 		}
 
 		div.panel {
@@ -96,7 +97,7 @@
 			font-size: 2.3vh;
 			background-color: inherit;
 			max-height: 0;
-			color: #e3e3f5;
+			color: #5858af;
 			overflow: hidden;
 			transition: max-height 0.2s ease-out;
 		}
