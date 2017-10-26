@@ -1,9 +1,6 @@
 /*do not initialize / config firebase + user variables here 
 b/c it's already initialized in messages.js*/
 
-//customize home page to user
-document.getElementById('name').textContent = name;
-
 //Navigation
 $('#Home sidebar section div a').click(function(){
   $('#Chat').css('transform', 'none');

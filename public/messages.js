@@ -17,6 +17,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     name = user.displayName;
     email = user.email;
     uid = user.uid;
+
+    //customize home page to user
+    document.getElementById('name').textContent = name;
     //get the classcode + group # - asynchronous (anything dependent on the value of classcode must go here)
     database.ref('/users/' + uid + '/classCode').on('value',
       function(snapshot) {
