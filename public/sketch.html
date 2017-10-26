@@ -3,11 +3,11 @@
 <head>
 	<title>Sketchpad</title>
 	<link rel="stylesheet" type="text/css" href="sketch.css">
-	<script src="https://simplewebrtc.com/latest-v2.js"></script> 
+	<script src="https://simplewebrtc.com/latest-v2.js"></script>
 	<link rel="icon" href="assets/favicon.png">
 </head>
 
-<body>	
+<body>
 <div>
 	<canvas class="whiteboard"></canvas>
 </div>
@@ -16,6 +16,10 @@
 			<div id="undo"></div>
 			<div id="redo"></div>
 		</div>
+		<div class = "drawingTools">
+				<div id = "pencil"></div>
+				<div id = "highlighter"></div>
+			</div>
 		<div class="colors">
 			<div id="colorBar">
 				<div class="currentColor tool" id="currentColor"></div>
@@ -30,7 +34,7 @@
 		</div>
 		<div class="thickness tool">
 			<div id=""></div>
-			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">			
+			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">
 			<!--<output id="thickness-value">2</output>-->
 		</div>
 		<div class="papers tool">
