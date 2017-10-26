@@ -1,17 +1,17 @@
 {
 	"users": {
 		"fGRYbO2FzoNqe31VrnDDyzRORm23": {
-            "classCode": "@calcbc20162017",
+            "classCode": "calcbc20162017",
             "mathLevel": "calc-bc",
             "struggle": 3
 		},
 		"uid2": {
-            "classCode": "@calcbc20162017",
+            "classCode": "calcbc20162017",
             "mathLevel": "calc-bc",
             "struggle": 2
 		},
 		"uid3": {
-            "classCode": "@calcbc1617",
+            "classCode": "calcbc1617",
             "mathLevel": "calc-bc",
             "struggle": 4
 		}

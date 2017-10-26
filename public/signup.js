@@ -2,7 +2,7 @@ const config = {
     apiKey: "AIzaSyD0Fh_eak1Z-Lm_dDf_aXlhXWtToO-APD4",
     authDomain: "aftermathcac.firebaseapp.com",
     databaseURL: "https://aftermathcac.firebaseio.com",
-    storageBucket: "aftermathcac.appspot.com",
+    storageBucket: "aftermathcac.appspot.com"
 };
 firebase.initializeApp(config);
 const database = firebase.database();
