@@ -29,15 +29,22 @@ firebase.auth().onAuthStateChanged(function(user) {
         groupId = classcode + 'group-1';
 
         //display previous 100 messages -> collect from database
-        var setMessage = function(data) {
-          var val = data.val();
+        function setMessage(val) {
+          //var val = data.val();
           var li = jQuery('<li><div class="receive"><div class="sender"><img src="assets/DefaultProfile.svg" alt="' + val.from +'"><h3>' + val.from+ '</h3></div><p>' + val.text+'</p></div></li>'); //creates html object
           //add timestamp later
           jQuery('#messages').append(li); //gets the html li data onto the html ordered list
-          $("#ChatBody section").animate({scrollTop: $('#messages').prop("scrollHeight")}, 1000);
+          $("#ChatBody section").animate({scrollTop: $('#messages').prop("scrollHeight")}, 100);
         };
-        database.ref('messages/' + groupId).limitToLast(100).on('child_added', setMessage);
-        database.ref('messages/' + groupId).limitToLast(100).on('child_changed', setMessage);
+        database.ref('messages/' + groupId).once('value', function(data) {
+          var val = data.val();   //data in object form
+          for (var key in val) {
+            if (val.hasOwnProperty(key)) {
+              console.log(key + '->' + val[key]);
+              setMessage(val[key]);
+            }
+          }
+        });
       },
       function(error) {
         console.log(error.code);
