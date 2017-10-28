@@ -24,10 +24,14 @@ io.on('connection', function (socket) { //called w/ socket, usually only one io.
   socket.broadcast.emit('newMessage', generatedMessage('Admin', 'New User joined.'))
 
   socket.on('drawing', (data) => socket.broadcast.emit('drawing', data)); //makes the drawing collaborative
+  socket.on('annotate', (data) => {
+    socket.broadcast.emit('annotate', data);
+    console.log(data);
+  });
 
   socket.on('createMessage', (message,callback) => { // the thing in the 2nd argument's parentheses is the event
     console.log('createMessage', message);
-    io.emit('newMessage', generatedMessage(message.from, message.text))
+    io.emit('newMessage', generatedMessage(message.from, message.text));
     callback('This is from the server');
     //  createdAt: new Date().getTime()
   });

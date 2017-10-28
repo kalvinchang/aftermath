@@ -168,14 +168,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       else{
         annotationTool.style.backgroundImage = 'url("assets/annotationCheck.svg")';
       }
-
-  })
-
-  // for (var i = 0; i < color.length; i++) {
-  //  color[i].onclick = function() {
-  //    this.classList.toggle('active');
-  //  }
-  // }
+  });
 
   function drawLine(x0, y0, x1, y1, color, thickness, emit){
     context.beginPath();
@@ -200,6 +193,35 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     });
   }
 
+  function annotate(x0, y0, x1, y1, text) {
+    context.fillStyle = '#c41230';
+    context.globalAlpha = 0.05;
+    context.strokeRect(x0, y0, Math.abs(x1 - x0), Math.abs(y1 - y0));
+    context.globalAlpha = 1;
+
+    var w = canvas.width;
+    var h = canvas.height;
+
+    var annotationInput = prompt("Enter your annotation", "");
+    var li;
+    if(annotationInput == null || annotationInput == "") {
+      li = jQuery('<li> Empty text </li>');
+    }
+    else {
+      li = jQuery('<li>' + annotationInput + ' </li>');
+    }
+    jQuery('#annotations').append(li);
+    //if mouse is just moving, put empty text??
+
+    socket.emit('annotate', {   //only send the final rectangle!
+      x0: x0 / w,
+      x1: x1 / w,
+      y0: y0 / h,
+      y1: y1 / h,
+      text: text,
+    });
+  }
+
   function onMouseDown(e){
     drawing = true;
     current.x = e.clientX;
@@ -209,55 +231,39 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   function onMouseUp(e){
     if (!drawing) { return; }
     var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
-    if(!annotating){
-    drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
-  }else if (Math.abs(e.clientX - current.x) > 100){
-      context.fillStyle = current.color;
-      context.globalAlpha = 0.25;
-      context.fillRect(current.x, current.y, Math.abs(e.clientX - current.x), Math.abs(e.clientY - current.y));
-      context.globalAlpha = 1;
-      console.log("Annotation Working");
+    if(!annotating) {
+      drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
+      current.x = e.clientX;
+      current.y = e.clientY;
+    } else {
+      annotate(current.x, current.y, e.clientX, e.clientY, "");
+      current.x = e.clientX;
+      current.y = e.clientY;
       var annotationInput = prompt("Enter your annotation", "");
       var li;
-      if(annotationInput == null || annotationInput == ""){
-        li = jQuery('<li color: '+ current.color + '> No annotation ... </li>');
+      if(annotationInput == null || annotationInput == "") {
+        li = jQuery('<li> Empty text </li>');
       }
       else {
-        li = jQuery('<li color: '+ current.color + '> '+ annotationInput + ' </li>');
+        li = jQuery('<li>' + annotationInput + ' </li>');
       }
       jQuery('#annotations').append(li);
-      socket.emit('annotationEvent', {
-        li1: li,
-        x0: current.x,
-        x1: Math.abs(e.clientX - current.x),
-        y0: current.y,
-        y1: Math.abs(e.clientY - current.y),
-        color: current.color
-      }, function(){
-        console.log('working');
-      });
     }
-  drawing = false;
-    //store the line in an array
+    drawing = false;
   }
 
-  function onMouseMove(e){
+  function onMouseMove(e) {
     if (!drawing) { return; }
     var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
-    if(!annotating){
-    drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
-    current.x = e.clientX;
-    current.y = e.clientY;
+    if (!annotating) { //if not annotating, then draw regularly
+      drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
+      current.x = e.clientX;
+      current.y = e.clientY;
     }
-    else{
-      var distanceX = e.clientX - current.x;
-      var distanceY = e.clientY - current.y;
-      context.globalAlpha = 0.05;
-      context.strokeRect(current.x, current.y,Math.abs(e.clientX - current.x), Math.abs(e.clientY - current.y) )
-      context.globalAlpha = 1;
-
+    else {
+      console.log('test');
+      annotate(current.x, current.y, e.clientX, e.clientY, ""); //should an annotation even be added when mouse moves??
     }
-
   }
 
   function onColorUpdate(e){
@@ -307,22 +313,18 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     };
   }
 
-  function onDrawingEvent(data){
+  function onDrawingEvent(data){    //processes drawing events from the server
     var w = canvas.width;
     var h = canvas.height;
     drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color, data.thickness);
     //store line in array
   }
 
-  function onAnnotationEvent(data){
-    console.log('annotation event works');
-    context.globalAlpha = 0.25;
-    jQuery('#annotations').append(data.li1);
-    context.fillStyle = data.color;
-    context.fillRect(data.x0,data.y0,data.x1,data.y1);
-    context.globalAlpha = 1;
-    context.fillStyle = current.color;
-
+  function onAnnotationEvent(data){   //processes annotations from the server
+    var w = canvas.width;
+    var h = canvas.height;
+    console.log('annotation from the server');
+    annotate(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.text);
   }
 
   // make the canvas fill its parent
