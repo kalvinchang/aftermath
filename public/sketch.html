@@ -30,7 +30,7 @@
 		</div>
 		<div class="thickness tool">
 			<div id=""></div>
-			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5" oninput="updateSlider()">
+			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5">
 			<!--<output id="thickness-value">2</output>-->
 		</div>
 		<div class="annotations tool">
@@ -94,7 +94,7 @@
 	  webrtc.joinRoom('your awesome room name');
 	});
 
-	
+
 
 	var acc = document.getElementsByClassName("accordion");
 	for (var i = 0; i < acc.length; i++) {
@@ -111,15 +111,6 @@
 
 	window.onload = function() {
 		setTimeout(function(){acc[1].click();},100)
-		updateSlider();
-			
-
-		}
-
-	function updateSlider() {
-		var input = document.getElementById('thickness-slider');
-		var output = document.getElementById('thickness-value');
-		output.value = input.value;
 	}
 
 </script>
