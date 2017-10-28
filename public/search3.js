@@ -33,6 +33,7 @@ function checkMarks(){
       recentUnchecked = i;
       break;
     }
+    
   }
 }
 //gets thing to search
@@ -55,10 +56,10 @@ $(function() {
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
-            q: topic + " math",
+            q: "How to" + topic + " math",
             maxResults: 7,
-            order: "viewCount",
-            publishedAfter: "2015-01-01T00:00:00Z"
+            order: "relevance",
+            publishedAfter: "2010-01-01T00:00:00Z"
        });
        // execute the request
        request.execute(function(response) {
