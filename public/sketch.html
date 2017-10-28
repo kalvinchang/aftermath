@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+
 <head>
 
 	<title>Sketchpad</title>
@@ -13,11 +8,18 @@
 	<script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script><script type="text/javascript" src="https://latex.codecogs.com/editor3.js"></script>
 	<script src="https://simplewebrtc.com/latest-v2.js"></script>
 	<link rel="icon" href="assets/favicon.png">
+	<script type="text/x-mathjax-config">
+  	MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async
+  	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 </head>
 
 <body>
 <div>
-	<canvas class="whiteboard"></canvas>
+	<canvas class="whiteboard" style="background-size: 200px;"></canvas>
 </div>	
 <div id="rectangle-select" hidden></div>
 <div id="calculator" style="
@@ -90,7 +92,6 @@ var elt = document.getElementById('calculator');
 	<button class="accordion">Topics</button>
 	<div class="panel" id="topic-checklist">
 		<ul> <!-- turn each icon into a checkbox -->
-			<li><img src="assets/unchecked.svg">Show Resources</li>
 			<li><img src="assets/unchecked.svg">Formulas</li>
 			<li><img src="assets/unchecked.svg">Notations</li>
 			<li><img src="assets/unchecked.svg">Derivative</li>
