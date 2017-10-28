@@ -41,6 +41,9 @@
 		#topic-checklist ul{
 			list-style-type: none;
 		}
+		#topic-checklist ul li:hover{
+			background-color:#ebebeb;
+		}
 		#topic-checklist ul li img{
 			width: 3.5vh;
 		}
@@ -67,6 +70,9 @@
 			width: 100%;
 			height: 95px;
 			padding: 0.7% 0;
+		}
+		#resources .item:hover{
+			background-color: #d1d1d1;
 		}
 		#resources{
 			overflow-y:auto;

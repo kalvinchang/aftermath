@@ -248,7 +248,7 @@ label{
     margin: auto;
 }
 #names input, select, #classcode{
-    width: 17vw;
+    width: 19vw;
 }
 
 #form input:focus, select:focus{
@@ -258,6 +258,10 @@ label{
 }
 #form .btn-container {
     text-align: center;
+}
+#ratings p{
+    display: inline-block;
+    font-size: 2em;
 }
 #SignUp{
     text-align: center;
