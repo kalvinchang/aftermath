@@ -24,9 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 'use strict';
 
 (function() {
-  var tool; //take out if unused
   var socket = io();
-  //DOM  var elt = document.getElementById('calculator');
 
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
@@ -44,9 +42,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     paper: 'plain'
   };
   var drawing = false;
-  // calculator 
-
-   
 
   //history - undo / redo
 
@@ -107,7 +102,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   }
 
   socket.on('drawing', onDrawingEvent);
-  socket.on('annotationEvent', onAnnotationEvent);
+  socket.on('annotate', onAnnotationEvent);
   window.addEventListener('resize', onResize, false);
   onResize();
 
@@ -145,7 +140,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     papertrack = !papertrack;
   });
 
-
   /*
   annotation tool
     1. click annotation tool - switch to a cross
@@ -158,7 +152,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * must show up on the annotations tab
   */
   annotationTool.addEventListener('click', function(){
-    console.log(annotationTool.style.backgroundImage);
       annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
       if(annotating){
         console.log('working');
@@ -193,16 +186,21 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     });
   }
 
-  function annotate(x0, y0, x1, y1, text) {
+  function annotate(x0, y0, x1, y1, text, emit) {
     context.fillStyle = '#c41230';
-    context.globalAlpha = 0.05;
-    context.strokeRect(x0, y0, Math.abs(x1 - x0), Math.abs(y1 - y0));
+    context.globalAlpha = 0.25;
+    context.fillRect(x0, y0, Math.abs(x1 - x0), Math.abs(y1 - y0));
+    console.log('rectangle drawn');
     context.globalAlpha = 1;
+
+    if(!emit) { return; }
+
+    //if it's an annotation coming from the server, use a diff method to display the text?
 
     var w = canvas.width;
     var h = canvas.height;
 
-    var annotationInput = prompt("Enter your annotation", "");
+    var annotationInput = prompt("Enter your annotation", ""); //replace w/ user interface
     var li;
     if(annotationInput == null || annotationInput == "") {
       li = jQuery('<li> Empty text </li>');
@@ -211,14 +209,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       li = jQuery('<li>' + annotationInput + ' </li>');
     }
     jQuery('#annotations').append(li);
-    //if mouse is just moving, put empty text??
 
     socket.emit('annotate', {   //only send the final rectangle!
       x0: x0 / w,
       x1: x1 / w,
       y0: y0 / h,
       y1: y1 / h,
-      text: text,
+      text: annotationInput,
     });
   }
 
@@ -230,40 +227,28 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   function onMouseUp(e){
     if (!drawing) { return; }
-    var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
+    annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
     if(!annotating) {
       drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
       current.x = e.clientX;
       current.y = e.clientY;
     } else {
-      annotate(current.x, current.y, e.clientX, e.clientY, "");
-      current.x = e.clientX;
-      current.y = e.clientY;
-      var annotationInput = prompt("Enter your annotation", "");
-      var li;
-      if(annotationInput == null || annotationInput == "") {
-        li = jQuery('<li> Empty text </li>');
-      }
-      else {
-        li = jQuery('<li>' + annotationInput + ' </li>');
-      }
-      jQuery('#annotations').append(li);
+      annotate(current.x, current.y, e.clientX, e.clientY, "", true);
     }
     drawing = false;
   }
 
   function onMouseMove(e) {
     if (!drawing) { return; }
-    var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
+    annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
     if (!annotating) { //if not annotating, then draw regularly
       drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
       current.x = e.clientX;
       current.y = e.clientY;
     }
-    else {
-      console.log('test');
-      annotate(current.x, current.y, e.clientX, e.clientY, ""); //should an annotation even be added when mouse moves??
-    }
+    // else {
+    //   //annotate(current.x, current.y, e.clientX, e.clientY, ""); //should an annotation even be added when mouse moves??
+    // }
   }
 
   function onColorUpdate(e){
@@ -324,7 +309,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     var w = canvas.width;
     var h = canvas.height;
     console.log('annotation from the server');
+    //display annotation
     annotate(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.text);
+    //display text on the side
+    var li;
+    if(data.text == null || data.text  == "") {
+      li = jQuery('<li> Empty text </li>');
+    }
+    else {
+      li = jQuery('<li>' + data.text + ' </li>');
+    }
+    jQuery('#annotations').append(li);
   }
 
   // make the canvas fill its parent
@@ -332,5 +327,4 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
-
 })();
