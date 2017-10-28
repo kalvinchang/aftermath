@@ -29,15 +29,7 @@ io.on('connection', function (socket) { //called w/ socket, usually only one io.
     console.log('createMessage', message);
     io.emit('newMessage', generatedMessage(message.from, message.text))
     callback('This is from the server');
-    //  from:message.from,
-    //  text:message.text,
     //  createdAt: new Date().getTime()
-    //}); //emits an event to every single connection, while socket.emit only emits to a single connection
-    //socket.broadcast.emit('newMessage', { // broadcast has same function as socket, but the user that sends doesn't get the message
-    //  from: message.from,
-  //    text: message.text,
-    //  createdAt: new Date().getTime()
-  //  });
   });
   socket.on('disconnect', () => {
     console.log('User has disconnected.');

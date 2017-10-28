@@ -26,7 +26,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 (function() {
   var tool; //take out if unused
   var socket = io();
-  //DOM
+  //DOM  var elt = document.getElementById('calculator');
+
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
   var thick = document.getElementById('thickness-slider');
@@ -43,6 +44,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     paper: 'plain'
   };
   var drawing = false;
+  // calculator 
+
+   
 
   //history - undo / redo
 
