@@ -188,9 +188,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   function annotate(x0, y0, x1, y1, text, emit) {
     context.fillStyle = '#c41230';
-    context.globalAlpha = 0.25;
+    context.globalAlpha = 0.40;
     context.fillRect(x0, y0, Math.abs(x1 - x0), Math.abs(y1 - y0));
-    console.log('rectangle drawn');
     context.globalAlpha = 1;
 
     if(!emit) { return; }
