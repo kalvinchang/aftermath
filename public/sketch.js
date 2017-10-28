@@ -78,6 +78,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   //     }
   //   }
   // }
+  var annotationTool = document.getElementsByClassName('annotations tool')[0];
+  var annotating = true;
 
   //DOM - update settings
   canvas.addEventListener('mousedown', onMouseDown, false);
@@ -91,6 +93,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     //history.redo(canvas, context)
   });
 
+  //tools
   for (var i = 0; i < colors.length; i++){
     colors[i].addEventListener('click', onColorUpdate, false);
   }
@@ -138,6 +141,30 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   });
 
 
+  /*
+  annotation tool
+    1. click annotation tool - switch to a cross
+    2. freeze the screen
+    3. turn cursor into a pencil?? - Darien will make the graphic
+    4. user interface for entering in comments (text)
+    5. the text shows up on the annotations tab (w/ a check / uncheck button) - similar to Google Docs
+      * computer generates a <div> for the annotation
+    * cannot affect drawing
+    * must show up on the annotations tab
+  */
+  annotationTool.addEventListener('click', function(){
+    console.log(annotationTool.style.backgroundImage);
+      annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
+      if(annotating){
+        console.log('working');
+        annotationTool.style.backgroundImage = 'url("assets/annotationCross.svg")';
+        annotating = false;
+      }
+      else{
+        annotationTool.style.backgroundImage = 'url("assets/annotationCheck.svg")';
+      }
+
+  })
 
   // for (var i = 0; i < color.length; i++) {
   //  color[i].onclick = function() {
@@ -176,16 +203,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   function onMouseUp(e){
     if (!drawing) { return; }
-    drawing = false;
+    var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
+    if(!annotating){
     drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
+    }
+    else{
+      var annotationBox = jQuery('<div class="annotation"></div>'); //creates html object
+      
+
+    }
+  drawing = false;
     //store the line in an array
   }
 
   function onMouseMove(e){
     if (!drawing) { return; }
+    var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
+    if(!annotating){
     drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
     current.x = e.clientX;
     current.y = e.clientY;
+    }
   }
 
   function onColorUpdate(e){
@@ -202,8 +240,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   }
 
   function onThickUpdate(e){
-    current.thickness = e.target.value; 
-  }  
+    current.thickness = e.target.value;
+  }
 
   function onPaperUpdate(e) {
     current.paper = e.target.className.split(' ')[1];

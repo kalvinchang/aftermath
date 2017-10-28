@@ -245,13 +245,12 @@
 			transform: translateY(-168px) translateX(170px);
 			visibility: hidden;
 		}
-		.drawingTools{
-
-		}
-		#pencil{
-				background-image: url('assets/pencil.png');
-				transform: translateY(-224px) translateX(237px);
-		}
-		#highlighter{
-
+		.annotations {
+			background-image: url('assets/annotationCheck.svg');
+			background-size: 100%;
+			width: 40%;
+			height: 54px;
+			display: inline-block;
+			background-repeat: no-repeat;
+			border: none;
 		}
