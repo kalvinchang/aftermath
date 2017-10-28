@@ -23,6 +23,7 @@ $("#topic-checklist ul li img").click(function(){
     $("#You").trigger("submit");
   });
 
+  var sessionTitle=$('#topic').text();
 
 //finds the most recent unchecked checklist item and records
 //it's 'index' with recentUnchecked
@@ -56,9 +57,9 @@ $(function() {
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
-            q: topic + " math" + " english",
+            q: topic + " " + sessionTitle + " math",
             maxResults: 7,
-            order: "viewCount",
+            order: "relevance",
             publishedAfter: "2015-01-01T00:00:00Z"
        });
        // execute the request
