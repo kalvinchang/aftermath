@@ -12,6 +12,9 @@
 		canvas.whiteboard{
 			z-index: 0;
 		}
+		.crosshair {
+			cursor: crosshair;
+		}
 		#topic {
 			position: absolute;
 			font-size: 3.9vh;
@@ -259,4 +262,8 @@
 			display: inline-block;
 			background-repeat: no-repeat;
 			border: none;
+		}
+		#rectangle-select {
+			background-color: rgba(196, 18, 48, 0.40);
+			position: absolute;
 		}

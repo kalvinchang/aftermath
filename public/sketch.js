@@ -101,6 +101,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     papers[i].addEventListener('click', onPaperUpdate, false);
   }
 
+  var div = document.getElementById('rectangle-select');
+  var x2, y2, x3, y3;
+
   socket.on('drawing', onDrawingEvent);
   socket.on('annotate', onAnnotationEvent);
   window.addEventListener('resize', onResize, false);
@@ -160,8 +163,20 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
       else{
         annotationTool.style.backgroundImage = 'url("assets/annotationCheck.svg")';
+        canvas.classList.add('crosshair');
       }
   });
+
+  function rectSelectRestyle() {
+    var xMin = Math.min(x2, x3);
+    var xMax = Math.max(x2, x3);
+    var yMin = Math.min(y2, y3);
+    var yMax = Math.max(y2, y3);
+    div.style.left = xMin + 'px';
+    div.style.top = yMin + 'px';
+    div.style.width = (xMax - xMin) + 'px';
+    div.style.height = (yMax - yMin) + 'px';
+  }
 
   function drawLine(x0, y0, x1, y1, color, thickness, emit){
     context.beginPath();
@@ -222,6 +237,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     drawing = true;
     current.x = e.clientX;
     current.y = e.clientY;
+    div.hidden = 0;         //unhide rect select
+    x2 = e.clientX;         //initial pos of rect select
+    y2 = e.clientY;
+    rectSelectRestyle();
   }
 
   function onMouseUp(e){
@@ -233,6 +252,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       current.y = e.clientY;
     } else {
       annotate(current.x, current.y, e.clientX, e.clientY, "", true);
+      div.hidden = 1;
     }
     drawing = false;
   }
@@ -245,9 +265,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       current.x = e.clientX;
       current.y = e.clientY;
     }
-    // else {
-    //   //annotate(current.x, current.y, e.clientX, e.clientY, ""); //should an annotation even be added when mouse moves??
-    // }
+    else {
+      x3 = e.clientX;         //final pos of rect select
+      y3 = e.clientY;
+      rectSelectRestyle();
+    }
   }
 
   function onColorUpdate(e){
