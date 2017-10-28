@@ -103,6 +103,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   }
 
   socket.on('drawing', onDrawingEvent);
+  socket.on('annotationEvent', onAnnotationEvent);
   window.addEventListener('resize', onResize, false);
   onResize();
 
@@ -206,11 +207,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     var annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
     if(!annotating){
     drawLine(current.x, current.y, e.clientX, e.clientY, current.color, current.thickness, true);
-    }
-    else{
-      var annotationBox = jQuery('<div class="annotation"></div>'); //creates html object
-      
-
+  }else if (Math.abs(e.clientX - current.x) > 100){
+      context.fillStyle = current.color;
+      context.globalAlpha = 0.25;
+      context.fillRect(current.x, current.y, Math.abs(e.clientX - current.x), Math.abs(e.clientY - current.y));
+      context.globalAlpha = 1;
+      console.log("Annotation Working");
+      var annotationInput = prompt("Enter your annotation", "");
+      var li;
+      if(annotationInput == null || annotationInput == ""){
+        li = jQuery('<li color: '+ current.color + '> No annotation ... </li>');
+      }
+      else {
+        li = jQuery('<li color: '+ current.color + '> '+ annotationInput + ' </li>');
+      }
+      jQuery('#annotations').append(li);
+      socket.emit('annotationEvent', {
+        li1: li,
+        x0: current.x,
+        x1: Math.abs(e.clientX - current.x),
+        y0: current.y,
+        y1: Math.abs(e.clientY - current.y),
+        color: current.color
+      }, function(){
+        console.log('working');
+      });
     }
   drawing = false;
     //store the line in an array
@@ -224,6 +245,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     current.x = e.clientX;
     current.y = e.clientY;
     }
+    else{
+      var distanceX = e.clientX - current.x;
+      var distanceY = e.clientY - current.y;
+      context.globalAlpha = 0.05;
+      context.strokeRect(current.x, current.y,Math.abs(e.clientX - current.x), Math.abs(e.clientY - current.y) )
+      context.globalAlpha = 1;
+
+    }
+
   }
 
   function onColorUpdate(e){
@@ -278,6 +308,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     var h = canvas.height;
     drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color, data.thickness);
     //store line in array
+  }
+
+  function onAnnotationEvent(data){
+    console.log('annotation event works');
+    context.globalAlpha = 0.25;
+    jQuery('#annotations').append(data.li1);
+    context.fillStyle = data.color;
+    context.fillRect(data.x0,data.y0,data.x1,data.y1);
+    context.globalAlpha = 1;
+    context.fillStyle = current.color;
+
   }
 
   // make the canvas fill its parent
