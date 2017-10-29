@@ -3,7 +3,6 @@
 /*imports*/
 @import url("https://fonts.googleapis.com/css?family=Mukta+Vaani");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Raleway");
-@import url("https://fonts.googleapis.com/css?family=Nunito");
 /*Scroll Bar*/
 *::-webkit-scrollbar-track
 {
@@ -561,7 +560,7 @@ div.receive p{
     height: fit-content;
     color: #2B4877;
     font-size: 2.5vh;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 #ChatBody ol#messages{
     width: 100%;
