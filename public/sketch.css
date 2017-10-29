@@ -49,7 +49,8 @@ canvas.whiteboard{
 	padding-top: .5%;
 }
 #sidebar {
-	background: #9ea9df;
+	background-color: #9ea9df;
+	background: -webkit-linear-gradient(left, #9697cb, #8284bd);
 	width: 20%; /*make width draggable by mouse*/
 	position: absolute;
 	right: 0;
@@ -99,7 +100,7 @@ canvas.whiteboard{
 }
 #resources{
 	overflow-y:auto;
-	max-height: 500px;
+	max-height: 70%;
 }
 #results{
 	height: 500px;
@@ -124,7 +125,8 @@ button.accordion.active,  button.accordion:hover, button.accord:hover {
 div.panel {
 	padding: 0 10px;
 	font-size: 2.3vh;
-	background-color: inherit;
+	background-color: #9ea9df;
+	background: -webkit-linear-gradient(left, #9697cb, #8284bd);
 	max-height: 0;
 	color: #5858af;
 	overflow: hidden;
@@ -155,13 +157,14 @@ canvas {
 #toolbar {
 	position: absolute;
 	z-index: 1;
-	top: 15%;
-	left: 1vh;
+	top: 0;
+	left: 0;
 	padding:.5%;
 	text-align: center;
-	width: 95.98px;
-	height: 40%;
+	width: 90px;
+	height: 100%;
 	background-color: #7fbeff;
+	background: -webkit-linear-gradient(left, #5da4ef, #86bffa);
 }
 .tool {
 	width: 55px;	/*use vh*/
@@ -290,8 +293,8 @@ div.currentColor {
 }
 
 #calculator {
-	width: 400px; 
-	height: 350px;
+	width: 25vw; 
+	height: 41vh;
 	position: absolute;	/*should be draggable*/
 	top: 15%;
 	left: 43vh;

@@ -28,7 +28,7 @@ elt.addEventListener('keypress', function(event) {
    }
 });
 
-// jQuery draggable plugin
+// jQuery draggable plugin - learned from https://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
 (function($) {
     $.fn.draggable = function(options) {
         var $handle = this,
@@ -67,3 +67,5 @@ elt.addEventListener('keypress', function(event) {
             });
     };
 })(jQuery);
+
+$('#calculator').draggable();

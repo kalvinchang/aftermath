@@ -55,10 +55,6 @@
 <script type="text/javascript" src="mathquill-0.10.1/mathquill.js"></script>
 <div id="calculator">
 	<div id="textboxes"></div>
-<!-- 	<p id="equationText"> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-	<p> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p> -->
 </div>
 <script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
@@ -67,7 +63,7 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p> -->
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
 	<div class="panel" id="topic-checklist">
-		<ul> <!-- turn each icon into a checkbox -->
+		<ul> <!-- turn each icon into a checkbox -> pull from database on page load-->
 			<li><img src="assets/unchecked.svg">Formulas</li>
 			<li><img src="assets/unchecked.svg">Notations</li>
 			<li><img src="assets/unchecked.svg">Derivative</li>
@@ -76,12 +72,9 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p> -->
 	</div>
 	<button class="accordion">Annotations</button>
 	<div class="panel" id="annotations">
-<<<<<<< HEAD
-=======
 		<ul id="notations">
 			
 		</ul>
->>>>>>> 024f7c9e2af4e3a6eee5e06a8e5a6744b27e92c0
 	</div>
 	<button class="accord">Resources</button>
 	<div class="panel" id="resources">
