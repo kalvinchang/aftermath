@@ -28,7 +28,15 @@
 </head>
 
 <body>
-
+<!--For Seaching for people, will react on both modules-->
+<div id="searchWindow">
+            <form>
+                <input type="text" placeholder="search classmates" id="mate">
+            </form>
+            <ul>
+                
+            </ul>
+        </div>
 <div id="Home">
 <!--____________BEGINNING OF HOME MODULE____________-->
 
@@ -42,18 +50,18 @@
         <div>
         <a><h3>Study</h3></a>
         <!--DOM this-->
-        <img src="assets/search.svg" style="float: right; width: 5vh;">
-
+        <img src="assets/search.svg" style="float: right; width: 5vh;" class="searchIcon">
+        
         </div>
         <!--people list-->
-        <ul class="lined">
+        <ul class="lined" id="classmates">
             <!--<a><li>person</li></a>-->
+            <li><span>Eric Siu</span></li>
             <li><span>Person</span></li>
             <li><span>Person</span></li>
+            <li><span>Kalvin Chang</span></li>
             <li><span>Person</span></li>
-            <li><span>Person</span></li>
-            <li><span>Person</span></li>
-            <li><span>Person</span></li>
+            <li><span>Darien Tsai</span></li>
         </ul>
         <!--Units list-->
         <h3>Units</h3>
@@ -150,7 +158,7 @@
 <sidebar id="MessageList">
     <header>
         <img id="back" src="assets/home.svg">
-        <img src="assets/search.svg">
+        <img src="assets/search.svg" class="searchIcon">
     </header>
      <h3>Groups</h3>
     <section id="group">
@@ -166,12 +174,12 @@
         <!--DM list-->
        
         <ul class="lined">
-            <li><span>Person 1</span></li>
+            <li><span>Kalvin Chang</span></li>
             <li><span>Person 2</span></li>
-            <li><span>Person 3</span></li>
+            <li><span>Eric Siu</span></li>
             <li><span>Person 4</span></li>
             <li><span>Person 5</span></li>
-            <li><span>Person 6</span></li>
+            <li><span>Darien Tsai</span></li>
             <li><span>Person 7</span></li>
         </ul>
     </section>
@@ -283,6 +291,9 @@
     <script src="messages.js"> </script>
     <!--Scheduling-->
     <script type="text/javascript" src="scheduling.js"></script>
+    <!--Search Window-->
+    <script type="text/javascript" src="people.js"></script>
+    <script type="text/javascript" src="peopleProcess.js"></script>
     <!--YouTube-->
     <script src="search3.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=init" type="text/javascript"></script>
