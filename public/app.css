@@ -76,7 +76,7 @@ li {
     z-index: 1;
     color: rgba(255, 255, 255, 0.67);
     background-color: #313190;
-    background: -webkit-linear-gradient(right, #1d1d6d, #0e0e4a);
+    background: -webkit-linear-gradient(right, #171763, #0e0e4a);
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -393,7 +393,7 @@ li {
     z-index: 4;
     width: 95%;
     background-color: #313190;
-    background: -webkit-linear-gradient(right, #1d1d6d, #0e0e4a);
+    background: -webkit-linear-gradient(right, #171763, #0e0e4a);
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -479,7 +479,7 @@ li {
     left: 5%;
     bottom: 0;
     background-color: #ebebeb;
-    background: linear-gradient(#efffff,#d8dbff);
+    background: linear-gradient(#e8ebff,#d2d5f3);
 }
 #ChatBody section{
     width: 100%;
@@ -529,7 +529,6 @@ div.receive p{
 }
 #ChatBody form{
     height: 5%;
-    background-color: #ebebeb;
     width: 100%;
 }
 #ChatBody form div{
