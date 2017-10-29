@@ -25,6 +25,7 @@ elt.addEventListener('keypress', function(event) {
     $.fn.draggable = function(options) {
         var $handle = this,
             $draggable = this;
+        var id = $draggable.attr('id');
 
         options = $.extend({}, {
             handle: null,
@@ -48,7 +49,15 @@ elt.addEventListener('keypress', function(event) {
                         left: x + e.pageX,
                         top: y + e.pageY
                     });
+                    if (id != "") {
+                        socket.emit('textboxMove', {
+                            id: id,
+                            left: x + e.pageX,
+                            top: y + e.pageY
+                        });
+                    }
                     // //change elt's position too - prevent blank area on canvas
+                    // * problem = how to check if $draggable is the desmos calculator only
                     // if ($draggable == $('.dcg-container')) {
                     //     console.log('reached');
                     //     elt.offset({
@@ -70,21 +79,21 @@ elt.addEventListener('keypress', function(event) {
 
 function textBox(expressionInLatex, emit) {
     //inject expression into the sketchboard
-    var textBox = jQuery('<p class="equationText draggable" id="' + counter + '"">' + expressionInLatex + '</p>');
-    textboxArea.append(textBox);   //add CSS animation for the ejection
-    //remove expression from desmos keyboard
+    var textBox = jQuery('<p class="equationText draggable" id="' + counter + '">' + expressionInLatex + '</p>');
+    textboxArea.append(textBox);  
     textboxes = jQuery('.equationText');
-    calculator.removeExpression(calculator.getExpressions()[0]);
     var recentlyAdded = textboxes[textboxes.length - 1];
     //make the textbox an editable field
     var field = MQ.MathField(recentlyAdded);
     MQ.StaticMath(field);
     $('#' + counter).draggable();
     counter++;
-    //add CSS animation for the ejection
 
     if (!emit) { return; }
 
+    //add CSS animation for the ejection
+    //remove expression from desmos keyboard
+    calculator.removeExpression(calculator.getExpressions()[0]);
     socket.emit('textbox', {
         text: expressionInLatex
     });
@@ -94,5 +103,13 @@ function onTextEvent(data) {  //process text boxes from the server
     textBox(data.text);
 }
 
+function onTextMoveEvent(data) {  //process text boxes from the server
+    jQuery('#' + data.id).offset({
+        left: data.left,
+        top: data.top
+    });
+}
+
 $('.dcg-container').draggable();
 socket.on('textbox', onTextEvent);
+socket.on('textboxMove', onTextMoveEvent);

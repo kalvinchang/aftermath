@@ -28,10 +28,15 @@ io.on('connection', function (socket) { //called w/ socket, usually only one io.
     socket.broadcast.emit('annotate', data);
     console.log(data);
   });
+  //makes textboxes collaborative
   socket.on('textbox', (data) => {
     socket.broadcast.emit('textbox', data);
     console.log(data);
-  }); //makes textboxes collaborative
+  });
+  socket.on('textboxMove', (data) => {
+    socket.broadcast.emit('textboxMove', data);
+    console.log(data);
+  });
 
   socket.on('createMessage', (message,callback) => { // the thing in the 2nd argument's parentheses is the event
     console.log('createMessage', message);
