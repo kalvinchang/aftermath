@@ -48,7 +48,7 @@ canvas.whiteboard{
 	padding-top: .5%;
 }
 #sidebar {
-	background: #a5a4d0;
+	background: #9ea9df;
 	width: 20%; /*make width draggable by mouse*/
 	position: absolute;
 	right: 0;
