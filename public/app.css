@@ -420,7 +420,7 @@ li {
     padding: 2%;
 }
 #MessageList header img:hover{
-    background-color: #565ea1;
+    background-color: #212263;
 }
 #MessageList section#group{
     height: 19%;
@@ -714,7 +714,7 @@ div#schedule{
     display: inline-block;
 }
 #Home sidebar section img:hover {
-    background-color: #565ea1;
+    background-color: #212263;
 }
 #Home sidebar section ul {
     text-align: left;
