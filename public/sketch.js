@@ -158,8 +158,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       annotating = annotationTool.style.backgroundImage == 'url("assets/annotationCheck.svg")';
       if(annotating){
         console.log('working');
-        annotationTool.style.backgroundImage = 'url("assets/annotationCross.svg")';
+        annotationTool.style.backgroundImage = 'url("assets/annotationTool.svg")';
         annotating = false;
+        canvas.classList.remove('crosshair');
       }
       else{
         annotationTool.style.backgroundImage = 'url("assets/annotationCheck.svg")';
@@ -216,7 +217,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     var annotationInput = prompt("Enter your annotation", ""); //replace w/ user interface
     var li;
-    if(annotationInput == null || annotationInput == "") {
+    if(annotationInput == null) { 
+      return;
+    } 
+    else if (annotationInput == "") {
       li = jQuery('<li> Empty text </li>');
     }
     else {
@@ -237,10 +241,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     drawing = true;
     current.x = e.clientX;
     current.y = e.clientY;
-    div.hidden = 0;         //unhide rect select
-    x2 = e.clientX;         //initial pos of rect select
-    y2 = e.clientY;
-    rectSelectRestyle();
+    if (annotating) {
+      div.hidden = 0;         //unhide rect select
+      x2 = e.clientX;         //initial pos of rect select
+      y2 = e.clientY;
+      rectSelectRestyle();
+    }
   }
 
   function onMouseUp(e){
