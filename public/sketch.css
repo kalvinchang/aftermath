@@ -290,16 +290,12 @@ div.currentColor {
 }
 
 #calculator {
-	width: 300px; 
+	width: 400px; 
 	height: 350px;
 	position: absolute;	/*should be draggable*/
 	top: 15%;
 	left: 43vh;
 	text-align: center;
-}
-
-.equationText {
-
 }
 
 #notations{
