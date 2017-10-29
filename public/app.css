@@ -76,6 +76,7 @@ li {
     z-index: 1;
     color: rgba(255, 255, 255, 0.67);
     background-color: #313190;
+    background: -webkit-linear-gradient(right, #1d1d6d, #0e0e4a);
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -178,12 +179,14 @@ li {
     top: 0;
     bottom: 0;
     background-color: #f3f4ff;
+    background: linear-gradient(#efffff,#d8dbff);
 }
 #HomeBody header {
     width: 100%;
     padding: 1% 0;
     height: 20%;
     background-color: #c6e0ff;
+    background: linear-gradient(#8f89ff,#a8cfff);
     color: #1a1a92;
     text-align: center;
     display: flex;
@@ -268,12 +271,15 @@ li {
     overflow: auto;
     overflow-X: hidden;
 }
-#HomeBody #HomeResources header{
+#HomeBody #HomeResources div h3{
     height: fit-content;
+    color: rgb(14, 14, 82);
+    width: fit-content;
+    margin: auto;
     font-size: 3.5vh;
     background-color: #f4f5ff;
 }
-#HomeResources header:hover{
+#HomeResources div:hover{
     background-color: #f4f5ff;
 }
 #HomeResources input{
