@@ -279,9 +279,6 @@ li {
     font-size: 3.5vh;
     background-color: #f4f5ff;
 }
-#HomeResources div:hover{
-    background-color: #f4f5ff;
-}
 #HomeResources input{
     outline: none;
 }
@@ -564,7 +561,7 @@ div.receive p{
 }
 /*The group details and call initializer*/
 #CallInit{
-    z-index: 5;
+    z-index: 6;
     position: absolute;
     right: -82%;
     top: 0;
@@ -599,6 +596,19 @@ div.receive p{
     display: inline-block;
     color: white;
     white-space: nowrap;
+}
+#CallInit div.scheduledTopic{
+    width: 50%;
+    position: absolute;
+    right: 100%;
+    color: white;
+    top: 10%;
+    background-color: rgb(23, 23, 102);
+    visibility: hidden;
+    transition-duration: 0.3s;
+}
+#CallInit div.scheduledTopic h3{
+    text-align: center;
 }
 figure{
     margin: auto;
@@ -640,6 +650,7 @@ div#schedule{
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     font-size: 3vh;
+    text-align: center;
     color: #E0E0E0;
 }
 #date:focus{
@@ -660,17 +671,30 @@ div#schedule{
     background-color: #404d99;
 }
 #makeSchedule{
-    display: block;
+    display: none;
 }
 #CallInit #makeSchedule h5{
     font-size: 3vh;
 }
+#CallInit #makeSchedule h6{
+    font-size: 2vh;
+}
+#CallInit #makeSchedule select{
+    font-size: .7em;
+    outline: none;
+    border:none;
+}
+#CallInit #makeSchedule select:hover{
+    outline: none;
+    border:none;
+}
 #showSchedule{
-        display: none;
+        display: block;
 }
 #showSchedule p{
     font-size: 4vh;
 }
+
 
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
