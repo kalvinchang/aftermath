@@ -8,6 +8,7 @@ console.log(calculator.getExpressions());
 
 var textboxArea = jQuery('#textboxes');
 var textboxes;
+var counter = 1;
 
 elt.addEventListener('keypress', function(event) {
    if (event.key == 'Enter' && calculator.getExpressions().length != 0) {
@@ -15,7 +16,7 @@ elt.addEventListener('keypress', function(event) {
          var expressionInLatex = calculator.getExpressions()[0].latex;
          console.log(expressionInLatex);
          //inject expression into the sketchboard
-         var textBox = jQuery('<p class="equationText draggable">' + expressionInLatex + '</p>');
+         var textBox = jQuery('<p class="equationText draggable" id="' + counter + '"">' + expressionInLatex + '</p>');
          textboxArea.append(textBox);	//add CSS animation for the ejection
          //remove expression from desmos keyboard
          textboxes = jQuery('.equationText');
@@ -24,7 +25,8 @@ elt.addEventListener('keypress', function(event) {
          //make the textbox an editable field
          var field = MQ.MathField(recentlyAdded);
          MQ.StaticMath(field);
-         $('.draggable').draggable();
+         $('#' + counter).draggable();
+         counter++;
    }
 });
 
@@ -68,4 +70,4 @@ elt.addEventListener('keypress', function(event) {
     };
 })(jQuery);
 
-$('#calculator').draggable();
+$('.dcg-container').draggable();
