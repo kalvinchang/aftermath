@@ -4,13 +4,11 @@
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #EBEBEB;
 }
-
 *::-webkit-scrollbar
 {
 	width: 10px;
 	background-color: #E7E7E7;
 }
-
 *::-webkit-scrollbar-thumb
 {
 	background-color: #566FBE;
@@ -29,6 +27,9 @@ body {
 }
 canvas.whiteboard{
 	z-index: 0;
+}
+.crosshair {
+	cursor: crosshair;
 }
 #topic {
 	position: absolute;
@@ -281,4 +282,9 @@ div.currentColor {
 	display: inline-block;
 	background-repeat: no-repeat;
 	border: none;
+}
+
+#rectangle-select {
+	background-color: rgba(196, 18, 48, 0.4);
+    position: absolute;
 }
