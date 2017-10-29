@@ -288,3 +288,7 @@ div.currentColor {
 	background-color: rgba(196, 18, 48, 0.4);
     position: absolute;
 }
+body .dcg-container{
+	position: absolute;
+    bottom: -229%;
+}
