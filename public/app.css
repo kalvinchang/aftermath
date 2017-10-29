@@ -55,7 +55,51 @@ li {
     text-overflow:ellipsis;
 }
 
-
+/*________________Searcher Window________________*/
+#searchWindow{
+    z-index: 8;
+    width: 15%;
+    height: 45%;
+    position: absolute;
+    visibility: hidden;
+    left: 15%;
+    top: 0%;
+    background-color: rgb(62, 62, 138);
+    transition-duration: 0.3s;
+}
+#searchWindow form{
+    padding-top: 3%;
+    margin: auto;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#searchWindow input{
+    width: 90%;
+    padding: 2%;
+    overflow: hidden;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.507);
+    border: none;
+    outline: none;
+}
+#searchWindow ul{
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-y: auto;
+    list-style-type: none;
+    color: white;
+    text-align: center;
+}
+#searchWindow ul li{
+    padding: 1.5%;
+}
+#searchWindow ul li:hover{
+    background-color: rgb(78, 78, 160);
+}
 
 
 /*________________HOME START________________*/
@@ -277,9 +321,6 @@ li {
     width: fit-content;
     margin: auto;
     font-size: 3.5vh;
-    background-color: #f4f5ff;
-}
-#HomeResources div:hover{
     background-color: #f4f5ff;
 }
 #HomeResources input{
@@ -564,7 +605,7 @@ div.receive p{
 }
 /*The group details and call initializer*/
 #CallInit{
-    z-index: 5;
+    z-index: 6;
     position: absolute;
     right: -82%;
     top: 0;
@@ -599,6 +640,24 @@ div.receive p{
     display: inline-block;
     color: white;
     white-space: nowrap;
+}
+#CallInit div.scheduledTopic{
+    width: 50%;
+    position: absolute;
+    right: 100%;
+    color: white;
+    top: 10%;
+    background-color: rgb(23, 23, 102);
+    visibility: hidden;
+    transition-duration: 0.3s;
+}
+#CallInit div.scheduledTopic h3{
+    text-align: center;
+}
+#CallInit div.scheduledTopic ul{
+    color: white;
+    overflow: hidden;
+    overflow-y: auto;
 }
 figure{
     margin: auto;
@@ -640,6 +699,7 @@ div#schedule{
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     font-size: 3vh;
+    text-align: center;
     color: #E0E0E0;
 }
 #date:focus{
@@ -660,17 +720,30 @@ div#schedule{
     background-color: #404d99;
 }
 #makeSchedule{
-    display: block;
+    display: none;
 }
 #CallInit #makeSchedule h5{
     font-size: 3vh;
 }
+#CallInit #makeSchedule h6{
+    font-size: 2vh;
+}
+#CallInit #makeSchedule select{
+    font-size: .7em;
+    outline: none;
+    border:none;
+}
+#CallInit #makeSchedule select:hover{
+    outline: none;
+    border:none;
+}
 #showSchedule{
-        display: none;
+        display: block;
 }
 #showSchedule p{
     font-size: 4vh;
 }
+
 
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/
 /*MARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARKMARK*/

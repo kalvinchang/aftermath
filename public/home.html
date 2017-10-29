@@ -28,7 +28,15 @@
 </head>
 
 <body>
-
+<!--For Seaching for people, will react on both modules-->
+<div id="searchWindow">
+            <form>
+                <input type="text" placeholder="search classmates" id="mate">
+            </form>
+            <ul>
+                
+            </ul>
+        </div>
 <div id="Home">
 <!--____________BEGINNING OF HOME MODULE____________-->
 
@@ -42,18 +50,18 @@
         <div>
         <a><h3>Study</h3></a>
         <!--DOM this-->
-        <img src="assets/search.svg" style="float: right; width: 5vh;">
-
+        <img src="assets/search.svg" style="float: right; width: 5vh;" class="searchIcon">
+        
         </div>
         <!--people list-->
-        <ul class="lined">
+        <ul class="lined" id="classmates">
             <!--<a><li>person</li></a>-->
+            <li><span>Eric Siu</span></li>
             <li><span>Person</span></li>
             <li><span>Person</span></li>
+            <li><span>Kalvin Chang</span></li>
             <li><span>Person</span></li>
-            <li><span>Person</span></li>
-            <li><span>Person</span></li>
-            <li><span>Person</span></li>
+            <li><span>Darien Tsai</span></li>
         </ul>
         <!--Units list-->
         <h3>Units</h3>
@@ -82,7 +90,7 @@
 <div id="HomeBody">
     <!--Test banner-->
     <header>
-    <h1>Test Monday 1/23</h1>
+    <h1 id="testHeader">Test Monday 1/23</h1>
     <h2 id="subject">Derivatives</h2>
     </header>
     <!--topics and links-->
@@ -150,7 +158,7 @@
 <sidebar id="MessageList">
     <header>
         <img id="back" src="assets/home.svg">
-        <img src="assets/search.svg">
+        <img src="assets/search.svg" class="searchIcon">
     </header>
      <h3>Groups</h3>
     <section id="group">
@@ -166,12 +174,12 @@
         <!--DM list-->
        
         <ul class="lined">
-            <li><span>Person 1</span></li>
+            <li><span>Kalvin Chang</span></li>
             <li><span>Person 2</span></li>
-            <li><span>Person 3</span></li>
+            <li><span>Eric Siu</span></li>
             <li><span>Person 4</span></li>
             <li><span>Person 5</span></li>
-            <li><span>Person 6</span></li>
+            <li><span>Darien Tsai</span></li>
             <li><span>Person 7</span></li>
         </ul>
     </section>
@@ -210,9 +218,23 @@
     <!--If a group-->
     <div>
         <h5>Group Members</h5>
-        <p>Eric Siu</p>
-        <p>Kalvin Chang</p>
-        <p>Darien</p>
+        <p id="gOne">Eric Siu</p>
+        <p id="gTwo">Kalvin Chang</p>
+        <p id="gThree">Darien Tsai</p>
+    </div>
+    <div class="scheduledTopic" id="pOne">
+        <!--Person's name-->
+        <h3></h3>
+        <!--Person's list of topics to cover-->
+        <ul></ul>
+    </div>
+    <div class="scheduledTopic" id="pTwo">
+        <h3></h3>
+        <ul></ul>
+    </div>
+    <div class="scheduledTopic" id="pThree">
+        <h3></h3>
+        <ul></ul>
     </div>
     <!--Call Init-->
     <figure>
@@ -223,16 +245,38 @@
         <!--make schedule-->
         <div id="makeSchedule">
             <h5>Schedule A Session!</h5>
+            <h6 id="testDay">No Test</h6>
             <div id="scheduleInput">
                 <input type="date" name="date" id="date">
+                <h6>What Topic Will You Cover?</h6>
+                <form>
+                    <select>
+                    <option>The Sum Rule</option>
+                    <option>The Power Rule</option>
+                    <option>The Scalar Multiple Rule</option>
+                    <option>The Product Rule</option>
+                    <option>The Quotient Rule</option>
+                </select>
+                </form>
                 <input type="submit" value="Schedule" name="submit" id="addSchedule">
             </div>
         </div>
+        
         <!--scheduled-->
         <div id="showSchedule">
             <h3>Study Session On:</h3>
-            <p>Tuesday</p>
-            <p>9/21/17</p>
+            <p>10/21/17</p>
+            <h6>Add a Topic:</h6>
+            <form>
+                <select>
+                <option>The Sum Rule</option>
+                <option>The Power Rule</option>
+                <option>The Scalar Multiple Rule</option>
+                <option>The Product Rule</option>
+                <option>The Quotient Rule</option>
+            </select>
+            </form>
+            
         </div>
     </div>
 
@@ -245,6 +289,11 @@
     <script src="/socket.io/socket.io.js"> </script>
     <script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
     <script src="messages.js"> </script>
+    <!--Scheduling-->
+    <script type="text/javascript" src="scheduling.js"></script>
+    <!--Search Window-->
+    <script type="text/javascript" src="people.js"></script>
+    <script type="text/javascript" src="peopleProcess.js"></script>
     <!--YouTube-->
     <script src="search3.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=init" type="text/javascript"></script>

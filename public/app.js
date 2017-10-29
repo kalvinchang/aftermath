@@ -36,4 +36,3 @@ firebase.initializeApp(config);
 // auth.signInWithEmailAndPassword(email, pass);
 // auth.createUserWithEmailAndPassword(email, pass);
 // auth.onAuthStateChanged(firebaseUser => { });
-
