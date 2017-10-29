@@ -32,7 +32,6 @@ function checkMarks(){
   for(var i = 0; i <= $('#topic-checklist ul li img').length; i ++){
     if ($('#topic-checklist ul li img').eq(i).attr('src') === "assets/unchecked.svg" )  {
       recentUnchecked = i;
-      $('#resources .item a.video').attr('style', 'height:90px;');
       break;
     }
   }
