@@ -4,6 +4,7 @@
 	<title>Sketchpad</title>
 	<link rel="stylesheet" type="text/css" href="sketch.css">
 	<script src="https://simplewebrtc.com/latest-v2.js"></script>
+	<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
 	<link rel="icon" href="assets/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 </head>
@@ -52,40 +53,16 @@
 <link rel="stylesheet" type="text/css" href="mathquill-0.10.1/mathquill.css">
 <script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="mathquill-0.10.1/mathquill.js"></script>
-<script type="text/javascript">
-	var MQ = MathQuill.getInterface(2);
-</script>
 <div id="calculator">
 	<div id="textboxes"></div>
-	<p id="equationText"> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+<!-- 	<p id="equationText"> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
 	<p> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p> -->
 </div>
 <script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
-<script>
-
-var elt = document.getElementById('calculator');
-var options = {
-	graphpaper: false
-};
-var calculator = Desmos.GraphingCalculator(elt, options);
-console.log(calculator.getExpressions());
-
-elt.addEventListener('keypress', function(event) {
-   if (event.key == 'Enter') {
-     var expressionInLatex = calculator.getExpressions()[0].latex;
-     console.log(expressionInLatex);
-     //inject expression into the sketchboard
-     var textBox = jQuery('<p class="equationText">' + expressionInLatex + '</p>');
-     jQuery('#textboxes').append(textBox);	//add CSS animation for the ejection
-     //remove expression from desmos keyboard
-     calculator.removeExpression(calculator.getExpressions()[0]);
-     MQ.StaticMath(jQuery('.equationText')[jQuery('.equationText').length - 1]);
-   }
- });
-</script>
+<script type="text/javascript" src="sketcheditor.js"></script>
 
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
