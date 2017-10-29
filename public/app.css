@@ -146,7 +146,7 @@ li {
     overflow-x:hidden;
 }
 #Home sidebar section ul li:hover{
-    background-color: #30278a;
+    background-color: #212263;
 }
 /*For settings section*/
 #Home sidebar section#setting{
@@ -392,7 +392,8 @@ li {
     bottom: 0;
     z-index: 4;
     width: 95%;
-    background-color: #313190; 
+    background-color: #313190;
+    background: -webkit-linear-gradient(right, #1d1d6d, #0e0e4a);
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -465,7 +466,7 @@ li {
     white-space: nowrap;
 }
 #MessageList section ul li:hover{
-    background-color: #565ea1;
+    background-color: #212263;
 }
 
 /*the messaging center*/
@@ -478,6 +479,7 @@ li {
     left: 5%;
     bottom: 0;
     background-color: #ebebeb;
+    background: linear-gradient(#efffff,#d8dbff);
 }
 #ChatBody section{
     width: 100%;
