@@ -3,15 +3,8 @@
 <head>
 	<title>Sketchpad</title>
 	<link rel="stylesheet" type="text/css" href="sketch.css">
-	<script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script><script type="text/javascript" src="https://latex.codecogs.com/editor3.js"></script>
 	<script src="https://simplewebrtc.com/latest-v2.js"></script>
 	<link rel="icon" href="assets/favicon.png">
-	<script type="text/x-mathjax-config">
-  	MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-	</script>
-	<script type="text/javascript" async
-  	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-	</script>
 	<link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 </head>
 
@@ -21,71 +14,78 @@
 </div>	
 <div id="rectangle-select" hidden></div>
 <div id="annotation-boxes"></div>
-<div id="calculator" style="
-			width: 300px; height: 350px;
-			position: absolute;
-			top: 15%;
-			left: 43vh;
-			text-align: center;">
-			<p id= "equationText"> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p><p> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-			</div>
-<!--MATHJAX USED TO CONVERT LATEX TO YEAH-->
 
-<script>
-var elt = document.getElementById('calculator');
-  var options = {
-    graphpaper: false
-  };
-  var calculator = Desmos.GraphingCalculator(elt, options);
-  console.log(calculator.getExpressions());
-  
-  elt.addEventListener('keypress', function(event) {
-    if (event.key == 'Enter') {
-      var expressionInLatex = calculator.getExpressions()[0].latex;
-      console.log(expressionInLatex);
-      var equationText = document.getElementById('equationText');
-      equationText.innerHTML = expressionInLatex;
-      MathJax.Hub.Configured();
-    }
-  });
-</script>
 <div id="toolbar"> <!-- style as toolbar later, remove from right hand panel?? -->
-		<div class="tool" id="do">
-			<div id="undo"></div>
-			<div id="redo"></div>
-		</div>
-		<div class="colors">
-			<div id="colorBar">
-				<div class="currentColor tool" id="currentColor"></div>
-				<div class="color red tool" id="red"></div>
-				<div class="color orange tool" id="orange"></div>
-				<div class="color yellow tool" id="yellow"></div>
-				<div class="color green tool" id="green"></div>
-				<div class="color blue tool" id="blue"></div>
-				<div class="color violet tool" id="violet"></div>
-				<div class="color black tool" id="black"></div>
-			</div>
-		</div>
-		<div class="thickness tool">
-			<div id=""></div>
-			<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5">
-			<!--<output id="thickness-value">2</output>-->
-		</div>
-		<div class="annotations tool">
-		</div>
-		<div class="papers tool">
-			<div class="currentPaper tool" id="currentPaper"></div>
-			<div class="paper plain tool" id="plain"></div>
-			<div class="paper graph tool" id="graph"></div>
-			<div class="paper lined tool" id="lined"></div>
+	<div class="tool" id="do">
+		<div id="undo"></div>
+		<div id="redo"></div>
+	</div>
+	<div class="colors">
+		<div id="colorBar">
+			<div class="currentColor tool" id="currentColor"></div>
+			<div class="color red tool" id="red"></div>
+			<div class="color orange tool" id="orange"></div>
+			<div class="color yellow tool" id="yellow"></div>
+			<div class="color green tool" id="green"></div>
+			<div class="color blue tool" id="blue"></div>
+			<div class="color violet tool" id="violet"></div>
+			<div class="color black tool" id="black"></div>
 		</div>
 	</div>
-
+	<div class="thickness tool">
+		<input id="thickness-slider" type="range" value="2" min="0.5" max="10" step="0.5">
+		<!--<output id="thickness-value">2</output>-->
+	</div>
+	<div class="annotations tool">
+	</div>
+		<div class="papers tool">
+		<div class="currentPaper tool" id="currentPaper"></div>
+		<div class="paper plain tool" id="plain"></div>
+		<div class="paper graph tool" id="graph"></div>
+		<div class="paper lined tool" id="lined"></div>
+	</div>
+</div>
 
 <h1 id="topic">Review of Algebra</h1>
 
+<!-- text editor -->
+<link rel="stylesheet" type="text/css" href="mathquill-0.10.1/mathquill.css">
+<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="mathquill-0.10.1/mathquill.js"></script>
+<script type="text/javascript">
+	var MQ = MathQuill.getInterface(2);
+</script>
+<div id="calculator">
+	<div id="textboxes"></div>
+	<p id="equationText"> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+	<p> When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+</div>
+<script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+<script>
+
+var elt = document.getElementById('calculator');
+var options = {
+	graphpaper: false
+};
+var calculator = Desmos.GraphingCalculator(elt, options);
+console.log(calculator.getExpressions());
+
+elt.addEventListener('keypress', function(event) {
+   if (event.key == 'Enter') {
+     var expressionInLatex = calculator.getExpressions()[0].latex;
+     console.log(expressionInLatex);
+     //inject expression into the sketchboard
+     var textBox = jQuery('<p class="equationText">' + expressionInLatex + '</p>');
+     jQuery('#textboxes').append(textBox);	//add CSS animation for the ejection
+     //remove expression from desmos keyboard
+     calculator.removeExpression(calculator.getExpressions()[0]);
+     MQ.StaticMath(jQuery('.equationText')[jQuery('.equationText').length - 1]);
+   }
+ });
+</script>
 
 <div class="accordion" id="sidebar">
 	<button class="accordion">Topics</button>
@@ -99,14 +99,17 @@ var elt = document.getElementById('calculator');
 	</div>
 	<button class="accordion">Annotations</button>
 	<div class="panel" id="annotations">
+<<<<<<< HEAD
+=======
 		<ul id="notations">
 			
 		</ul>
+>>>>>>> 024f7c9e2af4e3a6eee5e06a8e5a6744b27e92c0
 	</div>
 	<button class="accord">Resources</button>
 	<div class="panel" id="resources">
 		<div>
-			<form action="#" id="You"></form>
+			<form action="#" id="You">
 				<p><input style="display: none;" type="text" id="searcher" value="math" autocomplete="off" class="form-control"/></p>
 				<p><input style="display: none;" type="submit" value="Show Results" id="load"></p>
 			</form>
@@ -132,8 +135,6 @@ var elt = document.getElementById('calculator');
 	  webrtc.joinRoom('your awesome room name');
 	});
 
-
-
 	var acc = document.getElementsByClassName("accordion");
 	for (var i = 0; i < acc.length; i++) {
 	    acc[i].onclick = function() {
@@ -150,11 +151,9 @@ var elt = document.getElementById('calculator');
 	window.onload = function() {
 		setTimeout(function(){acc[1].click();},100)
 	}
-
 </script>
 
 <!--Youtube-->
-<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="sketchsearch.js"></script>
 <script src="https://apis.google.com/js/client.js?onload=init" type="text/javascript"></script>
 

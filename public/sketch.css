@@ -288,6 +288,20 @@ div.currentColor {
 	background-color: rgba(196, 18, 48, 0.4);
     position: absolute;
 }
+
+#calculator {
+	width: 300px; 
+	height: 350px;
+	position: absolute;	/*should be draggable*/
+	top: 15%;
+	left: 43vh;
+	text-align: center;
+}
+
+.equationText {
+
+}
+
 #notations{
 	list-style-type: none;
 	list-style-position: none;
@@ -298,6 +312,6 @@ div.currentColor {
 	font-size: 0.8em;
 	font-family: sans-serif;
 }
-#notations li:hover{
+#notations li:hover {
 	background-color:#a8b2e5;
 }
