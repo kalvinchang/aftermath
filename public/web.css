@@ -23,6 +23,9 @@ a {
     color: black;
     font-style: none;
 }
+body{
+    height:100%;
+}
 body, header, section, nav, footer {
     width: 100%;
 }
@@ -229,7 +232,7 @@ label {
     margin: auto;
 }
 #form input, select{
-    width: 25vw;
+    width: 27vw;
     margin:auto;
     margin-bottom: 3%;
     padding: 0.5%;

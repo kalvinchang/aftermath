@@ -60,7 +60,7 @@ $(function() {
             q: topic + " " + sessionTitle + " math",
             maxResults: 7,
             order: "relevance",
-            publishedAfter: "2015-01-01T00:00:00Z"
+            publishedAfter: "2007-01-01T00:00:00Z"
        });
        // execute the request
        request.execute(function(response) {

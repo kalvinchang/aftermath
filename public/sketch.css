@@ -70,6 +70,7 @@ canvas.whiteboard{
 
 #topic-checklist ul{
 	list-style-type: none;
+	color: #33338c;
 }
 #topic-checklist ul li:hover{
 	background-color:#b7b6df;
