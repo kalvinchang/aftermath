@@ -1,3 +1,5 @@
+
+
 var search = $('#searchWindow');
 
 //appearances

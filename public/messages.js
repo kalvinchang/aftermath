@@ -9,7 +9,8 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 var name, email, uid, classcode;
-var groupId; 
+var groupId;
+var students;
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -43,6 +44,23 @@ firebase.auth().onAuthStateChanged(function(user) {
               console.log(key + '->' + val[key]);
               setMessage(val[key]);
             }
+          }
+        });
+
+        //get list of people from the classroom from the database
+        database.ref('classes/@' + classcode).once('value', function(data) {
+          //get user ids from database within a classroom
+          var val = data.val().students; //puts data in object form
+
+          for (var key in val) {
+            if (val.hasOwnProperty(key)) {
+              students.push(key);
+            }
+          }
+
+          //get displaynames of classmates
+          for (var student in students) {
+            
           }
         });
       },

@@ -30,3 +30,13 @@ $('#gThree').mouseleave(function(){
     $('#pThree').css('top','10%');
     $('#pThree').css('visibility','hidden');
 });
+
+//scheduling button functions
+
+$('#makeSchedule select').val()
+
+$('#addSchedule').click(function(){
+    $('#makeSchedule').css('display', 'none');
+    $('#showSchedule').css('display', 'block');
+    $('#showSchedule p').text($('#date').val());
+});
