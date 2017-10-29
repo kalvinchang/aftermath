@@ -720,7 +720,7 @@ div#schedule{
     background-color: #404d99;
 }
 #makeSchedule{
-    display: none;
+    display: block;
 }
 #CallInit #makeSchedule h5{
     font-size: 3vh;
@@ -738,7 +738,7 @@ div#schedule{
     border:none;
 }
 #showSchedule{
-        display: block;
+    display: none;
 }
 #showSchedule p{
     font-size: 4vh;
