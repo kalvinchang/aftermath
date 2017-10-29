@@ -226,7 +226,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     else {
       li = jQuery('<li>' + annotationInput + ' </li>');
     }
-    jQuery('#annotations').append(li);
+    jQuery('#notations').append(li);
 
     socket.emit('annotate', {   //only send the final rectangle!
       x0: x0 / w,

@@ -42,6 +42,7 @@ canvas.whiteboard{
 	text-align: center;
 	margin: 0;
 	background-color: rgba(105, 200, 255, 0.39);
+	background: linear-gradient(rgba(55, 131, 163, .39),rgba(105, 200, 255, 0.39));
 	transition-duration: 0.3s;
 }
 #topic:hover{
@@ -283,7 +284,6 @@ div.currentColor {
 	background-repeat: no-repeat;
 	border: none;
 }
-
 #rectangle-select {
 	background-color: rgba(196, 18, 48, 0.4);
     position: absolute;
@@ -300,4 +300,18 @@ div.currentColor {
 
 .equationText {
 
+}
+
+#notations{
+	list-style-type: none;
+	list-style-position: none;
+	margin: none;
+	padding: 1%;
+}
+#notations li{
+	font-size: 0.8em;
+	font-family: sans-serif;
+}
+#notations li:hover {
+	background-color:#a8b2e5;
 }
