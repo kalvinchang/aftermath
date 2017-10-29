@@ -303,9 +303,7 @@ div.currentColor {
 #calculator {
 	width: 25vw; 
 	height: 41vh;
-	position: absolute;	/*should be draggable*/
-	top: 15%;
-	left: 43vh;
+	transform: translateX(55vw) translateY(25vh);
 	text-align: center;
 }
 
