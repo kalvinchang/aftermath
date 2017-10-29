@@ -75,7 +75,7 @@ li {
     width: 95%;
     z-index: 1;
     color: rgba(255, 255, 255, 0.67);
-    background-color: #2a2180;
+    background-color: #313190;
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -183,7 +183,7 @@ li {
     width: 100%;
     padding: 1% 0;
     height: 20%;
-    background-color: #c7ccf5;
+    background-color: #c6e0ff;
     color: #1a1a92;
     text-align: center;
     display: flex;
@@ -386,7 +386,7 @@ li {
     bottom: 0;
     z-index: 4;
     width: 95%;
-    background-color: #2a2180; 
+    background-color: #313190; 
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -471,7 +471,7 @@ li {
     right: 0%;
     left: 5%;
     bottom: 0;
-    background-color: #e6e7f3;
+    background-color: #ebebeb;
 }
 #ChatBody section{
     width: 100%;
@@ -521,7 +521,7 @@ div.receive p{
 }
 #ChatBody form{
     height: 5%;
-    background-color: #e6e7f3;
+    background-color: #ebebeb;
     width: 100%;
 }
 #ChatBody form div{
@@ -533,7 +533,6 @@ div.receive p{
 #ChatBody form div input{
     border: 1px solid rgba(77, 77, 128, 0.25);
     border-radius: 5px;
-    padding: 2%;
     color: #797292;
     font-size: 1.5vw;
     outline: none;
@@ -544,6 +543,7 @@ div.receive p{
 #ChatBody form div input:focus{
     border-bottom: 3px solid rgba(6, 6, 66, 0.3);
     outline:none;
+    padding: 2.5%;
 }
 #ChatBody form div button{
     background-color: #C5C1EE;
@@ -564,7 +564,7 @@ div.receive p{
     bottom: 0;
     width: 85%;
     display: block;
-    background-color: #5b66ab;
+    background-color: #6969b5;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
 }
@@ -579,6 +579,8 @@ div.receive p{
 #CallInit div h5{
     font-size: 1.5em;
     color: white;
+    margin: auto;
+    width: fit-content;
 }
 #CallInit div p:hover{
     background-color: #535ea3;
@@ -611,7 +613,7 @@ figure figcaption{
     text-align: center;
     margin: auto;
     color: white;
-    font-size: 2.8vh;
+    font-size: 2.5vh;
 }
 div#schedule{
     height: 35%;
@@ -652,6 +654,9 @@ div#schedule{
 }
 #makeSchedule{
     display: block;
+}
+#CallInit #makeSchedule h5{
+    font-size: 3vh;
 }
 #showSchedule{
         display: none;
