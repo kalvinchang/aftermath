@@ -314,9 +314,9 @@ div.currentColor {
 	padding: 1%;
 }
 #notations li{
-	font-size: 0.8em;
-	font-family: sans-serif;
+	font-family: 'Raleway', sans-serif;
+	color: #fff;
 }
 #notations li:hover {
-	background-color:#a8b2e5;
+	background-color: #a8b2e5;
 }
