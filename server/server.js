@@ -23,7 +23,8 @@ io.on('connection', function (socket) { //called w/ socket, usually only one io.
   // socket.broadcast.emit from ADmin text New user joined
   socket.broadcast.emit('newMessage', generatedMessage('Admin', 'New User joined.'))
 
-  socket.on('drawing', (data) => socket.broadcast.emit('drawing', data)); //makes the drawing collaborative
+  //makes the drawing collaborative
+  socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
   socket.on('annotate', (data) => {
     socket.broadcast.emit('annotate', data);
     console.log(data);

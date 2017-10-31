@@ -83,7 +83,7 @@ function textBox(expressionInLatex, emit) {
     textboxArea.append(textBox);  
     textboxes = jQuery('.equationText');
     var recentlyAdded = textboxes[textboxes.length - 1];
-    //make the textbox an editable field
+    //make the textbox an editable field - MathQuill
     var field = MQ.MathField(recentlyAdded);
     MQ.StaticMath(field);
     $('#' + counter).draggable();

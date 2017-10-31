@@ -10,7 +10,7 @@ const database = firebase.database();
 
 var name, email, uid, classcode;
 var groupId;
-var students;
+var students = [];
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -57,11 +57,13 @@ firebase.auth().onAuthStateChanged(function(user) {
               students.push(key);
             }
           }
+          console.log(students);
 
-          //get displaynames of classmates
-          for (var student in students) {
-            
-          }
+          //get displaynames of classmates -> add to database
+
+
+        }, function(error) {
+            console.log(error);
         });
       },
       function(error) {
